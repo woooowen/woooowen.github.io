@@ -4,13 +4,22 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-09-30T15:06:30+08:00</updated>
+ <updated>2014-09-30T17:48:23+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>This is a test</title>
+   <link href="http://www.woowen.com/php/linux/2014/09/30/test/"/>
+   <updated>2014-09-30T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/linux/2014/09/30/test</id>
+   <content type="html">&lt;p&gt;test&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Lanyon</title>
