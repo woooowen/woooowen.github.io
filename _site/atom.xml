@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-09-30T17:48:23+08:00</updated>
+ <updated>2014-10-01T02:21:18+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -13,10 +13,19 @@
 
  
  <entry>
+   <title>first</title>
+   <link href="http://www.woowen.com/first/mysql/python/test/2014/10/01/first/"/>
+   <updated>2014-10-01T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/first/mysql/python/test/2014/10/01/first</id>
+   <content type="html">&lt;p&gt;first&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>This is a test</title>
-   <link href="http://www.woowen.com/php/linux/2014/09/30/test/"/>
+   <link href="http://www.woowen.com/php11/linux22/2014/09/30/test/"/>
    <updated>2014-09-30T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/linux/2014/09/30/test</id>
+   <id>http://www.woowen.com/php11/linux22/2014/09/30/test</id>
    <content type="html">&lt;p&gt;test&lt;/p&gt;
 </content>
  </entry>

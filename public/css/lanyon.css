@@ -551,3 +551,108 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+/** 修改添加css **/
+.entry-meta {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #bbbbbb;
+  text-transform: uppercase;
+}
+
+.entry-meta a {
+  color: #bbbbbb;
+}
+
+.entry-meta .vcard:before {
+  content: " by ";
+}
+
+.entry-meta .tag {
+  display: inline-block;
+  padding: 2px 6px;
+  margin: 4px;
+  color: #ffffff;
+  background-color: #bbbbbb;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+.entry-meta .tag span {
+  font-size: 10px;
+  font-size: 0.625rem;
+  vertical-align: super;
+}
+
+.entry-meta .tag:hover {
+  background-color: #a2a2a2;
+}
+
+.entry-meta .tag:active {
+  -webkit-transform: translate(0, 1px);
+     -moz-transform: translate(0, 1px);
+      -ms-transform: translate(0, 1px);
+       -o-transform: translate(0, 1px);
+          transform: translate(0, 1px);
+  -webkit-box-shadow: 0 0 1px rgba(34, 34, 34, 0.2);
+     -moz-box-shadow: 0 0 1px rgba(34, 34, 34, 0.2);
+          box-shadow: 0 0 1px rgba(34, 34, 34, 0.2);
+}
+
+.inline-list {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.inline-list li {
+  display: inline;
+  list-style-type: none;
+}
+article{
+  display: block;
+}
+
+
+article {
+  padding: 25px 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
+}
+
+@media only screen and (min-width: 48em) {
+  article {
+    padding: 30px;
+  }
+}
+
+@media only screen and (min-width: 62.5em) {
+  article {
+    padding: 50px 80px;
+    margin-bottom: 30px;
+  }
+}
+
+.entry,
+.hentry {
+  *zoom: 1;
+}
+
+.entry:before,
+.hentry:before,
+.entry:after,
+.hentry:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.entry:after,
+.hentry:after {
+  clear: both;
+}
