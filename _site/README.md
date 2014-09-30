@@ -1,3 +1,8 @@
+# Update
+	1.将google的font资源全部整合进来,减少页面加载时间(GFW)
+	2.修改左侧的布局.
+	3.修改个人介绍页面的html
+
 # Lanyon
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
@@ -117,5 +122,3 @@ Lanyon has two branches, but only one is used for active development.
 ## License
 
 Open sourced under the [MIT license](LICENSE.md).
-
-<3
