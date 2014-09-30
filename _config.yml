@@ -1,26 +1,23 @@
-title:            Woowen
-description:      明心见性
-url:              woooowen.github.io
-signoff:          woowen
-disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
-facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
-google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
+#
+#Dependencies
+markdown:            redcarpet
+highlighter:         pygments
 
-links:
-  - name:         About
-    url:          /about
-  - name:         Blog
-    url:          http://www.woowen.com
-    external:     true
-  - name:         Email
-    url:          mailto:woooowen@gmail.com
-    external:     true
-  - name:         GitHub
-    url:          https://github.com/woooowen
-    external:     true
-highlighter:      pygments
-permalink:        pretty
-markdown:         redcarpet
-redcarpet:
-  extensions:
-    - smart
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Woooowen
+tagline:             'You can do anything you set your mind to'
+description:         '明证本心,明心见性'
+url:                 http://www.woowen.com
+baseurl:             /
+paginate:            5
+
+github:
+    repo : http://www.woowen.com
+# Custom vars
+version:             1.0.0
