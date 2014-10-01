@@ -3,6 +3,10 @@
 	2.修改左侧的布局.
 	3.修改个人介绍页面的html
 
+2014-10-01 16:09:48
+	1.修改了分页样式
+	2.添加标签,分类,目录集合页,整合统一样式
+	3.修改relate post bug
 # Lanyon
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.

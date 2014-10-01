@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: 分类
 layout: page
 ---
 <ul class="entry-meta inline-list">
@@ -8,15 +8,22 @@ layout: page
 {% endfor %}
 </ul>
 
-<ul class="listing">
 {% for cat in site.categories %}
-  <li class="listing-seperator" id="{{ cat[0] }}">{{ cat[0] }}</li>
+<article id="{{ cat[0] }}">
+<ul class="related-posts">
+  <h2>{{ cat[0] }}</h2>
 {% for post in cat[1] %}
   <li class="listing-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  <h3>
+  	<a href="{{ post.url }}" title="{{ post.title }}">
+  		{{ post.title }}
+  		<small>{{ post.date | date_to_string }}</small>
+  	</a>
+  </h3>
   </li>
 {% endfor %}
-{% endfor %}
 </ul>
+</article>
+{% endfor %}
+
 

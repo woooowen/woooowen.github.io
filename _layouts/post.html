@@ -8,22 +8,27 @@ layout: default
   {{ content }}
 </div>
 
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
+{% if site.related_posts.size %}
+    <div class="read-more">
+      {% for post in site.related_posts limit:1 %}
+        <div class="read-more-header">
+          <a href="{{ site.url }}{{ page.previous.url }}" class="read-more-btn">Read More</a>
+        </div><!-- /.read-more-header -->
+        <div class="read-more-content">
+          <h3><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 140 }}&hellip;{% endif %} <a href="{{ site.url }}{{ post.url }}">Continue reading</a></p>
+        </div><!-- /.read-more-content -->
+      {% endfor %}
+      <div class="read-more-list">
+        {% for post in site.related_posts limit:2 offset:1 %}
+          <div class="list-item">
+            <h4><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+            <span>Published on {{ post.date | date: "%B %d, %Y" }}</span>
+          </div><!-- /.list-item -->
+        {% endfor %}
+      </div><!-- /.read-more-list -->
+      {% endif %}
+    </div><!-- /.read-more -->
 <!-- 多说评论框 start -->
 <div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}" data-url="{{ site.baseurl }}{{ page.url }}"></div>
 <!-- 多说评论框 end -->
