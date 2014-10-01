@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-02T01:32:17+08:00</updated>
+ <updated>2014-10-02T01:36:07+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -30,7 +30,14 @@
 3.你标记过了这个项目
 4.你fork过这个仓库
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我得问题是我本地的客户端没有关联我得Github账户,mac客户端,Preferences-&amp;gt;Advanced-&amp;gt;Git Config中的用户名跟邮箱地址要跟你的账号一样.这样才能关联.好了等于之前的提交都白干了.哈哈.&lt;/p&gt;
+&lt;p&gt;我得问题是我本地的客户端没有关联我得Github账户,mac客户端&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Advanced&lt;/code&gt;-&amp;gt;&lt;code&gt;Git&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;Config中的用户名跟邮箱地址要跟你的账号一样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这样才能关联.好了等于之前的提交都白干了.哈哈.&lt;/p&gt;
 </content>
  </entry>
  
