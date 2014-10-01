@@ -825,3 +825,13 @@ background: #83BF73;
     text-align: right;
   }
 }
+.icons{
+  float:right;
+  width:20px;
+  height:20px;
+  margin-top: 5px;
+}
+.icons img{
+  width:20px;
+  height:20px;
+}

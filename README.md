@@ -7,6 +7,9 @@
 	1.修改了分页样式
 	2.添加标签,分类,目录集合页,整合统一样式
 	3.修改relate post bug
+2014-10-02 00:25:06
+  1.修改图标
+  2.添加github图标
 # Lanyon
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
