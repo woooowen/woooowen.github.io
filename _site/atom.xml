@@ -4,13 +4,35 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-02T01:10:06+08:00</updated>
+ <updated>2014-10-02T01:32:17+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>关于Github提交没有进入Contribution统计的问题</title>
+   <link href="http://www.woowen.com/github/2014/10/02/%E5%85%B3%E4%BA%8EGithub%20%E6%8F%90%E4%BA%A4%E6%B2%A1%E6%9C%89%E8%BF%9B%E5%85%A5Contribution%E7%BB%9F%E8%AE%A1/"/>
+   <updated>2014-10-02T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/github/2014/10/02/关于Github 提交没有进入Contribution统计</id>
+   <content type="html">&lt;p&gt;本地一直使用github的mac客户端去提交代码,发现提交了好多次的代码,但是依然没有进入github的Contribution统计,于是参考了相关资料找到原因.&lt;/p&gt;
+
+&lt;h4&gt;会被记录进入Contribution的情形&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.操作在1年之内
+2.操作针对的是一个独立的仓库,在Fork仓库中提交代码不会计入
+3.进行commit的时候关联了你的Github账户
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;除了以上情况之外也会被记录进入Contribution的情形&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.你是这个项目组织的一员
+2.你对这个项目有过pull,issue
+3.你标记过了这个项目
+4.你fork过这个仓库
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我得问题是我本地的客户端没有关联我得Github账户,mac客户端,Preferences-&amp;gt;Advanced-&amp;gt;Git Config中的用户名跟邮箱地址要跟你的账号一样.这样才能关联.好了等于之前的提交都白干了.哈哈.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>first</title>
