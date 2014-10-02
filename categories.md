@@ -17,7 +17,7 @@ layout: page
   <h3>
   	<a href="{{ post.url }}" title="{{ post.title }}">
   		{{ post.title }}
-  		<small>{{ post.date | date_to_string }}</small>
+  		<small>{{ post.date | date: "%Y-%m-%d"  }}</small>
   	</a>
   </h3>
   </li>

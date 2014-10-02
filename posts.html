@@ -15,7 +15,7 @@ description: "An archive of posts."
         <li class="entry-title">
         <h3>
           <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-          <small>{{ post.date | date_to_string }}</small>
+          <small>{{ post.date | date: "%Y-%m-%d"  }}</small>
         </h3>
           </li>
     {% if forloop.last %}
