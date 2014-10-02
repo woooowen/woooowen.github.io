@@ -10,7 +10,7 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-    <span class="post-date">{{ post.date | date: "%%m-%d" }}</span>
+    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
     {{ post.content | strip_html | truncate : 100}}
   </div>
   {% endfor %}
