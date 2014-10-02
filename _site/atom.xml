@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-02T16:34:26+08:00</updated>
+ <updated>2014-10-02T22:25:30+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -20,16 +20,22 @@
    <content type="html">&lt;p&gt;本地一直使用github的mac客户端去提交代码,发现提交了好多次的代码,但是依然没有进入github的Contribution统计,于是参考了相关资料找到原因.&lt;/p&gt;
 
 &lt;h4&gt;会被记录进入Contribution的情形&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.操作在1年之内
-2.操作针对的是一个独立的仓库,在Fork仓库中提交代码不会计入
-3.进行commit的时候关联了你的Github账户
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.操作在1年之内&lt;/li&gt;
+&lt;li&gt;2.操作针对的是一个独立的仓库,在Fork仓库中提交代码不会计入&lt;/li&gt;
+&lt;li&gt;3.进行commit的时候关联了你的Github账户&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h4&gt;除了以上情况之外也会被记录进入Contribution的情形&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.你是这个项目组织的一员
-2.你对这个项目有过pull,issue
-3.你标记过了这个项目
-4.你fork过这个仓库
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.你是这个项目组织的一员&lt;/li&gt;
+&lt;li&gt;2.你对这个项目有过pull,issue&lt;/li&gt;
+&lt;li&gt;3.你标记过了这个项目&lt;/li&gt;
+&lt;li&gt;4.你fork过这个仓库&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;我得问题是我本地的客户端没有关联我得Github账户,mac客户端&lt;/p&gt;
 
 &lt;ul&gt;
@@ -67,26 +73,22 @@
 &lt;p&gt;3.在项目中每个人员都知道了自己需求的前提下,项目经理开始编写项目技术文档.&lt;/p&gt;
 
 &lt;h4&gt;项目技术文档主要包含以下几个部分&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.需求背景,主要包含这个需求的愿景是什么,以及期望通过这个需求实现哪些目标,这些主要是项目经理跟运营沟通.
 
-2.技术方案
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.需求背景,主要包含这个需求的愿景是什么,以及期望通过这个需求实现哪些目标,这些主要是项目经理跟运营沟通.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.技术方案&lt;/p&gt;
 
-    1) 数据库关系图,数据字典
+&lt;p&gt;1) 数据库关系图,数据字典&lt;/p&gt;
 
-    2) 项目类图
+&lt;p&gt;2) 项目类图&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.项目流程图,用于描述整体一个项目的流程.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.针对核心需求需要通过流程图+文字的方式清楚的描述该需求&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.开发计划,每个人得工作任务,另外每个项目都应该将未来一些不可控的因素而话费的时间也算进去,例如有其他紧急需求占用资源.且当别人问你需要多久完成这个项目的时候,不是指你开发你自己得功能需要多久,而是指你这个功能 + 跟别人联调 + 部分测试一共需要多久.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6.用例图,用例图是参与者与外部用户所能观察到的系统功能的模型图,呈现参与者以及用例,他们之间的关系,如何项目联系.使得项目各个模块更加清晰.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;7.上线方案,包含上线前得一些准备,例如涉及到新建库表的时候,先准备好,建表得SQL,遇到问题之后需要回滚的项目编号,以及整体的一个项目上线步骤,可能遇到的问题,问题得解决方案.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;8.风险预估,告知清楚项目中可能存在的问题,并且由项目经理去不断跟进,在项目进行中,了解是否还会有其他风险的可能性.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.项目流程图,用于描述整体一个项目的流程.
-
-4.针对核心需求需要通过流程图+文字的方式清楚的描述该需求
-
-5.开发计划,每个人得工作任务,另外每个项目都应该将未来一些不可控的因素而话费的时间也算进去,例如有其他紧急需求占用资源.且当别人问你需要多久完成这个项目的时候,不是指你开发你自己得功能需要多久,而是指你这个功能 + 跟别人联调 + 部分测试一共需要多久.
-
-6.用例图,用例图是参与者与外部用户所能观察到的系统功能的模型图,呈现参与者以及用例,他们之间的关系,如何项目联系.使得项目各个模块更加清晰.
-
-7.上线方案,包含上线前得一些准备,例如涉及到新建库表的时候,先准备好,建表得SQL,遇到问题之后需要回滚的项目编号,以及整体的一个项目上线步骤,可能遇到的问题,问题得解决方案.
-
-8.风险预估,告知清楚项目中可能存在的问题,并且由项目经理去不断跟进,在项目进行中,了解是否还会有其他风险的可能性.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;4.告知团队中每个人自己得工作任务.将任务安排告诉他们,让他们清楚的知道每天需要做什么,明天做什么,并且询问这样得安排是否妥当,这方面我跟前端沟通的较少,后面需要提升.使得项目在前端方面有点失控.这个后面再提.&lt;/p&gt;
 
 &lt;p&gt;5.项目开发开始,项目经理每天开始花10分钟,召集所有参与人员开个早会,根据项目计划安排每个人今日的工作任务.&lt;/p&gt;
@@ -103,14 +105,14 @@
 &lt;p&gt;10.项目测试修改完成,项目发布上线.&lt;/p&gt;
 
 &lt;h4&gt;项目经理角色作用&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.项目经理应该将更多得精力放在项目管理上面,因此当项目经理在分配任务得时候.建议不要给自己安排太多的开发任务.
 
-2.项目经理不光要完成后端这边的开发任务,还需要时刻的关注前端的任务,而程序员写代码又常常容易沉浸在其中,导致前后端的进度不同步,给项目进度带来风险.
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.项目经理应该将更多得精力放在项目管理上面,因此当项目经理在分配任务得时候.建议不要给自己安排太多的开发任务.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.项目经理不光要完成后端这边的开发任务,还需要时刻的关注前端的任务,而程序员写代码又常常容易沉浸在其中,导致前后端的进度不同步,给项目进度带来风险.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.人得精力总是有限的,在一个项目中,不代表写的代码最多,那么贡献就最多,每个人得分工不同,但是大家的贡献却是直接影响项目亦或是间接的影响到项目,项目经理对于前后端的进度掌握,将最新得进度告知团队中得其他人,给予充分的信息沟通.每当遇到问题得时候也会将遇到的问题告知其他人.遇到其他问题得时候,协调资源给予解决问题.这样群策群力,不仅提高了个人的效率,也让项目在把控中一步步前进.团队中得每个人都能了解到团队中其他人做了什么事情,遇到什么困难,哪怕某个环节出现了delay得情况.那么大家在知晓原因的前提下,都会觉得能够理解.所以项目经理虽然在开发端给予整体项目的贡献偏弱,但是综合其他却是大大的保障了整体项目的慢慢推荐,项目经理也应该从宏观上对项目进行把控.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.项目经理是每个角色之间的沟通传话员.同时也是项目进度把控人.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.人得精力总是有限的,在一个项目中,不代表写的代码最多,那么贡献就最多,每个人得分工不同,但是大家的贡献却是直接影响项目亦或是间接的影响到项目,项目经理对于前后端的进度掌握,将最新得进度告知团队中得其他人,给予充分的信息沟通.每当遇到问题得时候也会将遇到的问题告知其他人.遇到其他问题得时候,协调资源给予解决问题.这样群策群力,不仅提高了个人的效率,也让项目在把控中一步步前进.团队中得每个人都能了解到团队中其他人做了什么事情,遇到什么困难,哪怕某个环节出现了delay得情况.那么大家在知晓原因的前提下,都会觉得能够理解.所以项目经理虽然在开发端给予整体项目的贡献偏弱,但是综合其他却是大大的保障了整体项目的慢慢推荐,项目经理也应该从宏观上对项目进行把控.
-
-4.项目经理是每个角色之间的沟通传话员.同时也是项目进度把控人.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;此次项目开发中遇到的困扰&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -193,12 +195,14 @@
    <updated>2014-09-15T00:00:00+08:00</updated>
    <id>http://www.woowen.com/php/2014/09/15/PHP Zval浅析</id>
    <content type="html">&lt;h3&gt;什么是zval&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.zval是php底层非常重要的一种数据结构.
-2.php变量分为3种类型:简单类型(int,string,bool),集合类型(array,object,resource),常量(const)
-3.php为弱类型,定义时不指明类型,运行时可以转换数据类型.就是由于zval的功劳.
-4.同样zval得使用能大大的节约内存的资源消耗
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;zval结构&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.zval是php底层非常重要的一种数据结构.&lt;/li&gt;
+&lt;li&gt;2.php变量分为3种类型:简单类型(int,string,bool),集合类型(array,object,resource),常量(const)&lt;/li&gt;
+&lt;li&gt;3.php为弱类型,定义时不指明类型,运行时可以转换数据类型.就是由于zval的功劳.&lt;/li&gt;
+&lt;li&gt;4.同样zval得使用能大大的节约内存的资源消耗
+####zval结构&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;在phpsrc/zend/zend.h中有关于zval的函数定义.&lt;/p&gt;
 
@@ -213,22 +217,22 @@
 
 &lt;p&gt;关于zval的定义代码在phpsrc/zend/zend.h文件中&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;union&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_zvalue_value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/* long value */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/* double value */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;union&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_zvalue_value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* long value */&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* double value */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;HashTable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ht&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/* hash table value */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;HashTable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ht&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* hash table value */&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;zend_object_value&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zvalue_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_zval_struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;sr&quot;&gt;/* Variable information */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;zvalue_value&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/* value */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_zval_struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* Variable information */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;zvalue_value&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* value */&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;zend_uint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcount__gc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;zend_uchar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/* active type */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;zend_uchar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* active type */&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;zend_uchar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_ref__gc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -241,16 +245,16 @@
 union是c中得一个联合体.union可以定义多个成员,且多个成员共享一片内存块,一次只能使用一个成员,当其中一个成员被赋值时会覆盖其他成员的值.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#include&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;a:%d,b:%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;a:%d,b:%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;输出结果:&lt;code&gt;a:321,b:321&lt;/code&gt;&lt;/p&gt;
@@ -270,10 +274,9 @@ union是c中得一个联合体.union可以定义多个成员,且多个成员共�
 &lt;p&gt;debug&lt;em&gt;zval&lt;/em&gt;dump()是zend自带得php方法,可以查看refcount值,但是显示的信息不够完整.&lt;/p&gt;
 
 &lt;p&gt;当你声明一个变量时,他得refcount是为1得.建议大家装个xdebug去查看.xdebug中提供了一系列得方法.xdebug&lt;em&gt;debug&lt;/em&gt;zval可以查看refcount,以及is_ref的值.&lt;/p&gt;
-
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;debug_zval_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span class=&quot;n&quot;&gt;debug_zval_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出结果:string(1) &amp;quot;a&amp;quot; refcount(1)&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -281,22 +284,22 @@ union是c中得一个联合体.union可以定义多个成员,且多个成员共�
 
 &lt;p&gt;输出结果:a: (refcount=1, is_ref=0)=1&lt;/p&gt;
 
-&lt;p&gt;当$b = $a; 变量a的refcount ++;
+&lt;p&gt;&lt;code&gt;当$b = $a; 变量a的refcount ++;&lt;/code&gt;
 使用传值的时候:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;vg&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;xdebug_debug_zval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;输出结果:a: (refcount=2, is_ref=0)=1
+&lt;p&gt;输出结果:&lt;code&gt;a: (refcount=2, is_ref=0)=1&lt;/code&gt;
 使用传引用的时候:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;vg&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;xdebug_debug_zval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;输出结果:a: (refcount=2, is&lt;em&gt;ref=0)=1
-而当$b = &amp;amp;$a;refcount++,且is&lt;/em&gt;ref = 1;is_ref=1表示该变量被引用了&lt;/p&gt;
+&lt;p&gt;输出结果:&lt;code&gt;a: (refcount=2, is_ref=0)=1&lt;/code&gt;
+而当&lt;code&gt;$b = &amp;amp;$a;refcount++&lt;/code&gt;,且&lt;code&gt;is_ref = 1;is_ref=1&lt;/code&gt;表示该变量被引用了&lt;/p&gt;
 
 &lt;p&gt;当unset一个变量的时候refcount会-1,当refcount = 0的时候,对应的zval就会被释放掉.自己可以去试验下了解下.&lt;/p&gt;
 
@@ -344,13 +347,13 @@ b: (refcount=1, is&lt;/em&gt;ref=0)=&amp;#39;other str&amp;#39;
 
 &lt;p&gt;注:__gc其实就是引入了新的垃圾回收之后而变的.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#define SEPARATE_ZVAL(ppzv)&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define SEPARATE_ZVAL(ppzv)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Z_REFCOUNT_PP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z_REFCOUNT_PP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;zval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Z_DELREF_PP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;ALLOC_ZVAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;INIT_PZVAL_COPY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Z_DELREF_PP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLOC_ZVAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;INIT_PZVAL_COPY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppzv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;zval_copy_ctor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_zv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -398,7 +401,7 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;memory_get_usage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;-&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;输出结果:
-228808-&amp;gt;228976-&amp;gt;229064-&amp;gt;228976&lt;/p&gt;
+&lt;code&gt;228808-&amp;gt;228976-&amp;gt;229064-&amp;gt;228976&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;理论上$bb是$aa的值引用,当unset($bb)的时候$aa的值也应该被unset掉才是.但事实上php只会将$bb从hashtable中移除,且将refcount-1,而实际使用的内存没有任何变化.只有当指向该变量的所有变量都unset掉,这块的内存才会被释放.&lt;/p&gt;
 
@@ -416,7 +419,7 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;memory_get_usage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;输出结果:
-226696-&amp;gt;236840-&amp;gt;241864-&amp;gt;228264
+&lt;code&gt;226696-&amp;gt;236840-&amp;gt;241864-&amp;gt;228264&lt;/code&gt;
 为什么将数组声明在释放之后的内存占用是不一样得?&lt;/p&gt;
 
 &lt;p&gt;在声明变量的时候,变量都是存放在hashtable中得.而hashtable每次不知道你需要申请的内存有多大,因此他每次都只是申请一部分,当不够用的时候在扩容
@@ -434,24 +437,23 @@ php中并不推荐大家使用&amp;amp;传引用方式.
    <content type="html">&lt;p&gt;mac下安装xdebug 总是出错.&lt;/p&gt;
 
 &lt;p&gt;整理下避免以后在遇到&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.cd ~ &amp;amp;&amp;amp; mkdir xdebug
 
-    在当前用户目录下创建一个文件夹用来安放xdebug源文件
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.cd ~ &amp;amp;&amp;amp; mkdir xdebug&lt;/p&gt;
 
-2.git clone git://github.com/derickr/xdebug.git
+&lt;p&gt;在当前用户目录下创建一个文件夹用来安放xdebug源文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.git clone git://github.com/derickr/xdebug.git&lt;/p&gt;
 
-    mac下集成了git工具因此可以直接使用该命令,clone一份xdebug到本地.
+&lt;p&gt;mac下集成了git工具因此可以直接使用该命令,clone一份xdebug到本地.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.cd xdebug&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;/Applications/XAMPP/xamppfiles/bin/phpize&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.make&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6.sudo cp modules/* /Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20121212/&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;7.vim /Applications/XAMPP/etc/php.ini  在最底下加上这么一段代码&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.cd xdebug
-
-4. /Applications/XAMPP/xamppfiles/bin/phpize
-
-5.make
-
-6.sudo cp modules/* /Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20121212/
-
-7.vim /Applications/XAMPP/etc/php.ini  在最底下加上这么一段代码
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;xdebug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;zend_extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;Applications&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;XAMPP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;xamppfiles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;php&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;no-debug-non-zts-20121212&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;xdebug&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.so&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;xdebug&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.remote_enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;on&lt;/span&gt;
@@ -460,11 +462,14 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;span class=&quot;nt&quot;&gt;xdebug&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.remote_port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;9000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;如果需要xdebug自动运行.加上xdebug.remote_autostart=1&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;8.然后重启xampp的apache服务器
-    sudo /Applications/XAMPP/xamppfiles/xampp stop
 
-    sudo /Applications/XAMPP/xamppfiles/xampp start
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;8.然后重启xampp的apache服务器&lt;/p&gt;
+
+&lt;p&gt;sudo /Applications/XAMPP/xamppfiles/xampp stop
+sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;查看phpinfo.php文件.找到xdebug&lt;/p&gt;
 
 &lt;h3&gt;注: 这个只针对64位得处理器.mac下怎么查看处理器呢 打开终端.输入uname -a x86_64 显示这个就是64位得了.&lt;/h3&gt;
@@ -481,14 +486,14 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;h4&gt;目录在/etc/bashrc&lt;/h4&gt;
 
 &lt;p&gt;如果你需要增加一个命令.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.vim /etc/bashrc
 
-2.alias 命令=&amp;#39;cd ~/xxx&amp;#39; 将这段代码写入bashrc文件中. &amp;quot;命令&amp;quot;代表的意思就是你想要给你新增的命令什么样的名字.随意,但是不要和系统命令重叠.
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.vim /etc/bashrc&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.alias 命令=&amp;#39;cd ~/xxx&amp;#39; 将这段代码写入bashrc文件中. &amp;quot;命令&amp;quot;代表的意思就是你想要给你新增的命令什么样的名字.随意,但是不要和系统命令重叠.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.最后不要忘记在加一句,source /etc/bashrc .这样你新增的那个命令才回生效.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.你可以直接在终端中输入alias 来查看现在已有的自定义命令.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.最后不要忘记在加一句,source /etc/bashrc .这样你新增的那个命令才回生效.
-
-4.你可以直接在终端中输入alias 来查看现在已有的自定义命令.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;由于这个是写在/etc/目录下得.所以你自定义的命令别名是永久生效的.当然你也可以写在用户目录下. ~/.bashrc 这样的话只有该用户才能使用这些命令别名&lt;/p&gt;
 </content>
  </entry>
@@ -565,14 +570,14 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;h3&gt;需求&lt;/h3&gt;
 
 &lt;p&gt;当用户分享某个用户到微博的时候,需要将该用户的以下信息合并成一整个图片分享出去&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.用户封面图
 
-2.用户名
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.用户封面图&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.用户名&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.用户描述(后剔除,因为样式不好看,且部分用户会用字符拼接一个表情,中文字体失效)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.粉丝数目红色显示,第一张twi图,和twi文字&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.用户描述(后剔除,因为样式不好看,且部分用户会用字符拼接一个表情,中文字体失效)
-
-4.粉丝数目红色显示,第一张twi图,和twi文字
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;最后这个需求正确得思路,应该是&lt;code&gt;html-&amp;gt;pdf-&amp;gt;imgick-&amp;gt;pic&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;htmltopdf 有第三方公司提供接口http://pdfcrowd.com/&lt;/p&gt;
@@ -580,18 +585,16 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;p&gt;嵌套html页面,然后通过接口或者在公司集群安装htmltopdf组件,然后根据html生成了pdf文件,再使用imgick转换并且优化成图片,还可以进行裁剪,压缩等处理.生成你要的图片. 下面主要使用imagick来完成这个需求.避免在集群安装htmltopdf.这样一个不常用的组件.&lt;/p&gt;
 
 &lt;h3&gt;解决思路&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.由于没有图片得绝对地址,因此通过获取到的相对地址,构造出cdn地址.然后将需要用到的图片通过cdn地址下载到当前服务器下./var/www/html/www.xxx.com/Photo/top/ 类似该目录
 
-2.能够复用的图片尽量放在当前服务器上,减少网络开销,加快程序运行速度.
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.由于没有图片得绝对地址,因此通过获取到的相对地址,构造出cdn地址.然后将需要用到的图片通过cdn地址下载到当前服务器下./var/www/html/www.xxx.com/Photo/top/ 类似该目录&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.能够复用的图片尽量放在当前服务器上,减少网络开销,加快程序运行速度.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.图片处理&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.生成大图,保存当前服务器&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.将图片服务器zupload到FTS,然后返回相对地址&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6.将新生成的图片cdn地址通过微博接口分享出去.微博自动抓取图片显示&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-3.图片处理
-
-4.生成大图,保存当前服务器
-
-5.将图片服务器zupload到FTS,然后返回相对地址
-
-6.将新生成的图片cdn地址通过微博接口分享出去.微博自动抓取图片显示
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这边的主要展示图片处理部分&lt;/p&gt;
 
 &lt;h3&gt;常用方法&lt;/h3&gt;
@@ -599,7 +602,6 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;p&gt;主要说说比较常用的方法以及遇到的坑,具体的数据获取就不说了.&lt;/p&gt;
 
 &lt;h4&gt;1.新建基础图片&lt;/h4&gt;
-
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$bgColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;white&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$ext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;jpg&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 
     &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Model_Top_Imagick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
@@ -610,8 +612,8 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 
 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4&gt;2.裁剪图片&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;crop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;

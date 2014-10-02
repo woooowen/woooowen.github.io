@@ -170,7 +170,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  background-color: black;
 }
 pre code {
   padding: 0;
@@ -186,6 +186,7 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
+  border-radius: 4px;
 }
 
 /* Gist via GitHub Pages */
