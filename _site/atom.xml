@@ -4,13 +4,39 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-02T22:42:27+08:00</updated>
+ <updated>2014-10-04T00:06:53+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>xcode6 设置textField无法呼出键盘,如何关闭键盘</title>
+   <link href="http://www.woowen.com/swift/2014/10/03/xcode6%20textfield%20%E4%B8%8D%E5%91%BC%E5%87%BA%E9%94%AE%E7%9B%98%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%AD%E9%94%AE%E7%9B%98/"/>
+   <updated>2014-10-03T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/10/03/xcode6 textfield 不呼出键盘以及如何关闭键盘</id>
+   <content type="html">&lt;h3&gt;在xcode6中使用了textField,但是在运行的时候发现即使获取焦点了.也没有自动呼出键盘&lt;/h3&gt;
+
+&lt;p&gt;解决方法:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开&lt;code&gt;IOS Simulator&lt;/code&gt; -&amp;gt; &lt;code&gt;Hardware&lt;/code&gt; -&amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; -&amp;gt; &lt;code&gt;Toggle Software Keyboard&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;再次运行即可&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;顺便补充一个如何在设置点击任意一处的时候自动关闭键盘的操作在ViewController代码中加上这段代码,其中Unamelabel,pwdLabel代表你绑定的空间自定义名称&lt;/h5&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;touchesEnded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;touches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NSSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;withEvent&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;UIEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;uNameLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resignFirstResponder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;pwdLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resignFirstResponder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;        
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xcode6 坑好多,慎用!&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
  
  <entry>
    <title>关于Github提交没有进入Contribution统计的问题</title>
