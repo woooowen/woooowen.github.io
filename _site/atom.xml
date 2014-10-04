@@ -4,13 +4,60 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-04T01:26:43+08:00</updated>
+ <updated>2014-10-04T21:33:46+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Swift 登录页面跳转,条件判断 ,页面跳转</title>
+   <link href="http://www.woowen.com/swift/2014/10/04/swift%20%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/"/>
+   <updated>2014-10-04T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/10/04/swift 条件判断页面跳转</id>
+   <content type="html">&lt;p&gt;swift在网上一大堆废话例子,实在看不懂.Swift的资料也少.&lt;/p&gt;
+
+&lt;p&gt;在swift中作跳转是一件很简单得事情,可是如果右键某个空间拖动然后选择modal来关联跳转关系的话该如何做出代码判断呢?&lt;/p&gt;
+
+&lt;h4&gt;场景:如果我想做一个登录页面,输入用户名密码之后点击登录按钮,验证成功就跳转这个功能呢?否则不跳转&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.切换到storyboard,选中第一个直到如图显示
+&lt;img src=&quot;http://woowen.qiniudn.com/AAD4A83A-251A-4BA6-A8B1-B0A484B21816.png&quot; alt=&quot;初始图片&quot;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.右键第一个storyboard,拖动到你需要跳转的另一个storyboard如图
+&lt;img src=&quot;http://woowen.qiniudn.com/73C34EFC-0B57-424F-99B0-9A34DF5609F6.png&quot; alt=&quot;step2&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.在弹出如图的提示中选择modal表示跳转页面完全覆盖第一个页面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/8A790850-7032-4ECC-B36B-E794F0E688B2.png&quot; alt=&quot;step3&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.选中Segue,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/BA0E93C4-8412-4A67-B3CD-6322E75AD304.png&quot; alt=&quot;step4&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.查看右侧的Attributes inspector如图,在Identifier中写上一个自定义名称(如:login)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/894A6013-5B60-428F-987E-9D8A143E1157.png&quot; alt=&quot;step5&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6.在你的ViewController中加上下面得代码&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;vi&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LoginBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;performSegueWithIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LoginBtn是某个button空间得绑定点击动作,里面是跳转代码,表示你在点击这个按钮的时候会执行这个跳转动作,里面得Login名称请和第5步中自定义名称保持一致,如果你想在跳转前做一些判断的话就可以在这个语句前面加一些判断语句例如:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;/**按钮点击事件*/&lt;/span&gt;
+&lt;span class=&quot;vi&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LoginBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;sr&quot;&gt;/**登陆验证成功**/&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tempResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;/**进行跳转**/&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;performSegueWithIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login fail&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
  
  <entry>
    <title>xcode6 设置textField无法呼出键盘,如何关闭键盘</title>
