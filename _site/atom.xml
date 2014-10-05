@@ -4,13 +4,31 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-04T21:33:46+08:00</updated>
+ <updated>2014-10-05T22:36:44+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Swift Label换行</title>
+   <link href="http://www.woowen.com/swift/2014/10/05/Swift%20Label%E6%8D%A2%E8%A1%8C/"/>
+   <updated>2014-10-05T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/10/05/Swift Label换行</id>
+   <content type="html">&lt;p&gt;Swift中当文字过长的话label中得显示默认为截断显示成xxx...这样得格式那么如何解决这个问题呢?&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;反反复复凤飞飞反反复复反反复复反反复复反反复复反反复复凤飞飞凤飞飞&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;numberOfLines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//显示label可以显示几行,为0表示不限制,多行显示&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lineBreakMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSLineBreakMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ByWordWrapping&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//NSLineBreakMode 有多个属性用来提供不同得显示格式.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;最后不要忘记调整label的高度,不然还是不会将多余得行给显示出来得.&lt;/h5&gt;
+
+&lt;h5&gt;Have fun&lt;/h5&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Swift 登录页面跳转,条件判断 ,页面跳转</title>

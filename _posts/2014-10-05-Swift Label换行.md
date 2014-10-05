@@ -1,0 +1,19 @@
+---
+layout: post
+title: Swift Label换行
+category: [Swift]
+tags: [Swift,Label]
+---
+
+Swift中当文字过长的话label中得显示默认为截断显示成xxx...这样得格式那么如何解决这个问题呢?
+
+```js
+	demo
+
+	label1.text = "反反复复凤飞飞反反复复反反复复反反复复反反复复反反复复凤飞飞凤飞飞"
+	label1.numberOfLines = 0	//显示label可以显示几行,为0表示不限制,多行显示
+	label1.lineBreakMode = NSLineBreakMode.ByWordWrapping //NSLineBreakMode 有多个属性用来提供不同得显示格式.
+```
+#####最后不要忘记调整label的高度,不然还是不会将多余得行给显示出来得.
+
+#####Have fun
