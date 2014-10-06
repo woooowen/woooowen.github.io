@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-07T00:52:24+08:00</updated>
+ <updated>2014-10-07T00:53:47+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -17,8 +17,11 @@
    <link href="http://www.woowen.com/swift/2014/10/06/Swift%20webView%E5%8A%A0%E8%BD%BDhtml/"/>
    <updated>2014-10-06T00:00:00+08:00</updated>
    <id>http://www.woowen.com/swift/2014/10/06/Swift webView加载html</id>
-   <content type="html">&lt;p&gt;Swift webView的用法
-webView其实就是相当于手机App充当了浏览器得功能,用app加载了一个HTTP链接,那么他显示的其实就是一个wap页面.但是我觉得手机新闻资讯类得app将来会被web取代.即app端只用远程加载一个链接地址显示内容即可,至于交互上面交给javascript去做就好了.而oc,或者swift或者android只是充当一个容器的作用.跟pc端得客户端大同小异.&lt;/p&gt;
+   <content type="html">&lt;h4&gt;Swift webView的用法&lt;/h4&gt;
+
+&lt;p&gt;webView其实就是相当于手机App充当了浏览器得功能,用app加载了一个HTTP链接,那么他显示的其实就是一个wap页面.&lt;/p&gt;
+
+&lt;p&gt;但是我觉得手机新闻资讯类得app将来会被web取代.即app端只用远程加载一个链接地址显示内容即可,至于交互上面交给javascript去做就好了.而oc,或者swift或者android只是充当一个容器的作用.跟pc端得客户端大同小异.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NSURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://top.mogujie.com/top/share/note?tid=11ts8&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NSURLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
