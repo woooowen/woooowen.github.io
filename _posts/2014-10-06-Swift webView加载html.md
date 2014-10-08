@@ -23,7 +23,8 @@ webView其实就是相当于手机App充当了浏览器得功能,用app加载了
 
 ```ruby
 	func webViewDidStartLoad(webView: UIWebView){
-        NSLog("webViewDidStartLoad")
+		//添加了一个loadImg: UIActivityIndicatorView! 用来显示页面加载中得动画效果
+        loadImg.startAnimating()
     }
 ``` 
 
@@ -31,7 +32,9 @@ webView其实就是相当于手机App充当了浏览器得功能,用app加载了
 
 ```ruby
 	func webViewDidFinishLoad(webView: UIWebView){
-        NSLog("webViewDidFinishLoad")        
+		//停止动画并移除,你也可以第一句不写,直接移除
+        loadImg.stopAnimating()
+        loadImg.removeFromSuperview()       
     }
 ```       
     
