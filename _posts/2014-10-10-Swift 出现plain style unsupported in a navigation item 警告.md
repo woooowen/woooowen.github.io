@@ -2,7 +2,7 @@
 layout: post
 title: Swift 出现 plain style unsupported in a navigation item 警告
 category: [Swift]
-tags: [Swift,warning,xcode]
+tags: [Swift,Warning,Xcode]
 ---
 
 ####xcode 在编译的时候出现 plain style unsupported in a navigation item 的警告问题

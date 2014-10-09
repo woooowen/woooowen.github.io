@@ -1,8 +1,8 @@
 ---
 layout: post
 title: xcode6 设置textField无法呼出键盘,如何关闭键盘
-category: [swift]
-tags: [xcode,swift]
+category: [Swift]
+tags: [Xcode,Swift]
 ---
 
 ###在xcode6中使用了textField,但是在运行的时候发现即使获取焦点了.也没有自动呼出键盘
