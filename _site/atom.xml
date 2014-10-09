@@ -4,13 +4,40 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-09T00:28:41+08:00</updated>
+ <updated>2014-10-10T00:55:46+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Swift 出现 plain style unsupported in a navigation item 警告</title>
+   <link href="http://www.woowen.com/swift/2014/10/10/Swift%20%E5%87%BA%E7%8E%B0plain%20style%20unsupported%20in%20a%20navigation%20item%20%E8%AD%A6%E5%91%8A/"/>
+   <updated>2014-10-10T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/10/10/Swift 出现plain style unsupported in a navigation item 警告</id>
+   <content type="html">&lt;h4&gt;xcode 在编译的时候出现 plain style unsupported in a navigation item 的警告问题&lt;/h4&gt;
+
+&lt;h4&gt;是因为你在storyboard中,将一个button 放在了Navigation Bar中&lt;/h4&gt;
+
+&lt;h4&gt;类似这样&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/1.png&quot; alt=&quot;step1&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;解决方法:&lt;/h4&gt;
+
+&lt;h4&gt;选中Bar Button Item 然后右侧工具中 选择Attributes inspector&lt;/h4&gt;
+
+&lt;h4&gt;如图所示&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2.png&quot; alt=&quot;step2&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;将Style 修改成 Bordered&lt;/h4&gt;
+
+&lt;h4&gt;编译完成,warning消除&lt;/h4&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Swift 时间戳转换成格式化时间</title>
