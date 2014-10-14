@@ -835,3 +835,23 @@ background: #83BF73;
   width:20px;
   height:20px;
 }
+.topdiv{
+  height: 40px;
+bottom: 90px;
+line-height: 40px;
+right: 10px;
+position: fixed;
+text-align: center;
+display: block;
+}
+.top{
+  height: 40px;
+width: 40px;
+right: 0px;
+display: block;
+background: url(http://woowen.qiniudn.com/top.png) 50% 50% no-repeat rgb(255, 255, 255);
+position: absolute;
+border: 1px #cccccc solid;
+display: none;
+cursor: pointer;
+}
