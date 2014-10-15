@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-15T23:27:46+08:00</updated>
+ <updated>2014-10-15T23:31:19+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -40,6 +40,26 @@
 另外我们公司的架构师老大说尽量使用Varchar来代替TEXT字段。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;6.最后要注意的就是数据库表名的命名尽量加上前缀。以及要有可读性良好的命名。加索引的使用尽量使用idx或者ind来作为前缀。后期维护的时候是个好事。还有就是做好数据字典。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Mysql如何排序</title>
+   <link href="http://www.woowen.com/mysql/2014/10/15/Mysql%E5%A6%82%E4%BD%95%E6%8E%92%E5%BA%8F/"/>
+   <updated>2014-10-15T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/mysql/2014/10/15/Mysql如何排序</id>
+   <content type="html">&lt;h4&gt;需求是这样的.&lt;/h4&gt;
+
+&lt;h4&gt;图文轮播排序.字段parent.每个图片的值分别是414,415,416,419,421&lt;/h4&gt;
+
+&lt;h4&gt;需要将图片显示循序按照parent值为416,415,419,421,414的顺序排序.那么这个sql就不能简单的写出order by parent desc 这种,因为顺序的不按照升序或者降序来的.&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-mysql&quot; data-lang=&quot;mysql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;`module_images`&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xx&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xx&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;416&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;419&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;421&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;414&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;FIELD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;416&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;419&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;421&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;414&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;这样的sql语句就能完成上述的功能.&lt;/h4&gt;
+
+&lt;h4&gt;前面的in里面的顺序可以随便改变,但是后面的需要按照顺序书写. 关键就是这个order by FIELD.另外不要忘记group by 不然是会出错的.&lt;/h4&gt;
+
+&lt;h3&gt;但是不建议在数据库使用函数方法来进行计算,排序.应该简化数据库操作,将排序算法留在逻辑层完成&lt;/h3&gt;
 </content>
  </entry>
  
