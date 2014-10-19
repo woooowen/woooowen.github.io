@@ -4,13 +4,103 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-15T23:47:45+08:00</updated>
+ <updated>2014-10-19T23:37:43+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>面向对象接口跟抽象类得相似和区别</title>
+   <link href="http://www.woowen.com/php/2014/10/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%8A%BD%E8%B1%A1%E7%B1%BB%E8%B7%9F%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%92%8C%E5%8C%BA%E5%88%AB/"/>
+   <updated>2014-10-19T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/2014/10/19/面向对象抽象类跟接口的相似和区别</id>
+   <content type="html">&lt;h4&gt;重写:&lt;/h4&gt;
+
+&lt;p&gt;父类已经有了一个名为a的方法.而子类继承该父类,子类中也有一个名为a的方法.但是实现的功能完全不同.这个就叫做重写,意为重写了父类中的该方法.&lt;/p&gt;
+
+&lt;h4&gt;重载:&lt;/h4&gt;
+
+&lt;p&gt;父类已经有了一个名为a的方法,但是a方法有一个参数$str,也就是function a($str){}
+子类继承了这个父类,子类中也有这个方法a,但是参数不同,或者参数数目不同,function a($str1,$str2){}
+这个时候就叫做子类重载了父类的方法.&lt;/p&gt;
+
+&lt;h3&gt;抽象类以abstract开始,抽象类中只定义了要实现的方法,但是不写方法体.而且不是用大括号({})来结束,而是以分号来结束&lt;/h3&gt;
+
+&lt;h3&gt;继承抽象类的类必须实现父类中的抽象方法才行,不然会报错&lt;/h3&gt;
+
+&lt;h3&gt;一般情况下抽象类必须包含一个抽象方法(当然也可以不包含,但是那样就失去了抽象类的意义了),以abstract命名.但是不能有方法体,象类也可以什么其他的普通方法&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//抽象方法&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classb&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//接口&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//接口其他方法和抽象类类似,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//调用接口就必须实现该接口中的所有方法,但是接口可以调用多个,可以使用implement Ia,Ib 来同时引入多个接口,但是类的继承php只支持单继承,也就是每个类最多只有一个父类.&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ibmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ibmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接口 和抽象的区别和相同之处&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.抽象类以abstract来定义,接口以interface定义&lt;/li&gt;
+&lt;li&gt;2.抽象中一般情况下必须包含一个abstract方法,当然你也可以不去定义这个抽象方法,只是用普通的方法.并且可以有方法体,那么继承他的子类可以
+直接拿抽象父类中的方法来使用,相当于抽象类提供了这些方法,子类继承直接调用.&lt;/li&gt;
+&lt;li&gt;3.如果抽象类中声明了抽象方法,那么该抽象方法没有方法体例如 abstract function abstractmethod();接口也是一样的
+那么继承的子类必须实现该抽象方法,不然就报错.而接口中也需要声明一些子类中可能用到的方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//继承接口的子类必须实现这些抽象方法.所有的方法.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;amethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//这个是定义的普通方法,可以在继承的子类中直接使用,也可以重写,也可以不用重写&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;方法体&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;abmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//抽象方法,子类继承必须实现该方法才能运行.不能包含方法体&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;4.抽象类只能继承一个,或者说php只支持单继承,不能继承多个类,而接口可以通过implement 继承多个接口.但是必须实现这些接口中的方法.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.抽象类提供了多个普通方法,子类继承可以直接使用,但是抽象方法必须在子类中重写.可以不给任何方法体,但是必须重写.
+而接口中定义的方法你子类继承了就必须去实现他们,才能继承.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;所以说.抽象类更像是一个方法的提供商,要什么用什么,只有抽象方法,你才必须重写一下来使用.
+而接口就像是一个方法的规定商,我规定了这些方法,你必须全部实现才能继承,更像是一个模板,规定好了里面有
+哪些方法.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>数据库设计需要注意的地方</title>
