@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-19T23:37:43+08:00</updated>
+ <updated>2014-10-19T23:38:26+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -83,8 +83,7 @@
 
 &lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;amethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//这个是定义的普通方法,可以在继承的子类中直接使用,也可以重写,也可以不用重写&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;方法体&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//这个是定义的普通方法,可以在继承的子类中直接使用,也可以重写,也可以不用重写方法体&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;abmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//抽象方法,子类继承必须实现该方法才能运行.不能包含方法体&lt;/span&gt;
 
