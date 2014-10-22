@@ -4,13 +4,72 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-20T23:33:32+08:00</updated>
+ <updated>2014-10-22T23:59:54+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>php 单例模式和工厂模式</title>
+   <link href="http://www.woowen.com/php/2014/10/22/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+   <updated>2014-10-22T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/2014/10/22/php单例模式和工厂模式</id>
+   <content type="html">&lt;p&gt;单例模式主要包含几点:
+* 1.这个类有且只有一个实例存在,这样可以方式被多个实例化,造成多个操作.或者操作同时进行,你可以将单例用在数据库类上,这样在同一时间只会有一个数据库实例存在,也就是只会有一个数据库连接的存在,这样避免的过多的数据库连接,和不必要的系统资源的浪费.
+* 2.单例必须要有一个构造函数,并且这个构造函数为私有的,就是只能被该类所访问,这样可以防止其在其他类中被实例化,只能被其自身所实例化.
+* 3.需要有&lt;strong&gt;clone()函数重载.这样自定义一个&lt;/strong&gt;clone()函数可以通过调用该函数在直接复制该类的实例化.
+* 4.需要有一个保存类实例的静态成员变量.
+* 5.需要有一个访问该实例对象的静态方法.这样可以提供给其他的类来访问单例中的方法.
+```js&lt;/p&gt;
+
+&lt;p&gt;//单例模式
+class myClass{
+    static $&lt;strong&gt;staticvar; //静态成员变量
+    private $&lt;em&gt;str; //私有的变量
+    private function _&lt;/em&gt;construct(){
+        $this-&amp;gt;&lt;em&gt;str = &amp;#39;单例模式&amp;#39;;
+    }
+    private function _&lt;/em&gt;clone(){} //重载clone方法
+    //由于单例不能被其他类所实例化,也就是不能使用$test = new myclass();
+    public static function getObject(){
+    //判断静态成员中是否有该对象如果没有就重新实例化.有就直接返回
+    if(!(self::$&lt;/strong&gt;staticvar instanceof self))
+    {
+        self::$&lt;strong&gt;staticvar = new self();
+    }
+        return self::$&lt;/strong&gt;staticvar;
+    }
+    //单例的一个方法
+    public function getStr(){
+        return $this-&amp;gt;_str;
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;$dl = myClass::getObject();
+print_r($dl-&amp;gt;getStr());
+```&lt;/p&gt;
+
+&lt;p&gt;静态成员变量$__staticvar主要用来保存该单例的实例化对象.外部访问的时候直接调用该类静态方法将实例化返回,可以避免的其他的类申明该类的实例.
+通过单例,你可以调用单例类中定义的任何非私有的静态方法.&lt;/p&gt;
+
+&lt;p&gt;工厂模式
+工厂模式,就是你定义一个接口,在接口中写下哪些方法可能会被用到.然后将每个特定的类起调用这个接口,并且重写里面的方法,在通过一个工厂类来根据判断而申明不同的类.工厂类必须返回一个对象,一般的命名规则为factory的静态方法.
+public static function factory($var){
+switch($var){
+case &amp;#39;xx&amp;#39;:
+$test = new classname();
+break;
+case &amp;#39;xxx&amp;#39;:
+$test = new classname1();
+break;
+}
+return $test;
+}&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>数据库,如何正确得创建索引</title>
