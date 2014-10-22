@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-23T00:02:24+08:00</updated>
+ <updated>2014-10-23T00:03:31+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>php 单例模式和工厂模式</title>
+   <title>PHP 单例模式和工厂模式</title>
    <link href="http://www.woowen.com/php/2014/10/22/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
    <updated>2014-10-22T00:00:00+08:00</updated>
    <id>http://www.woowen.com/php/2014/10/22/php单例模式和工厂模式</id>
