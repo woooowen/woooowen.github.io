@@ -1,6 +1,9 @@
 # Update
 
-* 0.模板基于https://github.com/mdo
+* 0.模板基于https://github.com/mdo	
+**Mark Otto**
+	- <https://github.com/mdo>
+	- <https://twitter.com/mdo>	
 * 1.将google的font资源全部整合进来,减少页面加载时间(GFW)
 * 2.修改左侧的布局.
 * 3.修改个人介绍页面的html
@@ -29,8 +32,11 @@
 ###2014-10-04 14:11:09
 
 * 1.修改github icon第一次加载不对齐的问题
-## Author
 
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
+###2014-10-23 12:02:05
+* 1.首页添加分类
+* 2.详细页面添加时间跟标签显示
+* 3.加载font awesome样式用作字体图标
+* 4.修改详细页面标题过长换行的问题
+* 5.使用font awesome 替换了github的图片
+
