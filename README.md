@@ -39,4 +39,5 @@
 * 3.加载font awesome样式用作字体图标
 * 4.修改详细页面标题过长换行的问题
 * 5.使用font awesome 替换了github的图片
+* 6.修改部分css
 
