@@ -591,7 +591,8 @@ a.pagination-item:hover {
 }
 
 .entry-meta .tag:hover {
-  background-color: #a2a2a2;
+  background-color: #268bd2;
+  color: #FFFFFF;  
 }
 
 .entry-meta .tag:active {
