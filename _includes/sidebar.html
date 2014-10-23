@@ -7,7 +7,6 @@
   <div class="sidebar-item">
     <p>{{ site.description }}</p>    
   </div>
-
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">首页</a>
     {% assign pages_list = site.pages | sort:"url" %}

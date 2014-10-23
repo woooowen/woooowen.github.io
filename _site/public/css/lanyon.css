@@ -100,7 +100,7 @@ a:hover{
 .masthead {
   padding-top:    1rem;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
 .masthead-title {
@@ -578,7 +578,7 @@ a.pagination-item:hover {
   padding: 2px 6px;
   margin: 4px;
   color: #ffffff;
-  background-color: #bbbbbb;
+  background-color: #000000;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -829,7 +829,6 @@ background: #83BF73;
   float:right;
   width:20px;
   height:20px;
-  margin-top: 5px;
 }
 .icons img{
   width:20px;
@@ -854,4 +853,7 @@ position: absolute;
 border: 1px #cccccc solid;
 display: none;
 cursor: pointer;
+}
+.extra-right{
+  margin-left:1rem;
 }

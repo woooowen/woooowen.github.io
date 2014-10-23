@@ -3,7 +3,11 @@ layout: default
 ---
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date: "%Y-%m-%d"  }}</span>
+  <div class="post-date">
+  <span><i class="fa fa-clock-o"></i> {{ page.date | date: "%Y-%m-%d"  }}</span>
+  <span class="extra-right"><i class="fa fa-tags"></i> {{ page.tags | array_to_sentence_string }}
+</span>
+  </div>
   {{ content }}
 </div>
 {% if site.related_posts.size %}
@@ -14,14 +18,14 @@ layout: default
         </div><!-- /.read-more-header -->
         <div class="read-more-content">
           <h3><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title | strip_html | truncate : 18}}</a></h3>
-          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 80 }}&hellip;{% endif %} <a href="{{ post.url }}">Continue reading</a></p>
+          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 80 }}&hellip;{% endif %}</p>
         </div><!-- /.read-more-content -->
       {% endfor %}
       <div class="read-more-list">
         {% for post in site.related_posts limit:2 offset:1 %}
           <div class="list-item">
-            <h4><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 17 }}</a></h4>
-            <span>Published on {{ post.date | date: "%Y-%m-%d" }}</span>
+            <h4><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 14 }}</a></h4>
+            <span><i class="fa fa-clock-o"></i>  {{ post.date | date: "%Y-%m-%d" }}</span>
           </div><!-- /.list-item -->
         {% endfor %}
       </div><!-- /.read-more-list -->
