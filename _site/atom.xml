@@ -4,13 +4,31 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-10-29T10:08:13+08:00</updated>
+ <updated>2014-11-04T22:35:43+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>蘑菇街TeamTalk开源项目PHP后台管理</title>
+   <link href="http://www.woowen.com/php/2014/11/04/%E8%98%91%E8%8F%87%E8%A1%97TeamTalk%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AEPHP%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/"/>
+   <updated>2014-11-04T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/2014/11/04/蘑菇街TeamTalk开源项目PHP后台管理</id>
+   <content type="html">&lt;h4&gt;花了不少时间准备的这个TT后台管理php端,这个程序的第一版是我写的.然后现在已经转交给其他同事去维护了.帮忙宣传一下.多多提出建议.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;项目GitHub地址&lt;a href=&quot;https://github.com/mogutt/TTPHPServer&quot;&gt;https://github.com/mogutt/TTPHPServer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TeamTalk官方主页&lt;a href=&quot;http://tt.mogu.io/&quot;&gt;http://tt.mogu.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有想要加入蘑菇街的同学,请将简历推荐至mingxin#mogujie.com(# = @)&lt;/p&gt;
+
+&lt;p&gt;内推有加分哦.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>php 多维数组排序,字符相似度匹配</title>
@@ -1337,7 +1355,14 @@ https://trovepromo-tf.trove-stg.com/0m1-sd/stackoverflow.com/questions/13795535/
 http://www.laruence.com/2012/09/12/2765.html 这边的文章叙述了为什么不要使用include&lt;em&gt;once/require&lt;/em&gt;once的原因,而且就连php的发明人Rasmus Lerdorf都建议不要使用include&lt;em&gt;once/require&lt;/em&gt;once了&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;4.提前计算循环长度&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//slow&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$ary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){}&lt;/span&gt;
 
+&lt;span class=&quot;c1&quot;&gt;//fast&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//这边就不要在定义什么$count = count($ary);之类的了,这样多声明一个变量,内存就多占用一块&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;另外多使用foreach循环,以及使用switch代替if,代码看起来美观易维护&lt;/p&gt;
 
 &lt;ul&gt;
