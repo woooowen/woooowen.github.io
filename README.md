@@ -38,10 +38,15 @@ Jekyll source for my personal blog.
 * 1.修改github icon第一次加载不对齐的问题
 
 ###2014-10-23 12:02:05
+
 * 1.首页添加分类
 * 2.详细页面添加时间跟标签显示
 * 3.加载font awesome样式用作字体图标
 * 4.修改详细页面标题过长换行的问题
 * 5.使用font awesome 替换了github的图片
 * 6.修改部分css
+
+###2014-11-06 19:55:46
+
+* 1.添加Rss订阅
 
