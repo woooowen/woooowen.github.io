@@ -12,5 +12,9 @@ tags: [PHP,OpenSource]
 
 有想要加入蘑菇街的同学,请将简历推荐至mingxin#mogujie.com(# = @)
 
-内推有加分哦.
+内推有加分哦
+
+
+
+
 
