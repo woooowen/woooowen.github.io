@@ -22,7 +22,7 @@ description: "An archive of posts sorted by tag."
     {% for post in site.tags[this_word] %}{% if post.title != null %}
       <li class="entry-title">
       <h3>
-      <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
       <small>{{ post.date | date: "%Y-%m-%d"  }}</small>
       </h3>
       </li>
