@@ -678,16 +678,17 @@ padding: 0 4px;
 margin: 2px;
 text-decoration: none;
 border-radius: 3px;
+color:#000;
 }
 
 .paginator .current-page {
 color: white;
-background: #268bd2;
+background: #000;
 }
 
 .paginator a:hover{
 color: white;
-background: #83BF73;
+background: #268bd2;
 }
 
 /** read more **/
@@ -789,13 +790,14 @@ background: #83BF73;
 
 @media only screen and (min-width: 48em) {
   .read-more-content h3 {
-    font-size: 36px;
-    font-size: 2.25rem;
+    font-size: 30px;
+    font-size: 2rem;
   }
 }
 
 .read-more-list {
   border-top: solid 1px #bbbbbb;
+  height:4em;
 }
 
 
@@ -813,17 +815,17 @@ background: #83BF73;
 .list-item span {
   display: block;
   font-size: 14px;
-  
   color: #a2a2a2;
 }
 
 @media only screen and (min-width: 48em) {
   .list-item {
-    float: left;
-    width: 49%;
+    text-align: center;
+    width: 45%;
   }
   .list-item:nth-child(2) {
-    text-align: right;
+    float:right;
+    text-align: center;
   }
 }
 .icons{

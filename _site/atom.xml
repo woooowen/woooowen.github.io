@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Woooowen</title>
- <link href="http://www.woowen.com/atom.xml" rel="self"/>
- <link href="http://www.woowen.com/"/>
- <updated>2014-11-14T14:28:43+08:00</updated>
- <id>http://www.woowen.com</id>
+ <title></title>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2014-11-16T11:13:50+08:00</updated>
+ <id></id>
  <author>
    <name></name>
    <email></email>
@@ -14,193 +14,205 @@
  
  <entry>
    <title>php array_merge方法跟 + 的区别</title>
-   <link href="http://www.woowen.com/php/2014/11/14/php%20array_merge%20%E6%96%B9%E6%B3%95%E8%B7%9F%20+%20%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+   <link href="/php/2014/11/14/php%20array_merge%20%E6%96%B9%E6%B3%95%E8%B7%9F%20+%20%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
    <updated>2014-11-14T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/11/14/php array_merge 方法跟 + 的区别</id>
-   <content type="html">&lt;h4&gt;php中合并数组除了可以用到array_merge 方法,还有 + 号&lt;/h4&gt;
-
+   <id>/php/2014/11/14/php array_merge 方法跟 + 的区别</id>
+   <content type="html">&lt;h4 id=&quot;phparraymerge---&quot;&gt;php中合并数组除了可以用到array_merge 方法,还有 + 号&lt;/h4&gt;
 &lt;p&gt;例如:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;但是说到这2者之间的区别还是有很多不同地方的.主要是跟数组的键值存在关系&lt;/p&gt;
 
-&lt;h3&gt;example1 : 键值为数字时&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//code:&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//echo:&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;js
+$c = array_merge($a,$b);
+$c = $a + $b;
+&lt;/code&gt;
+但是说到这2者之间的区别还是有很多不同地方的.主要是跟数组的键值存在关系
+###example1 : 键值为数字时
+&lt;code&gt;js
+//code:
+$a = array(1,2,3);
+$b = array(3,4,5);
+print_r($a + $b);
+$c = array_merge($a,$b);
+print_r($c);
+//echo:
+Array
+(
+    [0] =&amp;gt; 1
+    [1] =&amp;gt; 2
+    [2] =&amp;gt; 3
+)
+Array
+(
+    [0] =&amp;gt; 1
+    [1] =&amp;gt; 2
+    [2] =&amp;gt; 3
+    [3] =&amp;gt; 3
+    [4] =&amp;gt; 4
+    [5] =&amp;gt; 5
+)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;当2组数组键值为纯数字的时候,出现键值冲突的情况下&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;使用 + : 会返回前一个数组的value&lt;/li&gt;
-&lt;li&gt;使用 array_merge : 返回合并之后的一个数组,且重置键值&lt;/li&gt;
+  &lt;li&gt;使用 + : 会返回前一个数组的value&lt;/li&gt;
+  &lt;li&gt;使用 array_merge : 返回合并之后的一个数组,且重置键值&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;example2 : 键值为字符时&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//code:&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;bb&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-&lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//echo:&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;example2--&quot;&gt;example2 : 键值为字符时&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;js
+//code:
+$a = array(
+	&#39;a&#39; =&amp;gt; 1,
+	&#39;b&#39; =&amp;gt; 2,
+	&#39;c&#39; =&amp;gt; 3
+);
+$b = array(
+	&#39;a&#39; =&amp;gt; 11,
+	&#39;bb&#39; =&amp;gt; 22,
+	&#39;c&#39; =&amp;gt; 33
+);	
+print_r($a + $b);
+$c = array_merge($a,$b);
+print_r($c);
+//echo:
+Array
+(
+    [a] =&amp;gt; 1
+    [b] =&amp;gt; 2
+    [c] =&amp;gt; 3
+    [bb] =&amp;gt; 22
+)
+Array
+(
+    [a] =&amp;gt; 11
+    [b] =&amp;gt; 2
+    [c] =&amp;gt; 33
+    [bb] =&amp;gt; 22
+)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;当2组数组键值为字符时&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;使用 + : 返回数组1的value&lt;/li&gt;
-&lt;li&gt;使用 array_merge : 返回数组2的value&lt;/li&gt;
+  &lt;li&gt;使用 + : 返回数组1的value&lt;/li&gt;
+  &lt;li&gt;使用 array_merge : 返回数组2的value&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;example3 : 键值重置&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//code:&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-    &lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//echo:&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;example3--&quot;&gt;example3 : 键值重置&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;js
+//code:
+	$a = array(
+		2 =&amp;gt; &#39;a&#39;,
+		3 =&amp;gt; &#39;b&#39;,
+		5 =&amp;gt; &#39;c&#39;
+	);
+	$b = array(
+		3 =&amp;gt; 11,
+		5 =&amp;gt; 22,
+		&#39;c&#39; =&amp;gt; 33
+	);	
+	print_r($a + $b);
+	$c = array_merge($a,$b);
+	print_r($c);
+//echo:
+Array
+(
+    [2] =&amp;gt; a
+    [3] =&amp;gt; b
+    [5] =&amp;gt; c
+    [c] =&amp;gt; 33
+)
+Array
+(
+    [0] =&amp;gt; a
+    [1] =&amp;gt; b
+    [2] =&amp;gt; c
+    [3] =&amp;gt; 11
+    [4] =&amp;gt; 22
+    [c] =&amp;gt; 33
+)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;使用 + : 键值不会重置&lt;/li&gt;
-&lt;li&gt;使用 array_merge : 数字键值会从0开始重置,且返回的合并数组的键值排序是按照先数组1,再数组2的次序来的&lt;/li&gt;
+  &lt;li&gt;使用 + : 键值不会重置&lt;/li&gt;
+  &lt;li&gt;使用 array_merge : 数字键值会从0开始重置,且返回的合并数组的键值排序是按照先数组1,再数组2的次序来的&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;岁月蹉跎,遥想当时我来蘑菇街面试的时候,就被问到这个问题了 = , =!!&lt;/p&gt;
+
 </content>
  </entry>
  
  <entry>
    <title>蘑菇街TeamTalk开源项目PHP后台管理</title>
-   <link href="http://www.woowen.com/php/2014/11/04/%E8%98%91%E8%8F%87%E8%A1%97TeamTalk%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AEPHP%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/"/>
+   <link href="/php/2014/11/04/%E8%98%91%E8%8F%87%E8%A1%97TeamTalk%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AEPHP%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86.html"/>
    <updated>2014-11-04T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/11/04/蘑菇街TeamTalk开源项目PHP后台管理</id>
-   <content type="html">&lt;h4&gt;花了不少时间准备的这个TT后台管理php端,这个程序的第一版是我写的.然后现在已经转交给其他同事去维护了.帮忙宣传一下.多多提出建议.&lt;/h4&gt;
+   <id>/php/2014/11/04/蘑菇街TeamTalk开源项目PHP后台管理</id>
+   <content type="html">&lt;h4 id=&quot;ttphp&quot;&gt;花了不少时间准备的这个TT后台管理php端,这个程序的第一版是我写的.然后现在已经转交给其他同事去维护了.帮忙宣传一下.多多提出建议.&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;项目GitHub地址&lt;a href=&quot;https://github.com/mogutt/TTPHPServer&quot;&gt;https://github.com/mogutt/TTPHPServer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;TeamTalk官方主页&lt;a href=&quot;http://tt.mogu.io/&quot;&gt;http://tt.mogu.io/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;项目GitHub地址&lt;a href=&quot;https://github.com/mogutt/TTPHPServer&quot;&gt;https://github.com/mogutt/TTPHPServer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;TeamTalk官方主页&lt;a href=&quot;http://tt.mogu.io/&quot;&gt;http://tt.mogu.io/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;有想要加入蘑菇街的同学,请将简历推荐至mingxin#mogujie.com(# = @)&lt;/p&gt;
 
 &lt;p&gt;内推有加分哦&lt;/p&gt;
+
 </content>
  </entry>
  
  <entry>
    <title>php 多维数组排序,字符相似度匹配</title>
-   <link href="http://www.woowen.com/php/2014/10/28/php%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F,%E5%AD%97%E7%AC%A6%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%8C%B9%E9%85%8D%E5%BA%A6/"/>
+   <link href="/php/2014/10/28/php%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F,%E5%AD%97%E7%AC%A6%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%8C%B9%E9%85%8D%E5%BA%A6.html"/>
    <updated>2014-10-28T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/10/28/php多维数组排序,字符相似度匹配度</id>
+   <id>/php/2014/10/28/php多维数组排序,字符相似度匹配度</id>
    <content type="html">&lt;p&gt;php多维数组按照某个键值排序&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @param $array 需要排序的数组&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @param $keyName 数组键值名称&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @param int $order&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @return array&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @desc 多维数组根据键值排序,排序之后重置键值&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     * @明心&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$keyName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SORT_ASC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$new_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$array&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$v&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$k2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$k2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$keyName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                            &lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-            &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SORT_ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;asort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SORT_DESC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;arsort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$sortable_array&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;$new_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//重置混乱键值&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$new_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```js
+ 	/**
+     * @param $array 需要排序的数组
+     * @param $keyName 数组键值名称
+     * @param int $order
+     * @return array
+     * @desc 多维数组根据键值排序,排序之后重置键值
+     * @明心
+     */
+    public static function array_sort($array, $keyName, $order=SORT_ASC)
+    {
+        $new_array = array();
+        $sortable_array = array();
+        if (count($array) &amp;gt; 0) {
+            foreach ($array as $k =&amp;gt; $v) {
+                if (is_array($v)) {
+                    foreach ($v as $k2 =&amp;gt; $v2) {
+                        if ($k2 == $keyName) {
+                            $sortable_array[$k] = $v2;
+                        }
+                    }
+                } else {
+                    $sortable_array[$k] = $v;
+                }
+            }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        switch ($order) {
+            case SORT_ASC:
+                asort($sortable_array);
+                break;
+            case SORT_DESC:
+                arsort($sortable_array);
+                break;
+        }
+        foreach ($sortable_array as $k =&amp;gt; $v) {
+            $new_array[$k] = $array[$k];
+        }
+    }
+    //重置混乱键值
+    return array_values($new_array);
+} ```
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;php 获取2个字符之间的相似度
 similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.因此说一下.&lt;/p&gt;
 
@@ -212,167 +224,195 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
  
  <entry>
    <title>PHP 单例模式和工厂模式</title>
-   <link href="http://www.woowen.com/php/2014/10/22/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+   <link href="/php/2014/10/22/php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.html"/>
    <updated>2014-10-22T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/10/22/php单例模式和工厂模式</id>
-   <content type="html">&lt;h3&gt;单例模式&lt;/h3&gt;
-
-&lt;h3&gt;单例模式主要包含几点:&lt;/h3&gt;
+   <id>/php/2014/10/22/php单例模式和工厂模式</id>
+   <content type="html">&lt;h3 id=&quot;section&quot;&gt;单例模式&lt;/h3&gt;
+&lt;p&gt;###单例模式主要包含几点:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.这个类有且只有一个实例存在,这样可以方式被多个实例化,造成多个操作.或者操作同时进行,你可以将单例用在数据库类上,这样在同一时间只会有一个数据库实例存在,也就是只会有一个数据库连接的存在,这样避免的过多的数据库连接,和不必要的系统资源的浪费.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.单例必须要有一个构造函数,并且这个构造函数为私有的,就是只能被该类所访问,这样可以防止其在其他类中被实例化,只能被其自身所实例化.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.需要有&lt;strong&gt;clone()函数重载.这样自定义一个&lt;/strong&gt;clone()函数可以通过调用该函数在直接复制该类的实例化.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.需要有一个保存类实例的静态成员变量.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.需要有一个访问该实例对象的静态方法.这样可以提供给其他的类来访问单例中的方法.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.这个类有且只有一个实例存在,这样可以方式被多个实例化,造成多个操作.或者操作同时进行,你可以将单例用在数据库类上,这样在同一时间只会有一个数据库实例存在,也就是只会有一个数据库连接的存在,这样避免的过多的数据库连接,和不必要的系统资源的浪费.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.单例必须要有一个构造函数,并且这个构造函数为私有的,就是只能被该类所访问,这样可以防止其在其他类中被实例化,只能被其自身所实例化.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.需要有__clone()函数重载.这样自定义一个__clone()函数可以通过调用该函数在直接复制该类的实例化.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.需要有一个保存类实例的静态成员变量.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.需要有一个访问该实例对象的静态方法.这样可以提供给其他的类来访问单例中的方法.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//单例模式&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$__staticvar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//静态成员变量&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//私有的变量&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;单例模式&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__clone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//重载clone方法&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//由于单例不能被其他类所实例化,也就是不能使用$test = new myclass();&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//判断静态成员中是否有该对象如果没有就重新实例化.有就直接返回&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$__staticvar&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$__staticvar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$__staticvar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//单例的一个方法&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;$dl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print_r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$dl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;静态成员变量$__staticvar主要用来保存该单例的实例化对象.外部访问的时候直接调用该类静态方法将实例化返回,可以避免的其他的类申明该类的实例.&lt;/h4&gt;
+&lt;p&gt;```js&lt;/p&gt;
+
+&lt;p&gt;//单例模式
+class myClass{
+	static $__staticvar; //静态成员变量
+	private $_str; //私有的变量
+	private function __construct(){
+		$this-&amp;gt;_str = ‘单例模式’;
+	}
+	private function __clone(){} //重载clone方法
+	//由于单例不能被其他类所实例化,也就是不能使用$test = new myclass();
+	public static function getObject(){
+	//判断静态成员中是否有该对象如果没有就重新实例化.有就直接返回
+	if(!(self::$__staticvar instanceof self))
+	{
+		self::$__staticvar = new self();
+	}
+		return self::$__staticvar;
+	}
+	//单例的一个方法
+	public function getStr(){
+		return $this-&amp;gt;_str;
+	}
+}&lt;/p&gt;
+
+&lt;p&gt;$dl = myClass::getObject();
+print_r($dl-&amp;gt;getStr());&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h4 id=&quot;staticvar&quot;&gt;静态成员变量$__staticvar主要用来保存该单例的实例化对象.外部访问的时候直接调用该类静态方法将实例化返回,可以避免的其他的类申明该类的实例.&lt;/h4&gt;
 
 &lt;p&gt;通过单例,你可以调用单例类中定义的任何非私有的静态方法.&lt;/p&gt;
 
-&lt;h3&gt;工厂模式&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;工厂模式&lt;/h3&gt;
 
 &lt;p&gt;工厂模式,就是你定义一个接口,在接口中写下哪些方法可能会被用到.然后将每个特定的类起调用这个接口,并且重写里面的方法,在通过一个工厂类来根据判断而申明不同的类.工厂类必须返回一个对象,一般的命名规则为factory的静态方法.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//工厂模式&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xx&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xxx&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classname1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+
+&lt;p&gt;&lt;code&gt;js
+//工厂模式
+public static function factory($var){
+	switch($var){
+		case &#39;xx&#39;:
+		$test = new classname();
+		break;
+		case &#39;xxx&#39;:
+		$test = new classname1();
+		break;
+	}
+return $test;
+}
+&lt;/code&gt;&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
    <title>数据库,如何正确得创建索引</title>
-   <link href="http://www.woowen.com/mysql/2014/10/20/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%BE%97%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/"/>
+   <link href="/mysql/2014/10/20/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%BE%97%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95.html"/>
    <updated>2014-10-20T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/mysql/2014/10/20/如何正确得创建索引</id>
-   <content type="html">&lt;h3&gt;索引可以提高数据的检索效率，也可以降低数据库的IO成本，并且索引还可以降低数据库的排序成本。排序分组操作主要消耗的就是CPU资源和内存，所以能够在排序分组操作中好好的利用索引将会极大地降低CPU资源的消耗。&lt;/h3&gt;
+   <id>/mysql/2014/10/20/如何正确得创建索引</id>
+   <content type="html">&lt;h3 id=&quot;iocpucpu&quot;&gt;索引可以提高数据的检索效率，也可以降低数据库的IO成本，并且索引还可以降低数据库的排序成本。排序分组操作主要消耗的就是CPU资源和内存，所以能够在排序分组操作中好好的利用索引将会极大地降低CPU资源的消耗。&lt;/h3&gt;
 
-&lt;h4&gt;如何判定是否需要创建索引&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;如何判定是否需要创建索引&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.&lt;code&gt;较频繁地作为查询条件的字段。&lt;/code&gt;这个都知道。什么是教频繁呢？分析你执行的所有SQL语句。最好将他们一个个都列出来。然后分析。发现其中有些字段在大部分的SQL语句查询时候都会用到，那么就果断为他建立索引。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.唯一性太差的字段不适合建立索引，什么是唯一性太差的字段。如状态字段。类型字段。那些只存储固定几个值的字段。例如用户登录状态。消息的status。等。这个涉及到了索引扫描的特性。&lt;code&gt;例如：通过索引查找键值为A和B的某些数据，通过A找到某条相符合的数据，这条数据在X页上面，然后继续扫描，又发现符合A的数据出现在了Y页上面，那么存储引擎就会丢弃X页面的数据，然后存储Y页面上的数据，一直到查找完所有对应A的数据，然后查找B字段，发现X页面上面又有对应B字段的数据，那么他就会再次扫描X页面，等于X页面就会被扫描2次甚至多次。&lt;/code&gt;以此类推，所以同一个数据页可能会被多次重复的读取，丢弃，在读取，这无疑给存储引擎极大地增加了IO的负担。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.&lt;code&gt;更新太频繁地字段不适合创建索引，&lt;/code&gt;当你为这个字段创建索引时候，当你再次更新这个字段数据时，数据库会自动更新他的索引，所以当这个字段更新太频繁地时候那么就是不断的更新索引，性能的影响可想而知。大概被检索几十次会更新一次的字段才比较符合建立索引的规范。而如果一个字段同一个时间段内被更新多次，那么果断不能为他建立索引。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.不会出现在where条件中的字段不该建立索引。这个相信大家都知道。&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.&lt;code&gt;较频繁地作为查询条件的字段。&lt;/code&gt;这个都知道。什么是教频繁呢？分析你执行的所有SQL语句。最好将他们一个个都列出来。然后分析。发现其中有些字段在大部分的SQL语句查询时候都会用到，那么就果断为他建立索引。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.唯一性太差的字段不适合建立索引，什么是唯一性太差的字段。如状态字段。类型字段。那些只存储固定几个值的字段。例如用户登录状态。消息的status。等。这个涉及到了索引扫描的特性。&lt;code&gt;例如：通过索引查找键值为A和B的某些数据，通过A找到某条相符合的数据，这条数据在X页上面，然后继续扫描，又发现符合A的数据出现在了Y页上面，那么存储引擎就会丢弃X页面的数据，然后存储Y页面上的数据，一直到查找完所有对应A的数据，然后查找B字段，发现X页面上面又有对应B字段的数据，那么他就会再次扫描X页面，等于X页面就会被扫描2次甚至多次。&lt;/code&gt;以此类推，所以同一个数据页可能会被多次重复的读取，丢弃，在读取，这无疑给存储引擎极大地增加了IO的负担。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.&lt;code&gt;更新太频繁地字段不适合创建索引，&lt;/code&gt;当你为这个字段创建索引时候，当你再次更新这个字段数据时，数据库会自动更新他的索引，所以当这个字段更新太频繁地时候那么就是不断的更新索引，性能的影响可想而知。大概被检索几十次会更新一次的字段才比较符合建立索引的规范。而如果一个字段同一个时间段内被更新多次，那么果断不能为他建立索引。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.不会出现在where条件中的字段不该建立索引。这个相信大家都知道。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
  
  <entry>
    <title>面向对象接口跟抽象类得相似和区别</title>
-   <link href="http://www.woowen.com/php/2014/10/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%8A%BD%E8%B1%A1%E7%B1%BB%E8%B7%9F%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%92%8C%E5%8C%BA%E5%88%AB/"/>
+   <link href="/php/2014/10/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%8A%BD%E8%B1%A1%E7%B1%BB%E8%B7%9F%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%92%8C%E5%8C%BA%E5%88%AB.html"/>
    <updated>2014-10-19T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/10/19/面向对象抽象类跟接口的相似和区别</id>
-   <content type="html">&lt;h4&gt;重写:&lt;/h4&gt;
-
-&lt;p&gt;父类已经有了一个名为a的方法.而子类继承该父类,子类中也有一个名为a的方法.但是实现的功能完全不同.这个就叫做重写,意为重写了父类中的该方法.&lt;/p&gt;
-
-&lt;h4&gt;重载:&lt;/h4&gt;
-
-&lt;p&gt;父类已经有了一个名为a的方法,但是a方法有一个参数$str,也就是function a($str){}
+   <id>/php/2014/10/19/面向对象抽象类跟接口的相似和区别</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;重写:&lt;/h4&gt;
+&lt;p&gt;父类已经有了一个名为a的方法.而子类继承该父类,子类中也有一个名为a的方法.但是实现的功能完全不同.这个就叫做重写,意为重写了父类中的该方法.
+####重载:
+父类已经有了一个名为a的方法,但是a方法有一个参数$str,也就是function a($str){}
 子类继承了这个父类,子类中也有这个方法a,但是参数不同,或者参数数目不同,function a($str1,$str2){}
 这个时候就叫做子类重载了父类的方法.&lt;/p&gt;
 
-&lt;h3&gt;抽象类以abstract开始,抽象类中只定义了要实现的方法,但是不写方法体.而且不是用大括号({})来结束,而是以分号来结束&lt;/h3&gt;
+&lt;h3 id=&quot;abstract&quot;&gt;抽象类以abstract开始,抽象类中只定义了要实现的方法,但是不写方法体.而且不是用大括号({})来结束,而是以分号来结束&lt;/h3&gt;
+&lt;p&gt;###继承抽象类的类必须实现父类中的抽象方法才行,不然会报错
+###一般情况下抽象类必须包含一个抽象方法(当然也可以不包含,但是那样就失去了抽象类的意义了),以abstract命名.但是不能有方法体,象类也可以什么其他的普通方法&lt;/p&gt;
 
-&lt;h3&gt;继承抽象类的类必须实现父类中的抽象方法才行,不然会报错&lt;/h3&gt;
+&lt;p&gt;```js&lt;/p&gt;
 
-&lt;h3&gt;一般情况下抽象类必须包含一个抽象方法(当然也可以不包含,但是那样就失去了抽象类的意义了),以abstract命名.但是不能有方法体,象类也可以什么其他的普通方法&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//抽象方法&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;abstract class classa{
+	public $str;
+	abstract public function str();//抽象方法
+	public function str1(){
+		$this-&amp;gt;str = 13;
+	}
+}&lt;/p&gt;
 
-&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classb&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;class classb extends classa{
+	public function str(){
+		echo 123;
+	}
+}&lt;/p&gt;
 
-&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;classb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;p&gt;$b = new classb();
+$b-&amp;gt;str();&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//接口&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//接口其他方法和抽象类类似,&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//调用接口就必须实现该接口中的所有方法,但是接口可以调用多个,可以使用implement Ia,Ib 来同时引入多个接口,但是类的继承php只支持单继承,也就是每个类最多只有一个父类.&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ibmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ibmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;//接口
+//接口其他方法和抽象类类似,
+//调用接口就必须实现该接口中的所有方法,但是接口可以调用多个,可以使用implement Ia,Ib 来同时引入多个接口,但是类的继承php只支持单继承,也就是每个类最多只有一个父类.
+interface Ia{
+	public function Iamethod();
+}
+interface Ib{
+	public function Ibmethod();
+}
+class a implements Ia , Ib{
+	public function Iamethod(){
+		echo 13;
+	}
+	public function Ibmethod(){}
+}
+$a = new a();
+```&lt;/p&gt;
+
 &lt;p&gt;接口 和抽象的区别和相同之处&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1.抽象类以abstract来定义,接口以interface定义&lt;/li&gt;
-&lt;li&gt;2.抽象中一般情况下必须包含一个abstract方法,当然你也可以不去定义这个抽象方法,只是用普通的方法.并且可以有方法体,那么继承他的子类可以
+  &lt;li&gt;1.抽象类以abstract来定义,接口以interface定义&lt;/li&gt;
+  &lt;li&gt;2.抽象中一般情况下必须包含一个abstract方法,当然你也可以不去定义这个抽象方法,只是用普通的方法.并且可以有方法体,那么继承他的子类可以
 直接拿抽象父类中的方法来使用,相当于抽象类提供了这些方法,子类继承直接调用.&lt;/li&gt;
-&lt;li&gt;3.如果抽象类中声明了抽象方法,那么该抽象方法没有方法体例如 abstract function abstractmethod();接口也是一样的
+  &lt;li&gt;3.如果抽象类中声明了抽象方法,那么该抽象方法没有方法体例如 abstract function abstractmethod();接口也是一样的
 那么继承的子类必须实现该抽象方法,不然就报错.而接口中也需要声明一些子类中可能用到的方法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Iamethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//继承接口的子类必须实现这些抽象方法.所有的方法.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;amethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//这个是定义的普通方法,可以在继承的子类中直接使用,也可以重写,也可以不用重写方法体&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;abmethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//抽象方法,子类继承必须实现该方法才能运行.不能包含方法体&lt;/span&gt;
+&lt;p&gt;```js&lt;/p&gt;
 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;example:
+interface Ia{
+	public function Iamethod();
+	public function Iamethod();//继承接口的子类必须实现这些抽象方法.所有的方法.
+}&lt;/p&gt;
+
+&lt;p&gt;abstract class a{
+	public function amethod(){
+	//这个是定义的普通方法,可以在继承的子类中直接使用,也可以重写,也可以不用重写方法体
+	}
+abstract public function abmethod();//抽象方法,子类继承必须实现该方法才能运行.不能包含方法体&lt;/p&gt;
+
+&lt;p&gt;}
+```
+* 4.抽象类只能继承一个,或者说php只支持单继承,不能继承多个类,而接口可以通过implement 继承多个接口.但是必须实现这些接口中的方法.&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;4.抽象类只能继承一个,或者说php只支持单继承,不能继承多个类,而接口可以通过implement 继承多个接口.但是必须实现这些接口中的方法.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.抽象类提供了多个普通方法,子类继承可以直接使用,但是抽象方法必须在子类中重写.可以不给任何方法体,但是必须重写.
-而接口中定义的方法你子类继承了就必须去实现他们,才能继承.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;5.抽象类提供了多个普通方法,子类继承可以直接使用,但是抽象方法必须在子类中重写.可以不给任何方法体,但是必须重写.
+而接口中定义的方法你子类继承了就必须去实现他们,才能继承.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;所以说.抽象类更像是一个方法的提供商,要什么用什么,只有抽象方法,你才必须重写一下来使用.
@@ -383,114 +423,125 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
  
  <entry>
    <title>数据库设计需要注意的地方</title>
-   <link href="http://www.woowen.com/mysql/2014/10/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%20%E6%B3%A8%E6%84%8F%E8%A6%81%E7%82%B9/"/>
+   <link href="/mysql/2014/10/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%20%E6%B3%A8%E6%84%8F%E8%A6%81%E7%82%B9.html"/>
    <updated>2014-10-15T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/mysql/2014/10/15/数据库设计 注意要点</id>
-   <content type="html">&lt;h4&gt;数据库表结构的设计非常的重要，因为表设计的好坏将直接影响你项目的性能。&lt;/h4&gt;
-
+   <id>/mysql/2014/10/15/数据库设计 注意要点</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;数据库表结构的设计非常的重要，因为表设计的好坏将直接影响你项目的性能。&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;1.适度冗余。关系型数据库的规范化范式最根本的目的就是尽量的去处冗余数据，保持数据的一致性，方便数据更新。避免数据不一致从而出错。但是有的时候就不能不反范式设计。当初定义范式的时候有一部分原因是保持数据的一致性，但还有个重要的原因就是因为当初的存储空间有限。存储设备都很小。所以尽量避免数据冗余。而现在我们完全不必为了存储空间而烦恼。TB的存储设备随处可见。所以我们要做的就是从需求出发，以性能为根本来设计表。以空间换时间。&lt;/li&gt;
+  &lt;li&gt;1.适度冗余。关系型数据库的规范化范式最根本的目的就是尽量的去处冗余数据，保持数据的一致性，方便数据更新。避免数据不一致从而出错。但是有的时候就不能不反范式设计。当初定义范式的时候有一部分原因是保持数据的一致性，但还有个重要的原因就是因为当初的存储空间有限。存储设备都很小。所以尽量避免数据冗余。而现在我们完全不必为了存储空间而烦恼。TB的存储设备随处可见。所以我们要做的就是从需求出发，以性能为根本来设计表。以空间换时间。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;众所周知Join的操作是非常的消耗数据库性能的。所以我们要尽量避免使用Join操作。而减少Join操作就不得不通过表字段的冗余来实现。&lt;/h4&gt;
-
+&lt;h4 id=&quot;joinjoinjoin&quot;&gt;众所周知Join的操作是非常的消耗数据库性能的。所以我们要尽量避免使用Join操作。而减少Join操作就不得不通过表字段的冗余来实现。&lt;/h4&gt;
 &lt;p&gt;说到避免使用Join字段，就不得不拆分一整条复杂的Join 语句。如果拆分Join语句，就要通过多次简单的查询来实现Join的逻辑。那肯定要增加网络的开销。这就要靠你自己去把控了。其实优化就是在两个极端的点之间选取最合适的那个点。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;2.垂直拆分。举个最简单的例子。论坛的帖子。论坛的帖子列表页的PV肯定要比单个帖子的详细页要多。访问的人多了。那么他的性能如何就至关重要。而列表页是不需要显示帖子内容的。（大部分都是只显示一个帖子title就ok了）。所以你需要做的就是在表中将帖子的内容字段拆分出去。或者存入单独的一个表中。为什么？都知道帖子的内容字段一定是个大字段。包含了很长的信息。而访问数据库的时候不是只访问你定义的那几个字段。他会读取全部的字段然后再返回你所需要的那些字段。所以如果你的表设计中有个很大的字段，那么带来的性能影响可想而知。（如果可以索引中完成查询的情况除外）大字段所占的空间比例非常的大，浪费的IO资源也就相当大。因此我们需要将他们拆分出去。 如文章内容，帖子内容，产品的信息，产品介绍等等。&lt;/li&gt;
+  &lt;li&gt;2.垂直拆分。举个最简单的例子。论坛的帖子。论坛的帖子列表页的PV肯定要比单个帖子的详细页要多。访问的人多了。那么他的性能如何就至关重要。而列表页是不需要显示帖子内容的。（大部分都是只显示一个帖子title就ok了）。所以你需要做的就是在表中将帖子的内容字段拆分出去。或者存入单独的一个表中。为什么？都知道帖子的内容字段一定是个大字段。包含了很长的信息。而访问数据库的时候不是只访问你定义的那几个字段。他会读取全部的字段然后再返回你所需要的那些字段。所以如果你的表设计中有个很大的字段，那么带来的性能影响可想而知。（如果可以索引中完成查询的情况除外）大字段所占的空间比例非常的大，浪费的IO资源也就相当大。因此我们需要将他们拆分出去。 如文章内容，帖子内容，产品的信息，产品介绍等等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;当然字段大只是其中的一点。你将大字段拆分出去，那么要读取他的时候就必须通过Join操作。而上面也说了尽量避免Join操作。所以选择那些个拆分的字段不光光要大。而且也要访问的频率不是那么高。那么就可以选择奖他拆分出去。我们所做的优化是为了全局的性能提升，而不是单一的操作提升。牺牲一点而带来全局的提升是值得的。当然不仅仅非要是大字段。如果你一个表中一些字段的访问频率非常高。而一些访问频率很低。你也可以考虑将他们拆分出去。单独的存在。使用Join操作来读取。&lt;/h4&gt;
+&lt;h4 id=&quot;joinjoinjoin-1&quot;&gt;当然字段大只是其中的一点。你将大字段拆分出去，那么要读取他的时候就必须通过Join操作。而上面也说了尽量避免Join操作。所以选择那些个拆分的字段不光光要大。而且也要访问的频率不是那么高。那么就可以选择奖他拆分出去。我们所做的优化是为了全局的性能提升，而不是单一的操作提升。牺牲一点而带来全局的提升是值得的。当然不仅仅非要是大字段。如果你一个表中一些字段的访问频率非常高。而一些访问频率很低。你也可以考虑将他们拆分出去。单独的存在。使用Join操作来读取。&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;3.水平拆分。当某些个数据的访问量很高，而更新频率很低那么你可以试着将他们单独的创建一个表来存储。例如论坛的置顶帖子。置顶的帖子数量少，访问频率高，更新频率低。单独存放在表中。Mysql读取他们的时候将会使用Mysql的Query Cache。而如果你将他们和更新频率高的数据存放在一起，那么就会频繁地更新不适用Query Cache。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.准实时优化。对于不需要实时更新的数据。可以通过这个方法来，都知道实时更新，每次都需要连接数据库查询，然后更新数据，这样带来的资源消耗是非常大的。对于那么用户不是特别需要的数据。可以使用准实时来存储一些个。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.合适的数据类型。当数据量非常大时数据库的检索查询效率就会变低，而如果你选择合适的数据类型，那么数据库的存储空间也会更小。对于检索同样的数据所带来的IO消耗自然也会降低，性能也会自然得到提升。这里说下CHAR类型和TEXT类型。CHAR类型是静态长度类型，存放的长度是固定的。如果存放的长度没有255个字节，那么就会存放空格来代替。但是Mysql在读取的时候会自动忽略最后的所有空格。而超过255字节的存储将会直接拒绝并且报错。在以前的版本中Mysql  Char类型在存入超过255个字节的数据时会自动转换成TEXT存储。现在不会了。
-另外我们公司的架构师老大说尽量使用Varchar来代替TEXT字段。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;6.最后要注意的就是数据库表名的命名尽量加上前缀。以及要有可读性良好的命名。加索引的使用尽量使用idx或者ind来作为前缀。后期维护的时候是个好事。还有就是做好数据字典。&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.水平拆分。当某些个数据的访问量很高，而更新频率很低那么你可以试着将他们单独的创建一个表来存储。例如论坛的置顶帖子。置顶的帖子数量少，访问频率高，更新频率低。单独存放在表中。Mysql读取他们的时候将会使用Mysql的Query Cache。而如果你将他们和更新频率高的数据存放在一起，那么就会频繁地更新不适用Query Cache。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.准实时优化。对于不需要实时更新的数据。可以通过这个方法来，都知道实时更新，每次都需要连接数据库查询，然后更新数据，这样带来的资源消耗是非常大的。对于那么用户不是特别需要的数据。可以使用准实时来存储一些个。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.合适的数据类型。当数据量非常大时数据库的检索查询效率就会变低，而如果你选择合适的数据类型，那么数据库的存储空间也会更小。对于检索同样的数据所带来的IO消耗自然也会降低，性能也会自然得到提升。这里说下CHAR类型和TEXT类型。CHAR类型是静态长度类型，存放的长度是固定的。如果存放的长度没有255个字节，那么就会存放空格来代替。但是Mysql在读取的时候会自动忽略最后的所有空格。而超过255字节的存储将会直接拒绝并且报错。在以前的版本中Mysql  Char类型在存入超过255个字节的数据时会自动转换成TEXT存储。现在不会了。
+另外我们公司的架构师老大说尽量使用Varchar来代替TEXT字段。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;6.最后要注意的就是数据库表名的命名尽量加上前缀。以及要有可读性良好的命名。加索引的使用尽量使用idx或者ind来作为前缀。后期维护的时候是个好事。还有就是做好数据字典。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
  
  <entry>
    <title>Mysql如何排序</title>
-   <link href="http://www.woowen.com/mysql/2014/10/15/Mysql%E5%A6%82%E4%BD%95%E6%8E%92%E5%BA%8F/"/>
+   <link href="/mysql/2014/10/15/Mysql%E5%A6%82%E4%BD%95%E6%8E%92%E5%BA%8F.html"/>
    <updated>2014-10-15T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/mysql/2014/10/15/Mysql如何排序</id>
-   <content type="html">&lt;h4&gt;需求是这样的.&lt;/h4&gt;
+   <id>/mysql/2014/10/15/Mysql如何排序</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;需求是这样的.&lt;/h4&gt;
 
-&lt;h4&gt;图文轮播排序.字段parent.每个图片的值分别是414,415,416,419,421&lt;/h4&gt;
+&lt;h4 id=&quot;parent414415416419421&quot;&gt;图文轮播排序.字段parent.每个图片的值分别是414,415,416,419,421&lt;/h4&gt;
+&lt;p&gt;####需要将图片显示循序按照parent值为416,415,419,421,414的顺序排序.那么这个sql就不能简单的写出order by parent desc 这种,因为顺序的不按照升序或者降序来的.
+&lt;code&gt;mysql
+SELECT * FROM `module_images`  WHERE pid = &#39;xx&#39; and appid = &#39;xx&#39; and parent in (416,415,419,421,414) GROUP BY parent order by FIELD(parent,416,415,419,421,414)
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4&gt;需要将图片显示循序按照parent值为416,415,419,421,414的顺序排序.那么这个sql就不能简单的写出order by parent desc 这种,因为顺序的不按照升序或者降序来的.&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-mysql&quot; data-lang=&quot;mysql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;`module_images`&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xx&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;appid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;xx&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;416&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;419&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;421&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;414&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;FIELD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;416&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;419&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;421&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;414&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;这样的sql语句就能完成上述的功能.&lt;/h4&gt;
+&lt;h4 id=&quot;sql&quot;&gt;这样的sql语句就能完成上述的功能.&lt;/h4&gt;
+&lt;p&gt;####前面的in里面的顺序可以随便改变,但是后面的需要按照顺序书写. 关键就是这个order by FIELD.另外不要忘记group by 不然是会出错的.&lt;/p&gt;
 
-&lt;h4&gt;前面的in里面的顺序可以随便改变,但是后面的需要按照顺序书写. 关键就是这个order by FIELD.另外不要忘记group by 不然是会出错的.&lt;/h4&gt;
-
-&lt;h3&gt;但是不建议在数据库使用函数方法来进行计算,排序.应该简化数据库操作,将排序算法留在逻辑层完成&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;但是不建议在数据库使用函数方法来进行计算,排序.应该简化数据库操作,将排序算法留在逻辑层完成&lt;/h3&gt;
 </content>
  </entry>
  
  <entry>
    <title>Swift 下拉刷新</title>
-   <link href="http://www.woowen.com/swift/2014/10/14/Swift%20%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
+   <link href="/swift/2014/10/14/Swift%20%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0.html"/>
    <updated>2014-10-14T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/14/Swift 下拉刷新</id>
-   <content type="html">&lt;h4&gt;这几天身体不舒服,医院跑了好几天,心塞&lt;/h4&gt;
+   <id>/swift/2014/10/14/Swift 下拉刷新</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;这几天身体不舒服,医院跑了好几天,心塞&lt;/h4&gt;
 
 &lt;p&gt;Swift的下拉刷新功能.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1.定义一个UIRefreshControl的常量&lt;/li&gt;
+  &lt;li&gt;1.定义一个UIRefreshControl的常量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refreshControl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIRefreshControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;2.在ViewController viewDidLoad()方法中加入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;//添加下拉刷新手势&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//action 的参数是当触发下拉操作时执行的方法名称&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;refreshControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;action:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;refreshData&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;forControlEvents:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIControlEvents&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ValueChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;refreshControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attributedTitle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSAttributedString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;string:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;松手刷新&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refreshControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;3.添加刷新数据方法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//下拉刷新方法&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refreshData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//页面数据重载&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reloadData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//停止刷新动作&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;refreshControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;endRefreshing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;这个场景是在tableView中使用下拉刷新功能&lt;/h4&gt;
+&lt;p&gt;```java&lt;/p&gt;
 
-&lt;h4&gt;就这几个步骤,在Swift中得下拉刷新就完成了.是不是很简单.&lt;/h4&gt;
+&lt;p&gt;let refreshControl = UIRefreshControl()&lt;/p&gt;
+
+&lt;p&gt;```
+* 2.在ViewController viewDidLoad()方法中加入&lt;/p&gt;
+
+&lt;p&gt;```java
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//添加下拉刷新手势
+//action 的参数是当触发下拉操作时执行的方法名称
+refreshControl.addTarget(self, action: &quot;refreshData&quot;, forControlEvents: UIControlEvents.ValueChanged)
+refreshControl.attributedTitle = NSAttributedString(string: &quot;松手刷新&quot;)
+tableView.addSubview(refreshControl) }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```
+* 3.添加刷新数据方法&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;java
+//下拉刷新方法
+func refreshData() {
+	//页面数据重载
+    self.tableView.reloadData()
+    //停止刷新动作
+    self.refreshControl.endRefreshing()
+}
+&lt;/code&gt;
+####这个场景是在tableView中使用下拉刷新功能&lt;/p&gt;
+
+&lt;h4 id=&quot;swift&quot;&gt;就这几个步骤,在Swift中得下拉刷新就完成了.是不是很简单.&lt;/h4&gt;
 </content>
  </entry>
  
  <entry>
    <title>lnmp集成安装包关于graphviz安装(failed to execute cmd dot -Tpng)</title>
-   <link href="http://www.woowen.com/linux/2014/10/13/Lnmp%E9%9B%86%E6%88%90%E5%AE%89%E8%A3%85%E5%8C%85%E5%85%B3%E4%BA%8Egraphviz%E5%AE%89%E8%A3%85(failed%20to%20execute%20cmd%20dot%20-Tpng)/"/>
+   <link href="/linux/2014/10/13/Lnmp%E9%9B%86%E6%88%90%E5%AE%89%E8%A3%85%E5%8C%85%E5%85%B3%E4%BA%8Egraphviz%E5%AE%89%E8%A3%85(failed%20to%20execute%20cmd%20dot%20-Tpng).html"/>
    <updated>2014-10-13T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/linux/2014/10/13/Lnmp集成安装包关于graphviz安装(failed to execute cmd dot -Tpng)</id>
+   <id>/linux/2014/10/13/Lnmp集成安装包关于graphviz安装(failed to execute cmd dot -Tpng)</id>
    <content type="html">&lt;p&gt;最近想试试xhprof来调试php,具体就不说什么安装了.这个网上的资料比较多.&lt;/p&gt;
 
 &lt;p&gt;关键是说下图形工具graphviz的安装.&lt;/p&gt;
 
-&lt;h3&gt;给出的错误&lt;code&gt;failed to execute cmd &amp;quot; dot -Tpng&amp;quot;&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;failed-to-execute-cmd--dot--tpng&quot;&gt;给出的错误&lt;code&gt;failed to execute cmd &quot; dot -Tpng&quot;&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;谷歌的半天,看了半天不给力,资料实在太少了.找不到答案,&lt;/p&gt;
 
-&lt;p&gt;于是看代码.最后发现在&lt;code&gt;XHprof callgraph_utils.php&lt;/code&gt; 文件中的xhprof&lt;em&gt;generate&lt;/em&gt;image&lt;em&gt;by&lt;/em&gt;dot方法调用了proc_open()这个方法.一般是用来执行linux命令的.类似exec(),system()&lt;/p&gt;
+&lt;p&gt;于是看代码.最后发现在&lt;code&gt;XHprof callgraph_utils.php&lt;/code&gt; 文件中的xhprof_generate_image_by_dot方法调用了proc_open()这个方法.一般是用来执行linux命令的.类似exec(),system()&lt;/p&gt;
 
 &lt;p&gt;发现lnmp一键安装里面的&lt;code&gt;php.ini&lt;/code&gt; 里面的 disable_functions 里面给禁止了.于是你只要把他给删除了.就能正常运行了.我说呢.为什么别人那么安逸的就能搞定的东西.&lt;/p&gt;
 </content>
@@ -498,279 +549,306 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
  
  <entry>
    <title>常用正则验证</title>
-   <link href="http://www.woowen.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2014/10/11/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E9%AA%8C%E8%AF%81/"/>
+   <link href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2014/10/11/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E9%AA%8C%E8%AF%81.html"/>
    <updated>2014-10-11T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2014/10/11/常用正则验证</id>
-   <content type="html">&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Regexp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//put your code here&lt;/span&gt;
+   <id>/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/2014/10/11/常用正则验证</id>
+   <content type="html">&lt;p&gt;```js&lt;/p&gt;
 
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$realname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/^[A-Za-z0-9\\u4e00-\\u9fa5]+$/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;class Regexp {
+    //put your code here&lt;/p&gt;
 
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^([+-]?)\\d*\\.\\d+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;public static $realname = &#39;/^[A-Za-z0-9\\u4e00-\\u9fa5]+$/&#39;;
+   
+public static $decmal = &quot;/^([+-]?)\\d*\\.\\d+$/&quot;;
+   
+public static $decmal1 = &quot;/^[1-9]\\d*.\\d*|0.\\d*[1-9]\\d*$/&quot;;
+   
+public static $decmal2 = &quot;/^-([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*)$/&quot;;
+   
+public static $decmal3 = &quot;/^-?([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*|0?.0+|0)$/&quot;;
+   
+public static $decmal4 = &quot;/^[1-9]\\d*.\\d*|0.\\d*[1-9]\\d*|0?.0+|0$&quot;;
+   
+public static $decmal5 = &quot;/^(-([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*))|0?.0+|0$/&quot;;
+   
+public static $intege = &quot;/^-?[1-9]\\d*$/&quot;;
+   
+public static $intege1 = &quot;/^[1-9]\\d*$/&quot;;
+   
+public static $intege2 = &quot;/^-[1-9]\\d*$/&quot;;
+   
+public static $num = &quot;/^([+-]?)\\d*\\.?\\d+$/&quot;;
+   
+public static $num1 = &quot;/^[1-9]\\d*|0$/&quot;;
+   
+public static $num2 = &quot;/^-[1-9]\\d*|0$/&quot;;
+   
+public static $ascii = &quot;/^[\\x00-\\xFF]+$/&quot;;
+   
+public static $chinese = &quot;/^[\\u4e00-\\u9fa5]+$/&quot;;
+   
+public static $color = &quot;/^[a-fA-F0-9]{6}$/&quot;;
+   
+public static $date = &quot;/^\\d{4}(\\-|\\/|\.)\\d{1,2}\\1\\d{1,2}$/&quot;;
+   
+public static $email = &quot;/^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$/&quot;;
+   
+public static $idcard = &quot;/^[1-9]([0-9]{14}|[0-9]{17})$/&quot;;
+   
+public static $ip4 = &quot;/^(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)$/&quot;;
+   
+public static $letter = &quot;/^[A-Za-z]+$/&quot;;
+   
+public static $letter_l = &quot;/^[a-z]+$/&quot;;
+   
+public static $letter_u = &quot;/^[A-Z]+$/&quot;;
+   
+public static $mobile = &#39;/(13|15)[0-9]{9}$/&#39;;
+   
+public static $tel = &quot;/(^(86)\-(0\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^0(\d{2,3})\-(\d{7,8})$)|(^0(\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^(86)\-(\d{3,4})\-(\d{7,8})$)/&quot;;
+   
+public static $notempty = &quot;/^\\S+$/&quot;;
+   
+public static $password = &quot;/^[A-Za-z0-9_-]+$/&quot;;
+   
+public static $picture = &quot;(.*)\\.(jpg|bmp|gif|ico|pcx|jpeg|tif|png|raw|tga)$/&quot;;
+   
+public static $qq = &quot;/^[1-9]*[1-9][0-9]*$/&quot;;
+   
+public static $rar = &quot;(.*)\\.(rar|zip|7zip|tgz)$/&quot;;
+   
+public static $url = &quot;^http[s]? = \\/\\/([\\w-]+\\.)+[\\w-]+([\\w-./?%&amp;amp;=]*)?$/&quot;;
+   
+public static $username = &quot;/^[A-Za-z0-9_\\-\\u4e00-\\u9fa5]+$/&quot;;
+   
+public static $zipcode = &quot;/^\\d{6}$/&quot;;
+&lt;/code&gt;&lt;/pre&gt;
 
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]\\d*.\\d*|0.\\d*[1-9]\\d*$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;}
+```&lt;/p&gt;
 
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^-([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*)$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^-?([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*|0?.0+|0)$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]\\d*.\\d*|0.\\d*[1-9]\\d*|0?.0+|0$&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$decmal5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^(-([1-9]\\d*.\\d*|0.\\d*[1-9]\\d*))|0?.0+|0$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$intege&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^-?[1-9]\\d*$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$intege1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]\\d*$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$intege2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^-[1-9]\\d*$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^([+-]?)\\d*\\.?\\d+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]\\d*|0$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$num2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^-[1-9]\\d*|0$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$ascii&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[\\x00-\\xFF]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$chinese&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[\\u4e00-\\u9fa5]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[a-fA-F0-9]{6}$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^\\d{4}(\\-|\\/|\.)\\d{1,2}\\1\\d{1,2}$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$idcard&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]([0-9]{14}|[0-9]{17})$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$ip4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)\\.(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$letter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[A-Za-z]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$letter_l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[a-z]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$letter_u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[A-Z]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$mobile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/(13|15)[0-9]{9}$/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$tel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/(^(86)\-(0\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^0(\d{2,3})\-(\d{7,8})$)|(^0(\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^(86)\-(\d{3,4})\-(\d{7,8})$)/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$notempty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^\\S+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[A-Za-z0-9_-]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$picture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;(.*)\\.(jpg|bmp|gif|ico|pcx|jpeg|tif|png|raw|tga)$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$qq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[1-9]*[1-9][0-9]*$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$rar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;(.*)\\.(rar|zip|7zip|tgz)$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;^http[s]? = \\/\\/([\\w-]+\\.)+[\\w-]+([\\w-./?%&amp;amp;=]*)?$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^[A-Za-z0-9_\\-\\u4e00-\\u9fa5]+$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$zipcode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/^\\d{6}$/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+</content>
  </entry>
  
  <entry>
    <title>Swift 出现 plain style unsupported in a navigation item 警告</title>
-   <link href="http://www.woowen.com/swift/2014/10/10/Swift%20%E5%87%BA%E7%8E%B0plain%20style%20unsupported%20in%20a%20navigation%20item%20%E8%AD%A6%E5%91%8A/"/>
+   <link href="/swift/2014/10/10/Swift%20%E5%87%BA%E7%8E%B0plain%20style%20unsupported%20in%20a%20navigation%20item%20%E8%AD%A6%E5%91%8A.html"/>
    <updated>2014-10-10T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/10/Swift 出现plain style unsupported in a navigation item 警告</id>
-   <content type="html">&lt;h4&gt;xcode 在编译的时候出现 plain style unsupported in a navigation item 的警告问题&lt;/h4&gt;
+   <id>/swift/2014/10/10/Swift 出现plain style unsupported in a navigation item 警告</id>
+   <content type="html">&lt;h4 id=&quot;xcode--plain-style-unsupported-in-a-navigation-item-&quot;&gt;xcode 在编译的时候出现 plain style unsupported in a navigation item 的警告问题&lt;/h4&gt;
+&lt;p&gt;####是因为你在storyboard中,将一个button 放在了Navigation Bar中
+####类似这样
+&lt;img src=&quot;http://woowen.qiniudn.com/1.png&quot; alt=&quot;step1&quot; /&gt;&lt;/p&gt;
 
-&lt;h4&gt;是因为你在storyboard中,将一个button 放在了Navigation Bar中&lt;/h4&gt;
-
-&lt;h4&gt;类似这样&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/1.png&quot; alt=&quot;step1&quot;&gt;&lt;/p&gt;
-
-&lt;h4&gt;解决方法:&lt;/h4&gt;
-
-&lt;h4&gt;选中Bar Button Item 然后右侧工具中 选择Attributes inspector&lt;/h4&gt;
-
-&lt;h4&gt;如图所示&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2.png&quot; alt=&quot;step2&quot;&gt;&lt;/p&gt;
-
-&lt;h4&gt;将Style 修改成 Bordered&lt;/h4&gt;
-
-&lt;h4&gt;编译完成,warning消除&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;解决方法:&lt;/h4&gt;
+&lt;p&gt;####选中Bar Button Item 然后右侧工具中 选择Attributes inspector
+####如图所示
+&lt;img src=&quot;http://woowen.qiniudn.com/2.png&quot; alt=&quot;step2&quot; /&gt;
+####将Style 修改成 Bordered 
+####编译完成,warning消除&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Swift 时间戳转换成格式化时间</title>
-   <link href="http://www.woowen.com/swift/2014/10/09/Swift%20%E6%97%B6%E9%97%B4%E6%88%B3%20%E8%BD%AC%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4/"/>
+   <link href="/swift/2014/10/09/Swift%20%E6%97%B6%E9%97%B4%E6%88%B3%20%E8%BD%AC%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4.html"/>
    <updated>2014-10-09T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/09/Swift 时间戳 转 格式化时间</id>
-   <content type="html">&lt;h4&gt;Swift中的时间戳转换成想要格式的字符型时间&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outputFormat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSDateFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myDataSource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1412763755&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//格式化规则&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;outputFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateFormat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//定义时区&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;outputFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;locale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSLocale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localeIdentifier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;shanghai&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//发布时间&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pubTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timeIntervalSince1970&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myDataSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doubleValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outputFormat1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringFromDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pubTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//print 2014/10/08 18:22:35&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h5&gt;对于没有Object-c基础的人来说,看Swift真心吃力,希望能帮到其他人.&lt;/h5&gt;
+   <id>/swift/2014/10/09/Swift 时间戳 转 格式化时间</id>
+   <content type="html">&lt;h4 id=&quot;swift&quot;&gt;Swift中的时间戳转换成想要格式的字符型时间&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;js
+	var outputFormat = NSDateFormatter()
+	let myDataSource: NSString = &quot;1412763755&quot;
+	//格式化规则
+	outputFormat.dateFormat = &quot;yyyy/MM/dd HH:mm:ss&quot;
+	//定义时区
+	outputFormat.locale = NSLocale(localeIdentifier: &quot;shanghai&quot;)
+	//发布时间
+	let pubTime = NSDate(timeIntervalSince1970: myDataSource.doubleValue)
+	println(outputFormat1.stringFromDate(pubTime))
+	//print 2014/10/08 18:22:35
+&lt;/code&gt;
+#####对于没有Object-c基础的人来说,看Swift真心吃力,希望能帮到其他人.&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Swift之webView用法</title>
-   <link href="http://www.woowen.com/swift/2014/10/06/Swift%20webView%E5%8A%A0%E8%BD%BDhtml/"/>
+   <link href="/swift/2014/10/06/Swift%20webView%E5%8A%A0%E8%BD%BDhtml.html"/>
    <updated>2014-10-06T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/06/Swift webView加载html</id>
-   <content type="html">&lt;h4&gt;Swift webView的用法&lt;/h4&gt;
+   <id>/swift/2014/10/06/Swift webView加载html</id>
+   <content type="html">&lt;h4 id=&quot;swift-webview&quot;&gt;Swift webView的用法&lt;/h4&gt;
 
 &lt;p&gt;webView其实就是相当于手机App充当了浏览器得功能,用app加载了一个HTTP链接,那么他显示的其实就是一个wap页面.&lt;/p&gt;
 
 &lt;p&gt;但是我觉得手机新闻资讯类得app将来会被web取代.即app端只用远程加载一个链接地址显示内容即可,至于交互上面交给javascript去做就好了.而oc,或者swift或者android只是充当一个容器的作用.跟pc端得客户端大同小异.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://top.mogujie.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSURLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;js
+	var url = NSURL(string: &quot;http://top.mogujie.com&quot;)
+	var request = NSURLRequest(URL: url)
+	webView.loadRequest(request)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;将上面代码放入页面加载执行的动作中就ok了.稍等一会儿就能将内容显示出来,你也可以在加载之前加上一个交互的图片&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;webViewDidStartLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;UIWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//添加了一个loadImg: UIActivityIndicatorView!用来显示页面加载中得动画效果&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;loadImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startAnimating&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;js
+	func webViewDidStartLoad(webView: UIWebView){
+		//添加了一个loadImg: UIActivityIndicatorView!用来显示页面加载中得动画效果
+        loadImg.startAnimating()
+    }
+&lt;/code&gt; &lt;/p&gt;
+
 &lt;p&gt;页面加载完成执行方法&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;webViewDidFinishLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;webView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;UIWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//停止动画并移除,你也可以第一句不写,直接移除&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;loadImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopAnimating&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;loadImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeFromSuperview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;       
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+
+&lt;p&gt;&lt;code&gt;js
+	func webViewDidFinishLoad(webView: UIWebView){
+		//停止动画并移除,你也可以第一句不写,直接移除
+        loadImg.stopAnimating()
+        loadImg.removeFromSuperview()       
+    }
+&lt;/code&gt;       &lt;/p&gt;
+
+</content>
  </entry>
  
  <entry>
    <title>Swift Label换行</title>
-   <link href="http://www.woowen.com/swift/2014/10/05/Swift%20Label%E6%8D%A2%E8%A1%8C/"/>
+   <link href="/swift/2014/10/05/Swift%20Label%E6%8D%A2%E8%A1%8C.html"/>
    <updated>2014-10-05T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/05/Swift Label换行</id>
-   <content type="html">&lt;p&gt;Swift中当文字过长的话label中得显示默认为截断显示成xxx...这样得格式那么如何解决这个问题呢?&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;
+   <id>/swift/2014/10/05/Swift Label换行</id>
+   <content type="html">&lt;p&gt;Swift中当文字过长的话label中得显示默认为截断显示成xxx…这样得格式那么如何解决这个问题呢?&lt;/p&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;反反复复凤飞飞反反复复反反复复反反复复反反复复反反复复凤飞飞凤飞飞&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;numberOfLines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//显示label可以显示几行,为0表示不限制,多行显示&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;label1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lineBreakMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSLineBreakMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ByWordWrapping&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//NSLineBreakMode 有多个属性用来提供不同得显示格式.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h5&gt;最后不要忘记调整label的高度,不然还是不会将多余得行给显示出来得.&lt;/h5&gt;
+&lt;p&gt;```js
+	demo&lt;/p&gt;
 
-&lt;h5&gt;Have fun&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;label1.text = &quot;反反复复凤飞飞反反复复反反复复反反复复反反复复反反复复凤飞飞凤飞飞&quot;
+label1.numberOfLines = 0	//显示label可以显示几行,为0表示不限制,多行显示
+label1.lineBreakMode = NSLineBreakMode.ByWordWrapping //NSLineBreakMode 有多个属性用来提供不同得显示格式. ``` #####最后不要忘记调整label的高度,不然还是不会将多余得行给显示出来得.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&quot;have-fun&quot;&gt;Have fun&lt;/h5&gt;
 </content>
  </entry>
  
  <entry>
    <title>Swift 登录页面跳转,条件判断 ,页面跳转</title>
-   <link href="http://www.woowen.com/swift/2014/10/04/swift%20%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/"/>
+   <link href="/swift/2014/10/04/swift%20%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC.html"/>
    <updated>2014-10-04T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/04/swift 条件判断页面跳转</id>
+   <id>/swift/2014/10/04/swift 条件判断页面跳转</id>
    <content type="html">&lt;p&gt;swift在网上一大堆废话例子,实在看不懂.Swift的资料也少.&lt;/p&gt;
 
 &lt;p&gt;在swift中作跳转是一件很简单得事情,可是如果右键某个空间拖动然后选择modal来关联跳转关系的话该如何做出代码判断呢?&lt;/p&gt;
 
-&lt;h4&gt;场景:如果我想做一个登录页面,输入用户名密码之后点击登录按钮,验证成功就跳转这个功能呢?否则不跳转&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;场景:如果我想做一个登录页面,输入用户名密码之后点击登录按钮,验证成功就跳转这个功能呢?否则不跳转&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1.切换到storyboard,选中第一个直到如图显示
-&lt;img src=&quot;http://woowen.qiniudn.com/AAD4A83A-251A-4BA6-A8B1-B0A484B21816.png&quot; alt=&quot;初始图片&quot;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.右键第一个storyboard,拖动到你需要跳转的另一个storyboard如图
-&lt;img src=&quot;http://woowen.qiniudn.com/73C34EFC-0B57-424F-99B0-9A34DF5609F6.png&quot; alt=&quot;step2&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.在弹出如图的提示中选择modal表示跳转页面完全覆盖第一个页面&lt;/p&gt;
+  &lt;li&gt;1.切换到storyboard,选中第一个直到如图显示
+  &lt;img src=&quot;http://woowen.qiniudn.com/AAD4A83A-251A-4BA6-A8B1-B0A484B21816.png&quot; alt=&quot;初始图片&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.右键第一个storyboard,拖动到你需要跳转的另一个storyboard如图
+  &lt;img src=&quot;http://woowen.qiniudn.com/73C34EFC-0B57-424F-99B0-9A34DF5609F6.png&quot; alt=&quot;step2&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.在弹出如图的提示中选择modal表示跳转页面完全覆盖第一个页面&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/8A790850-7032-4ECC-B36B-E794F0E688B2.png&quot; alt=&quot;step3&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.选中Segue,&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/8A790850-7032-4ECC-B36B-E794F0E688B2.png&quot; alt=&quot;step3&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.选中Segue,&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/BA0E93C4-8412-4A67-B3CD-6322E75AD304.png&quot; alt=&quot;step4&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.查看右侧的Attributes inspector如图,在Identifier中写上一个自定义名称(如:login)&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/BA0E93C4-8412-4A67-B3CD-6322E75AD304.png&quot; alt=&quot;step4&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.查看右侧的Attributes inspector如图,在Identifier中写上一个自定义名称(如:login)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/894A6013-5B60-428F-987E-9D8A143E1157.png&quot; alt=&quot;step5&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;6.在你的ViewController中加上下面得代码&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/894A6013-5B60-428F-987E-9D8A143E1157.png&quot; alt=&quot;step5&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;6.在你的ViewController中加上下面得代码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;vi&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LoginBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;performSegueWithIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;LoginBtn是某个button空间得绑定点击动作,里面是跳转代码,表示你在点击这个按钮的时候会执行这个跳转动作,里面得Login名称请和第5步中自定义名称保持一致,如果你想在跳转前做一些判断的话就可以在这个语句前面加一些判断语句例如:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;/**按钮点击事件*/&lt;/span&gt;
-&lt;span class=&quot;vi&quot;&gt;@IBAction&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LoginBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;sr&quot;&gt;/**登陆验证成功**/&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tempResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;sr&quot;&gt;/**进行跳转**/&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;performSegueWithIdentifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;login fail&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+
+&lt;p&gt;&lt;code&gt;ruby
+    @IBAction func LoginBtn(sender: AnyObject) {
+		self.performSegueWithIdentifier(&quot;login&quot;, sender: self)
+    }    
+&lt;/code&gt;	
+&amp;gt;LoginBtn是某个button空间得绑定点击动作,里面是跳转代码,表示你在点击这个按钮的时候会执行这个跳转动作,里面得Login名称请和第5步中自定义名称保持一致,如果你想在跳转前做一些判断的话就可以在这个语句前面加一些判断语句例如:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ruby
+/**按钮点击事件*/
+@IBAction func LoginBtn(sender: AnyObject) {
+	/**登陆验证成功**/
+	if tempResult == 1001{
+		/**进行跳转**/
+		self.performSegueWithIdentifier(&quot;login&quot;, sender: self)
+	}else{
+		println(&quot;login fail&quot;)
+	}
+}
+&lt;/code&gt;&lt;/p&gt;
+
+</content>
  </entry>
  
  <entry>
    <title>xcode6 设置textField无法呼出键盘,如何关闭键盘</title>
-   <link href="http://www.woowen.com/swift/2014/10/03/xcode6%20textfield%20%E4%B8%8D%E5%91%BC%E5%87%BA%E9%94%AE%E7%9B%98%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%AD%E9%94%AE%E7%9B%98/"/>
+   <link href="/swift/2014/10/03/xcode6%20textfield%20%E4%B8%8D%E5%91%BC%E5%87%BA%E9%94%AE%E7%9B%98%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%AD%E9%94%AE%E7%9B%98.html"/>
    <updated>2014-10-03T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/swift/2014/10/03/xcode6 textfield 不呼出键盘以及如何关闭键盘</id>
-   <content type="html">&lt;h3&gt;在xcode6中使用了textField,但是在运行的时候发现即使获取焦点了.也没有自动呼出键盘&lt;/h3&gt;
-
+   <id>/swift/2014/10/03/xcode6 textfield 不呼出键盘以及如何关闭键盘</id>
+   <content type="html">&lt;h3 id=&quot;xcode6textfield&quot;&gt;在xcode6中使用了textField,但是在运行的时候发现即使获取焦点了.也没有自动呼出键盘&lt;/h3&gt;
 &lt;p&gt;解决方法:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;打开&lt;code&gt;IOS Simulator&lt;/code&gt; -&amp;gt; &lt;code&gt;Hardware&lt;/code&gt; -&amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; -&amp;gt; &lt;code&gt;Toggle Software Keyboard&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;再次运行即可&lt;/li&gt;
+  &lt;li&gt;打开&lt;code&gt;IOS Simulator&lt;/code&gt; -&amp;gt; &lt;code&gt;Hardware&lt;/code&gt; -&amp;gt; &lt;code&gt;Keyboard&lt;/code&gt; -&amp;gt; &lt;code&gt;Toggle Software Keyboard&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;再次运行即可&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5&gt;顺便补充一个如何在设置点击任意一处的时候自动关闭键盘的操作在ViewController代码中加上这段代码,其中Unamelabel,pwdLabel代表你绑定的空间自定义名称&lt;/h5&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;touchesEnded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;touches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NSSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;withEvent&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;UIEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;uNameLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resignFirstResponder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pwdLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resignFirstResponder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;        
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 id=&quot;viewcontrollerunamelabelpwdlabel&quot;&gt;顺便补充一个如何在设置点击任意一处的时候自动关闭键盘的操作在ViewController代码中加上这段代码,其中Unamelabel,pwdLabel代表你绑定的空间自定义名称&lt;/h5&gt;
+
+&lt;p&gt;```ruby&lt;/p&gt;
+
+&lt;p&gt;override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        uNameLabel.resignFirstResponder()
+        pwdLabel.resignFirstResponder()      &lt;br /&gt;
+        }    &lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;blockquote&gt;
-&lt;p&gt;xcode6 坑好多,慎用!&lt;/p&gt;
+
+  &lt;p&gt;xcode6 坑好多,慎用!&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
  </entry>
  
  <entry>
    <title>关于Github提交没有进入Contribution统计的问题</title>
-   <link href="http://www.woowen.com/github/2014/10/02/%E5%85%B3%E4%BA%8EGithub%20%E6%8F%90%E4%BA%A4%E6%B2%A1%E6%9C%89%E8%BF%9B%E5%85%A5Contribution%E7%BB%9F%E8%AE%A1/"/>
+   <link href="/github/2014/10/02/%E5%85%B3%E4%BA%8EGithub%20%E6%8F%90%E4%BA%A4%E6%B2%A1%E6%9C%89%E8%BF%9B%E5%85%A5Contribution%E7%BB%9F%E8%AE%A1.html"/>
    <updated>2014-10-02T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/github/2014/10/02/关于Github 提交没有进入Contribution统计</id>
+   <id>/github/2014/10/02/关于Github 提交没有进入Contribution统计</id>
    <content type="html">&lt;p&gt;本地一直使用github的mac客户端去提交代码,发现提交了好多次的代码,但是依然没有进入github的Contribution统计,于是参考了相关资料找到原因.&lt;/p&gt;
 
-&lt;h4&gt;会被记录进入Contribution的情形&lt;/h4&gt;
+&lt;h4 id=&quot;contribution&quot;&gt;会被记录进入Contribution的情形&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1.操作在1年之内&lt;/li&gt;
-&lt;li&gt;2.操作针对的是一个独立的仓库,在Fork仓库中提交代码不会计入&lt;/li&gt;
-&lt;li&gt;3.进行commit的时候关联了你的Github账户&lt;/li&gt;
+  &lt;li&gt;1.操作在1年之内&lt;/li&gt;
+  &lt;li&gt;2.操作针对的是一个独立的仓库,在Fork仓库中提交代码不会计入&lt;/li&gt;
+  &lt;li&gt;3.进行commit的时候关联了你的Github账户&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;除了以上情况之外也会被记录进入Contribution的情形&lt;/h4&gt;
+&lt;h4 id=&quot;contribution-1&quot;&gt;除了以上情况之外也会被记录进入Contribution的情形&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1.你是这个项目组织的一员&lt;/li&gt;
-&lt;li&gt;2.你对这个项目有过pull,issue&lt;/li&gt;
-&lt;li&gt;3.你标记过了这个项目&lt;/li&gt;
-&lt;li&gt;4.你fork过这个仓库&lt;/li&gt;
+  &lt;li&gt;1.你是这个项目组织的一员&lt;/li&gt;
+  &lt;li&gt;2.你对这个项目有过pull,issue&lt;/li&gt;
+  &lt;li&gt;3.你标记过了这个项目&lt;/li&gt;
+  &lt;li&gt;4.你fork过这个仓库&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;我得问题是我本地的客户端没有关联我得Github账户,mac客户端&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Advanced&lt;/code&gt;-&amp;gt;&lt;code&gt;Git&lt;/code&gt; &lt;/li&gt;
-&lt;li&gt;Config中的用户名跟邮箱地址要跟你的账号一样&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Advanced&lt;/code&gt;-&amp;gt;&lt;code&gt;Git&lt;/code&gt; &lt;/li&gt;
+  &lt;li&gt;Config中的用户名跟邮箱地址要跟你的账号一样&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;这样才能关联.好了等于之前的提交都白干了.哈哈.&lt;/p&gt;
@@ -779,22 +857,22 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
  
  <entry>
    <title>搭配资讯项目总结</title>
-   <link href="http://www.woowen.com/pm/2014/09/25/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%E6%80%BB%E7%BB%93/"/>
+   <link href="/pm/2014/09/25/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%E6%80%BB%E7%BB%93.html"/>
    <updated>2014-09-25T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/pm/2014/09/25/项目经理总结</id>
-   <content type="html">&lt;h2&gt;搭配资讯项目总结&lt;/h2&gt;
+   <id>/pm/2014/09/25/项目经理总结</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;搭配资讯项目总结&lt;/h2&gt;
 
 &lt;p&gt;参与人:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;后端:xx,xx&lt;/li&gt;
-&lt;li&gt;前端:xx,xx&lt;/li&gt;
-&lt;li&gt;运营:xx&lt;/li&gt;
+  &lt;li&gt;后端:xx,xx&lt;/li&gt;
+  &lt;li&gt;前端:xx,xx&lt;/li&gt;
+  &lt;li&gt;运营:xx&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;项目经理篇:&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;项目经理篇:&lt;/h3&gt;
 
-&lt;h4&gt;工作任务:&lt;/h4&gt;
+&lt;h4 id=&quot;section-2&quot;&gt;工作任务:&lt;/h4&gt;
 
 &lt;p&gt;1.首先项目经理在跟运营沟通之后,了解清楚需求(当然项目经理理应挡掉一些不合理的需求,提高开发效率.从而保障项目进度).&lt;/p&gt;
 
@@ -802,21 +880,37 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
 
 &lt;p&gt;3.在项目中每个人员都知道了自己需求的前提下,项目经理开始编写项目技术文档.&lt;/p&gt;
 
-&lt;h4&gt;项目技术文档主要包含以下几个部分&lt;/h4&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;项目技术文档主要包含以下几个部分&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.需求背景,主要包含这个需求的愿景是什么,以及期望通过这个需求实现哪些目标,这些主要是项目经理跟运营沟通.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.技术方案&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.需求背景,主要包含这个需求的愿景是什么,以及期望通过这个需求实现哪些目标,这些主要是项目经理跟运营沟通.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.技术方案&lt;/p&gt;
 
-&lt;p&gt;1) 数据库关系图,数据字典&lt;/p&gt;
+    &lt;p&gt;1) 数据库关系图,数据字典&lt;/p&gt;
 
-&lt;p&gt;2) 项目类图&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.项目流程图,用于描述整体一个项目的流程.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.针对核心需求需要通过流程图+文字的方式清楚的描述该需求&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.开发计划,每个人得工作任务,另外每个项目都应该将未来一些不可控的因素而话费的时间也算进去,例如有其他紧急需求占用资源.且当别人问你需要多久完成这个项目的时候,不是指你开发你自己得功能需要多久,而是指你这个功能 + 跟别人联调 + 部分测试一共需要多久.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;6.用例图,用例图是参与者与外部用户所能观察到的系统功能的模型图,呈现参与者以及用例,他们之间的关系,如何项目联系.使得项目各个模块更加清晰.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;7.上线方案,包含上线前得一些准备,例如涉及到新建库表的时候,先准备好,建表得SQL,遇到问题之后需要回滚的项目编号,以及整体的一个项目上线步骤,可能遇到的问题,问题得解决方案.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;8.风险预估,告知清楚项目中可能存在的问题,并且由项目经理去不断跟进,在项目进行中,了解是否还会有其他风险的可能性.&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;2) 项目类图&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.项目流程图,用于描述整体一个项目的流程.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.针对核心需求需要通过流程图+文字的方式清楚的描述该需求&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.开发计划,每个人得工作任务,另外每个项目都应该将未来一些不可控的因素而话费的时间也算进去,例如有其他紧急需求占用资源.且当别人问你需要多久完成这个项目的时候,不是指你开发你自己得功能需要多久,而是指你这个功能 + 跟别人联调 + 部分测试一共需要多久.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;6.用例图,用例图是参与者与外部用户所能观察到的系统功能的模型图,呈现参与者以及用例,他们之间的关系,如何项目联系.使得项目各个模块更加清晰.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;7.上线方案,包含上线前得一些准备,例如涉及到新建库表的时候,先准备好,建表得SQL,遇到问题之后需要回滚的项目编号,以及整体的一个项目上线步骤,可能遇到的问题,问题得解决方案.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;8.风险预估,告知清楚项目中可能存在的问题,并且由项目经理去不断跟进,在项目进行中,了解是否还会有其他风险的可能性.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;4.告知团队中每个人自己得工作任务.将任务安排告诉他们,让他们清楚的知道每天需要做什么,明天做什么,并且询问这样得安排是否妥当,这方面我跟前端沟通的较少,后面需要提升.使得项目在前端方面有点失控.这个后面再提.&lt;/p&gt;
@@ -834,19 +928,28 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
 
 &lt;p&gt;10.项目测试修改完成,项目发布上线.&lt;/p&gt;
 
-&lt;h4&gt;项目经理角色作用&lt;/h4&gt;
+&lt;h4 id=&quot;section-4&quot;&gt;项目经理角色作用&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.项目经理应该将更多得精力放在项目管理上面,因此当项目经理在分配任务得时候.建议不要给自己安排太多的开发任务.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.项目经理不光要完成后端这边的开发任务,还需要时刻的关注前端的任务,而程序员写代码又常常容易沉浸在其中,导致前后端的进度不同步,给项目进度带来风险.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.人得精力总是有限的,在一个项目中,不代表写的代码最多,那么贡献就最多,每个人得分工不同,但是大家的贡献却是直接影响项目亦或是间接的影响到项目,项目经理对于前后端的进度掌握,将最新得进度告知团队中得其他人,给予充分的信息沟通.每当遇到问题得时候也会将遇到的问题告知其他人.遇到其他问题得时候,协调资源给予解决问题.这样群策群力,不仅提高了个人的效率,也让项目在把控中一步步前进.团队中得每个人都能了解到团队中其他人做了什么事情,遇到什么困难,哪怕某个环节出现了delay得情况.那么大家在知晓原因的前提下,都会觉得能够理解.所以项目经理虽然在开发端给予整体项目的贡献偏弱,但是综合其他却是大大的保障了整体项目的慢慢推荐,项目经理也应该从宏观上对项目进行把控.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.项目经理是每个角色之间的沟通传话员.同时也是项目进度把控人.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.项目经理应该将更多得精力放在项目管理上面,因此当项目经理在分配任务得时候.建议不要给自己安排太多的开发任务.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.项目经理不光要完成后端这边的开发任务,还需要时刻的关注前端的任务,而程序员写代码又常常容易沉浸在其中,导致前后端的进度不同步,给项目进度带来风险.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.人得精力总是有限的,在一个项目中,不代表写的代码最多,那么贡献就最多,每个人得分工不同,但是大家的贡献却是直接影响项目亦或是间接的影响到项目,项目经理对于前后端的进度掌握,将最新得进度告知团队中得其他人,给予充分的信息沟通.每当遇到问题得时候也会将遇到的问题告知其他人.遇到其他问题得时候,协调资源给予解决问题.这样群策群力,不仅提高了个人的效率,也让项目在把控中一步步前进.团队中得每个人都能了解到团队中其他人做了什么事情,遇到什么困难,哪怕某个环节出现了delay得情况.那么大家在知晓原因的前提下,都会觉得能够理解.所以项目经理虽然在开发端给予整体项目的贡献偏弱,但是综合其他却是大大的保障了整体项目的慢慢推荐,项目经理也应该从宏观上对项目进行把控.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.项目经理是每个角色之间的沟通传话员.同时也是项目进度把控人.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;此次项目开发中遇到的困扰&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;另外项目经理的文档编写能力还需要加强.如果说一个项目文档对于项目至关
+
+  &lt;p&gt;另外项目经理的文档编写能力还需要加强.如果说一个项目文档对于项目至关
 重要,那么一个清晰易懂的项目文档就对项目来说是进度,质量的保障了.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -858,10 +961,10 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
  
  <entry>
    <title>51job和智联招聘的自动刷新简历脚本</title>
-   <link href="http://www.woowen.com/crond/2014/09/20/51job%E5%92%8C%E6%99%BA%E8%81%94%E6%8B%9B%E8%81%98%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0%E7%AE%80%E5%8E%86%E8%84%9A%E6%9C%AC/"/>
+   <link href="/crond/2014/09/20/51job%E5%92%8C%E6%99%BA%E8%81%94%E6%8B%9B%E8%81%98%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0%E7%AE%80%E5%8E%86%E8%84%9A%E6%9C%AC.html"/>
    <updated>2014-09-20T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/crond/2014/09/20/51job和智联招聘自动刷新简历脚本</id>
-   <content type="html">&lt;h4&gt;Win下,51job和智联招聘的自动刷新简历脚本&lt;/h4&gt;
+   <id>/crond/2014/09/20/51job和智联招聘自动刷新简历脚本</id>
+   <content type="html">&lt;h4 id=&quot;win51job&quot;&gt;Win下,51job和智联招聘的自动刷新简历脚本&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;dl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;php_curl.dll&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
@@ -912,38 +1015,37 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
 &lt;p&gt;使用方法&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;在CURLOPT_URL参数中写上你刷新简历时访问的ajax url 的地址.&lt;/li&gt;
-&lt;li&gt;在CURLOPT_COOKIE中写上你浏览器cookie中对应参数的value.&lt;/li&gt;
-&lt;li&gt;然后在linux中使用将脚本1小时一次的执行起来就可以了.&lt;/li&gt;
+  &lt;li&gt;在CURLOPT_URL参数中写上你刷新简历时访问的ajax url 的地址.&lt;/li&gt;
+  &lt;li&gt;在CURLOPT_COOKIE中写上你浏览器cookie中对应参数的value.&lt;/li&gt;
+  &lt;li&gt;然后在linux中使用将脚本1小时一次的执行起来就可以了.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
  
  <entry>
    <title>Php Zval浅析</title>
-   <link href="http://www.woowen.com/php/2014/09/15/PHP%20Zval%E6%B5%85%E6%9E%90/"/>
+   <link href="/php/2014/09/15/PHP%20Zval%E6%B5%85%E6%9E%90.html"/>
    <updated>2014-09-15T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/09/15/PHP Zval浅析</id>
-   <content type="html">&lt;h3&gt;什么是zval&lt;/h3&gt;
-
+   <id>/php/2014/09/15/PHP Zval浅析</id>
+   <content type="html">&lt;h3 id=&quot;zval&quot;&gt;什么是zval&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;1.zval是php底层非常重要的一种数据结构.&lt;/li&gt;
-&lt;li&gt;2.php变量分为3种类型:简单类型(int,string,bool),集合类型(array,object,resource),常量(const)&lt;/li&gt;
-&lt;li&gt;3.php为弱类型,定义时不指明类型,运行时可以转换数据类型.就是由于zval的功劳.&lt;/li&gt;
-&lt;li&gt;4.同样zval得使用能大大的节约内存的资源消耗
+  &lt;li&gt;1.zval是php底层非常重要的一种数据结构.&lt;/li&gt;
+  &lt;li&gt;2.php变量分为3种类型:简单类型(int,string,bool),集合类型(array,object,resource),常量(const)&lt;/li&gt;
+  &lt;li&gt;3.php为弱类型,定义时不指明类型,运行时可以转换数据类型.就是由于zval的功劳.&lt;/li&gt;
+  &lt;li&gt;4.同样zval得使用能大大的节约内存的资源消耗
 ####zval结构&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;在phpsrc/zend/zend.h中有关于zval的函数定义.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;value:zval存储的实际的数值&lt;/li&gt;
-&lt;li&gt;refcount:引用计数&lt;/li&gt;
-&lt;li&gt;type:主要判断变量的类型,是字符,还是整数或者数组.&lt;/li&gt;
-&lt;li&gt;if_ref:用来判断该变量是否引用变量&lt;/li&gt;
+  &lt;li&gt;value:zval存储的实际的数值&lt;/li&gt;
+  &lt;li&gt;refcount:引用计数&lt;/li&gt;
+  &lt;li&gt;type:主要判断变量的类型,是字符,还是整数或者数组.&lt;/li&gt;
+  &lt;li&gt;if_ref:用来判断该变量是否引用变量&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;并且在初始化zval的时候会直接给refcount和is_ref一个初始值,这也就是声明的变量他得refcount必定为1.&lt;/h4&gt;
+&lt;h4 id=&quot;zvalrefcountisrefrefcount1&quot;&gt;并且在初始化zval的时候会直接给refcount和is_ref一个初始值,这也就是声明的变量他得refcount必定为1.&lt;/h4&gt;
 
 &lt;p&gt;关于zval的定义代码在phpsrc/zend/zend.h文件中&lt;/p&gt;
 
@@ -966,13 +1068,12 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
 &lt;span class=&quot;n&quot;&gt;zend_uchar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_ref__gc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4&gt;zval之value&lt;/h4&gt;
+&lt;h4 id=&quot;zvalvalue&quot;&gt;zval之value&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;zvalue是用来保存实际数值的地方.在内存中划分了一块区域给它.&lt;/li&gt;
-&lt;li&gt;zvalue是一个union&lt;/li&gt;
-&lt;li&gt;
-union是c中得一个联合体.union可以定义多个成员,且多个成员共享一片内存块,一次只能使用一个成员,当其中一个成员被赋值时会覆盖其他成员的值.&lt;/li&gt;
+  &lt;li&gt;zvalue是用来保存实际数值的地方.在内存中划分了一块区域给它.&lt;/li&gt;
+  &lt;li&gt;zvalue是一个union&lt;/li&gt;
+  &lt;li&gt;union是c中得一个联合体.union可以定义多个成员,且多个成员共享一片内存块,一次只能使用一个成员,当其中一个成员被赋值时会覆盖其他成员的值.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt;
@@ -994,20 +1095,22 @@ union是c中得一个联合体.union可以定义多个成员,且多个成员共�
 
 &lt;p&gt;多个成员变量公用一块内存.因此其他得变量值会被最后一个被赋值的变量值覆盖.关于union和struct的不同,大家自行gg,php使用union比使用struct节省很多内存,php是不是比你想的要聪明?&lt;/p&gt;
 
-&lt;h4&gt;zval之refcount&lt;/h4&gt;
+&lt;h4 id=&quot;zvalrefcount&quot;&gt;zval之refcount&lt;/h4&gt;
 
 &lt;p&gt;refcount被称为引用计数.当这个变量对应内存中得值被其他变量所引用时,该值+1.
-例如当&lt;code&gt;$a = 1; $b = $a;&lt;/code&gt;那么此时&lt;code&gt;refcount = 2&lt;/code&gt;&lt;/p&gt;
+例如当&lt;code&gt;$a = 1; $b = $a; &lt;/code&gt;那么此时&lt;code&gt;refcount = 2&lt;/code&gt;
+#####下面结合代码来理解&lt;/p&gt;
 
-&lt;h5&gt;下面结合代码来理解&lt;/h5&gt;
+&lt;p&gt;debug_zval_dump()是zend自带得php方法,可以查看refcount值,但是显示的信息不够完整.&lt;/p&gt;
 
-&lt;p&gt;debug&lt;em&gt;zval&lt;/em&gt;dump()是zend自带得php方法,可以查看refcount值,但是显示的信息不够完整.&lt;/p&gt;
+&lt;p&gt;当你声明一个变量时,他得refcount是为1得.建议大家装个xdebug去查看.xdebug中提供了一系列得方法.xdebug_debug_zval可以查看refcount,以及is_ref的值.&lt;/p&gt;
 
-&lt;p&gt;当你声明一个变量时,他得refcount是为1得.建议大家装个xdebug去查看.xdebug中提供了一系列得方法.xdebug&lt;em&gt;debug&lt;/em&gt;zval可以查看refcount,以及is_ref的值.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;debug_zval_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;输出结果:string(1) &amp;quot;a&amp;quot; refcount(1)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ruby
+$a = 1;
+debug_zval_dump(&#39;a&#39;);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;输出结果:string(1) “a” refcount(1)&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;xdebug_debug_zval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1067,8 +1170,8 @@ union是c中得一个联合体.union可以定义多个成员,且多个成员共�
 &lt;span class=&quot;n&quot;&gt;xdebug_debug_zval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;输出结果:
-a: (refcount=1, is&lt;em&gt;ref=0)=&amp;#39;mingxin&amp;#39;
-b: (refcount=1, is&lt;/em&gt;ref=0)=&amp;#39;other str&amp;#39;
+a: (refcount=1, is_ref=0)=’mingxin’
+b: (refcount=1, is_ref=0)=’other str’
 当你给$b赋予了新的值得时候,php发现$b指向的zval的refcount是&amp;gt;1的.这个时候就会初始化一个新的zval,并且给予这个新的zval一个初始值,(refcount = 1,is_ref = 0)这个赋予初值在zend.h中,对应的宏如下:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#define INIT_PZVAL(z) \&lt;/span&gt;
@@ -1116,7 +1219,7 @@ phpsrc/zend/zend_types.h文件中记录了关于type的信息&lt;/p&gt;
 &lt;span class=&quot;c1&quot;&gt;#define IS_CONSTANT_ARRAY 9&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#define IS_CALLABLE 10&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;type中存储的是值类型,而真正得值是存放在zvalue中得. 如果zval.type=IS&lt;em&gt;LONG ,那么zval.value就去取lval,如果zval.type=IS&lt;/em&gt;ARRAY,那么zval.value就去取ht.&lt;/p&gt;
+&lt;p&gt;type中存储的是值类型,而真正得值是存放在zvalue中得. 如果zval.type=IS_LONG ,那么zval.value就去取lval,如果zval.type=IS_ARRAY,那么zval.value就去取ht.&lt;/p&gt;
 
 &lt;p&gt;需要注意1: 
 php中并不推荐大家使用&amp;amp;传引用方式. 
@@ -1155,33 +1258,45 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;p&gt;在声明变量的时候,变量都是存放在hashtable中得.而hashtable每次不知道你需要申请的内存有多大,因此他每次都只是申请一部分,当不够用的时候在扩容
 但是当你unset掉变量的时候,因这些变量而扩容的hashtable并没有unset掉.所以有一部分的内存被hashtable占用了&lt;/p&gt;
 
-&lt;p&gt;That&amp;#39;s All.&lt;/p&gt;
+&lt;p&gt;That’s All.&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Mac下安装xdebug</title>
-   <link href="http://www.woowen.com/mac/2014/09/13/Mac%E4%B8%8B%E5%AE%89%E8%A3%85xdebug/"/>
+   <link href="/mac/2014/09/13/Mac%E4%B8%8B%E5%AE%89%E8%A3%85xdebug.html"/>
    <updated>2014-09-13T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/mac/2014/09/13/Mac下安装xdebug</id>
+   <id>/mac/2014/09/13/Mac下安装xdebug</id>
    <content type="html">&lt;p&gt;mac下安装xdebug 总是出错.&lt;/p&gt;
 
 &lt;p&gt;整理下避免以后在遇到&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.cd ~ &amp;amp;&amp;amp; mkdir xdebug&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.cd ~ &amp;amp;&amp;amp; mkdir xdebug&lt;/p&gt;
 
-&lt;p&gt;在当前用户目录下创建一个文件夹用来安放xdebug源文件&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.git clone git://github.com/derickr/xdebug.git&lt;/p&gt;
+    &lt;p&gt;在当前用户目录下创建一个文件夹用来安放xdebug源文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.git clone git://github.com/derickr/xdebug.git&lt;/p&gt;
 
-&lt;p&gt;mac下集成了git工具因此可以直接使用该命令,clone一份xdebug到本地.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.cd xdebug&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;ol&gt;
-&lt;li&gt;/Applications/XAMPP/xamppfiles/bin/phpize&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.make&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;6.sudo cp modules/* /Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20121212/&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;7.vim /Applications/XAMPP/etc/php.ini  在最底下加上这么一段代码&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;mac下集成了git工具因此可以直接使用该命令,clone一份xdebug到本地.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.cd xdebug&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;/Applications/XAMPP/xamppfiles/bin/phpize&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.make&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;6.sudo cp modules/* /Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20121212/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;7.vim /Applications/XAMPP/etc/php.ini  在最底下加上这么一段代码&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;xdebug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
@@ -1194,34 +1309,44 @@ php中并不推荐大家使用&amp;amp;传引用方式.
 &lt;p&gt;如果需要xdebug自动运行.加上xdebug.remote_autostart=1&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;8.然后重启xampp的apache服务器&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;8.然后重启xampp的apache服务器&lt;/p&gt;
 
-&lt;p&gt;sudo /Applications/XAMPP/xamppfiles/xampp stop
-sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;sudo /Applications/XAMPP/xamppfiles/xampp stop
+  sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;查看phpinfo.php文件.找到xdebug&lt;/p&gt;
 
-&lt;h3&gt;注: 这个只针对64位得处理器.mac下怎么查看处理器呢 打开终端.输入uname -a x86_64 显示这个就是64位得了.&lt;/h3&gt;
+&lt;h3 id=&quot;mac-uname--a-x8664-64&quot;&gt;注: 这个只针对64位得处理器.mac下怎么查看处理器呢 打开终端.输入uname -a x86_64 显示这个就是64位得了.&lt;/h3&gt;
 </content>
  </entry>
  
  <entry>
    <title>Linux下生成alias</title>
-   <link href="http://www.woowen.com/linux/2014/09/09/Linux%20alias%20%E6%B0%B8%E4%B9%85%E7%94%9F%E6%95%88/"/>
+   <link href="/linux/2014/09/09/Linux%20alias%20%E6%B0%B8%E4%B9%85%E7%94%9F%E6%95%88.html"/>
    <updated>2014-09-09T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/linux/2014/09/09/Linux alias 永久生效</id>
-   <content type="html">&lt;h4&gt;Linux下得alias 可以用来在终端中设置快捷命令来执行一个操作&lt;/h4&gt;
+   <id>/linux/2014/09/09/Linux alias 永久生效</id>
+   <content type="html">&lt;h4 id=&quot;linuxalias-&quot;&gt;Linux下得alias 可以用来在终端中设置快捷命令来执行一个操作&lt;/h4&gt;
 
-&lt;h4&gt;目录在/etc/bashrc&lt;/h4&gt;
+&lt;h4 id=&quot;etcbashrc&quot;&gt;目录在/etc/bashrc&lt;/h4&gt;
 
 &lt;p&gt;如果你需要增加一个命令.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.vim /etc/bashrc&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.alias 命令=&amp;#39;cd ~/xxx&amp;#39; 将这段代码写入bashrc文件中. &amp;quot;命令&amp;quot;代表的意思就是你想要给你新增的命令什么样的名字.随意,但是不要和系统命令重叠.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.最后不要忘记在加一句,source /etc/bashrc .这样你新增的那个命令才回生效.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.你可以直接在终端中输入alias 来查看现在已有的自定义命令.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.vim /etc/bashrc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.alias 命令=’cd ~/xxx’ 将这段代码写入bashrc文件中. “命令”代表的意思就是你想要给你新增的命令什么样的名字.随意,但是不要和系统命令重叠.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.最后不要忘记在加一句,source /etc/bashrc .这样你新增的那个命令才回生效.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.你可以直接在终端中输入alias 来查看现在已有的自定义命令.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;由于这个是写在/etc/目录下得.所以你自定义的命令别名是永久生效的.当然你也可以写在用户目录下. ~/.bashrc 这样的话只有该用户才能使用这些命令别名&lt;/p&gt;
@@ -1230,9 +1355,9 @@ sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
  
  <entry>
    <title>数据库规范</title>
-   <link href="http://www.woowen.com/mysql/2014/09/01/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/"/>
+   <link href="/mysql/2014/09/01/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83.html"/>
    <updated>2014-09-01T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/mysql/2014/09/01/Mysql数据库设计规范</id>
+   <id>/mysql/2014/09/01/Mysql数据库设计规范</id>
    <content type="html">&lt;p&gt;1.int(&lt;em&gt;)  * 表示字段的显示宽度,无论&lt;/em&gt;多大,都要占用4B.&lt;/p&gt;
 
 &lt;p&gt;2.标识类型字段使用tinyint,不用char,enum.&lt;/p&gt;
@@ -1254,58 +1379,70 @@ sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;10.禁止使用%前缀模糊查询&lt;/p&gt;
 
 &lt;p&gt;11.如果有大得offset,可以先取id在limit,提高效率.&lt;/p&gt;
+
 </content>
  </entry>
  
  <entry>
    <title>Vim折叠,查找快捷键</title>
-   <link href="http://www.woowen.com/%E7%BC%96%E8%BE%91%E5%99%A8/2014/08/28/Vim%E6%8A%98%E5%8F%A0,%E6%9F%A5%E6%89%BE%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+   <link href="/%E7%BC%96%E8%BE%91%E5%99%A8/2014/08/28/Vim%E6%8A%98%E5%8F%A0,%E6%9F%A5%E6%89%BE%E5%BF%AB%E6%8D%B7%E9%94%AE.html"/>
    <updated>2014-08-28T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/%E7%BC%96%E8%BE%91%E5%99%A8/2014/08/28/Vim折叠,查找快捷键</id>
+   <id>/%E7%BC%96%E8%BE%91%E5%99%A8/2014/08/28/Vim折叠,查找快捷键</id>
    <content type="html">&lt;ul&gt;
-&lt;li&gt;zo 打开折叠&lt;/li&gt;
-&lt;li&gt;zc关闭折叠&lt;/li&gt;
-&lt;li&gt;zr一直打开折叠&lt;/li&gt;
+  &lt;li&gt;zo 打开折叠&lt;/li&gt;
+  &lt;li&gt;zc关闭折叠&lt;/li&gt;
+  &lt;li&gt;zr一直打开折叠&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5&gt;全文复制&lt;/h5&gt;
+&lt;h5 id=&quot;section&quot;&gt;全文复制&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;:1,$y&lt;/li&gt;
+  &lt;li&gt;全文复制到剪贴板(用于与其他windows程序交互)&lt;code&gt;ggVG&quot;*y&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;section-1&quot;&gt;全文删除&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;:1,$d&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;section-2&quot;&gt;查找命令&lt;/h5&gt;
 
 &lt;ul&gt;
-&lt;li&gt;:1,$y&lt;/li&gt;
-&lt;li&gt;全文复制到剪贴板(用于与其他windows程序交互)&lt;code&gt;ggVG&amp;quot;*y&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mdfind -name ‘filename’&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;man mdfind 可以查看帮助&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5&gt;全文删除&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;:1,$d&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;查找命令&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;mdfind -name &amp;#39;filename&amp;#39;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;man mdfind 可以查看帮助&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
  </entry>
  
  <entry>
    <title>Php Imagick常用知识</title>
-   <link href="http://www.woowen.com/php/2014/08/10/PHP%20Imagick%20%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/"/>
+   <link href="/php/2014/08/10/PHP%20Imagick%20%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB.html"/>
    <updated>2014-08-10T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/08/10/PHP Imagick 资料汇总</id>
+   <id>/php/2014/08/10/PHP Imagick 资料汇总</id>
    <content type="html">&lt;p&gt;根据公司现有情况,以及需求分析,这个需求使用imagick来做,涉及到的工作量就要相对少一点(例如不用在服务器上装组件,且公司不提倡使用第三方接口,而移动端没有相应得截图工具,他得截图只能截取一屏幕,一屏之外的无法截取.)&lt;/p&gt;
 
-&lt;h3&gt;需求&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;需求&lt;/h3&gt;
 
 &lt;p&gt;当用户分享某个用户到微博的时候,需要将该用户的以下信息合并成一整个图片分享出去&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.用户封面图&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.用户名&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.用户描述(后剔除,因为样式不好看,且部分用户会用字符拼接一个表情,中文字体失效)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.粉丝数目红色显示,第一张twi图,和twi文字&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.用户封面图&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.用户名&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.用户描述(后剔除,因为样式不好看,且部分用户会用字符拼接一个表情,中文字体失效)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.粉丝数目红色显示,第一张twi图,和twi文字&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;最后这个需求正确得思路,应该是&lt;code&gt;html-&amp;gt;pdf-&amp;gt;imgick-&amp;gt;pic&lt;/code&gt;&lt;/p&gt;
@@ -1314,108 +1451,126 @@ sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
 
 &lt;p&gt;嵌套html页面,然后通过接口或者在公司集群安装htmltopdf组件,然后根据html生成了pdf文件,再使用imgick转换并且优化成图片,还可以进行裁剪,压缩等处理.生成你要的图片. 下面主要使用imagick来完成这个需求.避免在集群安装htmltopdf.这样一个不常用的组件.&lt;/p&gt;
 
-&lt;h3&gt;解决思路&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;解决思路&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.由于没有图片得绝对地址,因此通过获取到的相对地址,构造出cdn地址.然后将需要用到的图片通过cdn地址下载到当前服务器下./var/www/html/www.xxx.com/Photo/top/ 类似该目录&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.能够复用的图片尽量放在当前服务器上,减少网络开销,加快程序运行速度.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.图片处理&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.生成大图,保存当前服务器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;5.将图片服务器zupload到FTS,然后返回相对地址&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;6.将新生成的图片cdn地址通过微博接口分享出去.微博自动抓取图片显示&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.由于没有图片得绝对地址,因此通过获取到的相对地址,构造出cdn地址.然后将需要用到的图片通过cdn地址下载到当前服务器下./var/www/html/www.xxx.com/Photo/top/ 类似该目录&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.能够复用的图片尽量放在当前服务器上,减少网络开销,加快程序运行速度.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.图片处理&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.生成大图,保存当前服务器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5.将图片服务器zupload到FTS,然后返回相对地址&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;6.将新生成的图片cdn地址通过微博接口分享出去.微博自动抓取图片显示&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;这边的主要展示图片处理部分&lt;/p&gt;
 
-&lt;h3&gt;常用方法&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;常用方法&lt;/h3&gt;
 
 &lt;p&gt;主要说说比较常用的方法以及遇到的坑,具体的数据获取就不说了.&lt;/p&gt;
 
-&lt;h4&gt;1.新建基础图片&lt;/h4&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$bgColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;white&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$ext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;jpg&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;1.新建基础图片&lt;/h4&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Model_Top_Imagick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;p&gt;```js&lt;/p&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newimage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ImagickPixel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$bgColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;p&gt;public function create($width,$height,$bgColor = ‘white’,$ext = ‘jpg’){&lt;/p&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setimageformat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$ext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;$image = new Model_Top_Imagick();
 
-&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+$image-&amp;gt;newimage($width,$height,new ImagickPixel($bgColor));
 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;2.裁剪图片&lt;/h4&gt;
+$image-&amp;gt;setimageformat($ext);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;return $image;&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;2.裁剪图片&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;crop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$myWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getimagewidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$myWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getimagewidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$myHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getimageheight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$myHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getimageheight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;//只有当图片宽度小于需要的时候才会拉伸图片.高度的话不会拉伸&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//只有当图片宽度小于需要的时候才会拉伸图片.高度的话不会拉伸&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$myWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$myWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thumbnailImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;999&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thumbnailImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;999&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;//$this-&amp;gt;thumbnailImage($width,$height,true);&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//$this-&amp;gt;thumbnailImage($width,$height,true);&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cropImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cropImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;需要注意的是,当原有图片比你需要的图片小,而你需要重新生成缩略图得时候,给高度设置999,然后在使用cropImage裁剪固定尺寸的方法比较好用. thumbnailImage($width,&amp;#39;999&amp;#39;,true); 第三个参数为true表示保持比例进行放大缩小,false表示强制放大缩小,不保持比例.&lt;/p&gt;
+&lt;p&gt;需要注意的是,当原有图片比你需要的图片小,而你需要重新生成缩略图得时候,给高度设置999,然后在使用cropImage裁剪固定尺寸的方法比较好用. thumbnailImage($width,’999’,true); 第三个参数为true表示保持比例进行放大缩小,false表示强制放大缩小,不保持比例.&lt;/p&gt;
 
-&lt;h4&gt;3.添加文字水印&lt;/h4&gt;
+&lt;h4 id=&quot;section-5&quot;&gt;3.添加文字水印&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ImagickDraw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//设置字体&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFont&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//设置字体&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFont&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;under_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTextUnderColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;under_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;under_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTextUnderColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;under_color&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;当你定义文字水印的时候,imagick中需要指定字体,不然会出现乱码&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;uName&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
 
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_size&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#333333&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_color&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#333333&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/var/www/html/www.mogujie.com/public/fonts/fzlt_GBK.TTF&amp;#39;&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;font_path&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/var/www/html/www.mogujie.com/public/fonts/fzlt_GBK.TTF&amp;#39;&lt;/span&gt;
 
-    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//例如这样,指定字体路径&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//例如这样,指定字体路径&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4&gt;4.添加图片&lt;/h4&gt;
+&lt;h4 id=&quot;section-6&quot;&gt;4.添加图片&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setimagecolorspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageColorspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setimagecolorspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageColorspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compositeImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageCompose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compositeImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getImageCompose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;$imageObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;avatar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$imgPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;avatarCircle&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;$imageObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;main&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$imageObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;avatar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;260&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$avatarHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h5&gt;5.圆形图片生成&lt;/h5&gt;
+&lt;h5 id=&quot;section-7&quot;&gt;5.圆形图片生成&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$mask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/var/www/html/www.mogujie.com/Photo/tmp/circle.png&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
@@ -1433,7 +1588,7 @@ sudo /Applications/XAMPP/xamppfiles/xampp start&lt;/p&gt;&lt;/li&gt;
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$outfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$outfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$outfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
@@ -1457,41 +1612,53 @@ https://trovepromo-tf.trove-stg.com/0m1-sd/stackoverflow.com/questions/13795535/
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/8699228/how-to-use-imagick-to-merge-and-mask-images&quot;&gt;http://stackoverflow.com/questions/8699228/how-to-use-imagick-to-merge-and-mask-images&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;注意:这2个文章的demo都是使用png格式的图片,如果你使用的图片是jpg得记得看我上面说的添加一条&lt;code&gt;setimagealphachannel(1);&lt;/code&gt;方法,解决透明色显示默认黑色的问题.&lt;/p&gt;
+
 </content>
  </entry>
  
  <entry>
    <title>php 网站优化</title>
-   <link href="http://www.woowen.com/php/2014/08/01/php%20%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/"/>
+   <link href="/php/2014/08/01/php%20%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96.html"/>
    <updated>2014-08-01T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2014/08/01/php 网站优化</id>
+   <id>/php/2014/08/01/php 网站优化</id>
    <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.在使用echo输出字符串的时候,应该使用逗号分隔,而不是使用连接字符串
-&lt;code&gt;echo &amp;#39;this is slow&amp;#39;.$slow1;&lt;/code&gt;
-&lt;code&gt;echo &amp;#39;this is faster&amp;#39;,$faster;&lt;/code&gt;
-因为当你使用连接符的时候,php引擎会将这个字符串先连接起来再输出,而使用逗号的时候,他会循环顺序输出.当然快点.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.使用双引号来包含变量
-&lt;code&gt;echo &amp;#39;this is slow&amp;#39;.$slow;&lt;/code&gt;
-&lt;code&gt;echo &amp;quot;this is faster $faster&amp;quot;;&lt;/code&gt;
-使用双引号的时候会自动解析双引号中的变量,但是如果你输出的是确定的字符,那么还是用单引号速度会快一点,因为这样就节省了一个解析字符串的过程.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.使用include/require而不是使用include&lt;em&gt;once/require&lt;/em&gt;once
-使用include&lt;em&gt;once/require&lt;/em&gt;once会在引入文件之前先去已加载的文件列表查找是否已经引入,这个过程也是一个资源消耗的过程.
-http://www.laruence.com/2012/09/12/2765.html 这边的文章叙述了为什么不要使用include&lt;em&gt;once/require&lt;/em&gt;once的原因,而且就连php的发明人Rasmus Lerdorf都建议不要使用include&lt;em&gt;once/require&lt;/em&gt;once了&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;4.提前计算循环长度&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.在使用echo输出字符串的时候,应该使用逗号分隔,而不是使用连接字符串
+&lt;code&gt;echo &#39;this is slow&#39;.$slow1;&lt;/code&gt;
+&lt;code&gt;echo &#39;this is faster&#39;,$faster;&lt;/code&gt;
+因为当你使用连接符的时候,php引擎会将这个字符串先连接起来再输出,而使用逗号的时候,他会循环顺序输出.当然快点.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.使用双引号来包含变量
+&lt;code&gt;echo &#39;this is slow&#39;.$slow;&lt;/code&gt;
+&lt;code&gt;echo &quot;this is faster $faster&quot;;&lt;/code&gt;
+使用双引号的时候会自动解析双引号中的变量,但是如果你输出的是确定的字符,那么还是用单引号速度会快一点,因为这样就节省了一个解析字符串的过程.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3.使用include/require而不是使用include_once/require_once
+使用include_once/require_once会在引入文件之前先去已加载的文件列表查找是否已经引入,这个过程也是一个资源消耗的过程.
+http://www.laruence.com/2012/09/12/2765.html 这边的文章叙述了为什么不要使用include_once/require_once的原因,而且就连php的发明人Rasmus Lerdorf都建议不要使用include_once/require_once了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4.提前计算循环长度&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//slow&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$ary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//fast&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//这边就不要在定义什么$count = count($ary);之类的了,这样多声明一个变量,内存就多占用一块&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;```js
+//slow
+$ary = array(1,2,3,4,5);
+for($i = 0;$i &amp;lt;= count($ary);$i++){}&lt;/p&gt;
+
+&lt;p&gt;//fast
+$len = count(array(1,2,3,4,5));//这边就不要在定义什么$count = count($ary);之类的了,这样多声明一个变量,内存就多占用一块
+for($i = 0;$i &amp;lt;= $len;$i++){}
+```&lt;/p&gt;
+
 &lt;p&gt;另外多使用foreach循环,以及使用switch代替if,代码看起来美观易维护&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;5.文件操作
-如果你读取的文件是个只有几KB的小文件的话,那么推荐使用fread()方法,该方法在读取小文件的时候速度好点,而如果你读取的是几MB的文件的话,还是使用file&lt;em&gt;get&lt;/em&gt;contents()吧.效率高.
+  &lt;li&gt;5.文件操作
+如果你读取的文件是个只有几KB的小文件的话,那么推荐使用fread()方法,该方法在读取小文件的时候速度好点,而如果你读取的是几MB的文件的话,还是使用file_get_contents()吧.效率高.
 尽量避免操作文件,就算操作文件函数的效率高,还是没有读取数据库来的方便,效率.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1509,47 +1676,46 @@ opcode 缓存工具:APC,Xcache,eA&lt;/p&gt;
 &lt;p&gt;1.前端优化.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a.减少文件请求数目,减少文件体积,合并css以减少文件请求书,减少筛检css和js代码&lt;/li&gt;
-&lt;li&gt;b.压缩图片,使用GD2函数库或者magicimage来压缩图片,减少图片体积.&lt;/li&gt;
-&lt;li&gt;c.异步加载js,使用do.js,或者在网站的底部才选择去加载js文件.这样不影响访问用户的体验.&lt;/li&gt;
-&lt;li&gt;d.使用flush技术或者ajax技术来分块显示,先将网站的整体的静态部分显示出来,在flush出有数据加载的部分.有测验说用户对于网页显示的平均等待时间是4秒中,如果超过这个时间,你将会失去大量的用户.&lt;/li&gt;
-&lt;li&gt;e.页面静态化,将页面静态化当然是显示最快的,可是如果有动态数据,怎么办?可以使用memcached或者redis缓存技术将页面缓存起来,或者数据缓存,不用去读库,当然这些东西偏后端了.但是你可以将一些显示不多,或者内容更新不频繁的页面静态化,例如公司介绍等等&lt;/li&gt;
-&lt;li&gt;f.避免那些华丽炫目的flash技术,页面显示的内容页做调整.不需要显示很多令人眼花缭乱的内容,有数据显示,2000年美国只有10%的用户会使用下拉条,而现在只有30%的用户会看到三屏以下内容,所以是否有必要为了30%的用户而去影响70%用户的体验么,所以尽量筛检你所要显示的内容.可以使用下拉加载等技术来加载更多的内容&lt;/li&gt;
+  &lt;li&gt;a.减少文件请求数目,减少文件体积,合并css以减少文件请求书,减少筛检css和js代码&lt;/li&gt;
+  &lt;li&gt;b.压缩图片,使用GD2函数库或者magicimage来压缩图片,减少图片体积.&lt;/li&gt;
+  &lt;li&gt;c.异步加载js,使用do.js,或者在网站的底部才选择去加载js文件.这样不影响访问用户的体验.&lt;/li&gt;
+  &lt;li&gt;d.使用flush技术或者ajax技术来分块显示,先将网站的整体的静态部分显示出来,在flush出有数据加载的部分.有测验说用户对于网页显示的平均等待时间是4秒中,如果超过这个时间,你将会失去大量的用户.&lt;/li&gt;
+  &lt;li&gt;e.页面静态化,将页面静态化当然是显示最快的,可是如果有动态数据,怎么办?可以使用memcached或者redis缓存技术将页面缓存起来,或者数据缓存,不用去读库,当然这些东西偏后端了.但是你可以将一些显示不多,或者内容更新不频繁的页面静态化,例如公司介绍等等&lt;/li&gt;
+  &lt;li&gt;f.避免那些华丽炫目的flash技术,页面显示的内容页做调整.不需要显示很多令人眼花缭乱的内容,有数据显示,2000年美国只有10%的用户会使用下拉条,而现在只有30%的用户会看到三屏以下内容,所以是否有必要为了30%的用户而去影响70%用户的体验么,所以尽量筛检你所要显示的内容.可以使用下拉加载等技术来加载更多的内容&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;2.后端优化.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a.php代码优化.&lt;/li&gt;
-&lt;li&gt;b.减少数据库连接,读取数据之后尽快断开数据库连接,避免长连接.&lt;/li&gt;
-&lt;li&gt;c.使用memcached和redis等缓存技术.&lt;/li&gt;
-&lt;li&gt;d.使用APC或者Xcache等opcode缓存技术.&lt;/li&gt;
-&lt;li&gt;e.使用xdebug等测试工具来查看php性能瓶颈.&lt;/li&gt;
-&lt;li&gt;f.避免大数据操作,和文件操作.&lt;/li&gt;
+  &lt;li&gt;a.php代码优化.&lt;/li&gt;
+  &lt;li&gt;b.减少数据库连接,读取数据之后尽快断开数据库连接,避免长连接.&lt;/li&gt;
+  &lt;li&gt;c.使用memcached和redis等缓存技术.&lt;/li&gt;
+  &lt;li&gt;d.使用APC或者Xcache等opcode缓存技术.&lt;/li&gt;
+  &lt;li&gt;e.使用xdebug等测试工具来查看php性能瓶颈.&lt;/li&gt;
+  &lt;li&gt;f.避免大数据操作,和文件操作.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;3.数据库优化&lt;/p&gt;
-
-&lt;h3&gt;网站性能方面,数据库一直都是瓶颈所在.数据库方面的优化可以从几个方面考虑.&lt;/h3&gt;
+&lt;p&gt;3.数据库优化
+###网站性能方面,数据库一直都是瓶颈所在.数据库方面的优化可以从几个方面考虑.&lt;/p&gt;
 
 &lt;p&gt;1.使用其他方式来分担数据库的压力&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a.使用memcached等缓存技术,避免重复读库&lt;/li&gt;
-&lt;li&gt;b.NoSQL虽然还不成熟,但是可以替代大部分数据库功能,使得数据库只是作为一个备份的存在&lt;/li&gt;
+  &lt;li&gt;a.使用memcached等缓存技术,避免重复读库&lt;/li&gt;
+  &lt;li&gt;b.NoSQL虽然还不成熟,但是可以替代大部分数据库功能,使得数据库只是作为一个备份的存在&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;2.数据库本身&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a.数据库本身的配置优化,关于数据库引擎的选择,MyISAM适合频繁使用select的表而InnoDB适合频繁更新的表.MyISAM适合小数据,低并发网站,InnoDB适合大数据高并发.&lt;/li&gt;
-&lt;li&gt;b.优化sql语句,经常使用explain来查看sql语句性能.避免使用join和子查询.能不适用order by的就不使用,创建索引,尽量避免使用&amp;lt;&amp;gt; ,!=,in ,not in这类语句,因为他们不走索引.&lt;/li&gt;
-&lt;li&gt;c.使用存储过程,来代替一部分的sql语句.&lt;/li&gt;
-&lt;li&gt;d.数据库读写分离.数据库分表分库&lt;/li&gt;
-&lt;li&gt;e.数据库集群&lt;/li&gt;
-&lt;li&gt;f.开启数据库慢查询来查找消耗时间长的一些sql语句,来优化他们.&lt;/li&gt;
-&lt;li&gt;g.避免使用mysql类,你可以使用mysqli或者数据抽象层PDO来替代他们.&lt;/li&gt;
-&lt;li&gt;h.避免在sql语句中使用sql内置的那些函数,你可以将那些函数先获取在放入sql语句中执行&lt;/li&gt;
+  &lt;li&gt;a.数据库本身的配置优化,关于数据库引擎的选择,MyISAM适合频繁使用select的表而InnoDB适合频繁更新的表.MyISAM适合小数据,低并发网站,InnoDB适合大数据高并发.&lt;/li&gt;
+  &lt;li&gt;b.优化sql语句,经常使用explain来查看sql语句性能.避免使用join和子查询.能不适用order by的就不使用,创建索引,尽量避免使用&amp;lt;&amp;gt; ,!=,in ,not in这类语句,因为他们不走索引.&lt;/li&gt;
+  &lt;li&gt;c.使用存储过程,来代替一部分的sql语句.&lt;/li&gt;
+  &lt;li&gt;d.数据库读写分离.数据库分表分库&lt;/li&gt;
+  &lt;li&gt;e.数据库集群&lt;/li&gt;
+  &lt;li&gt;f.开启数据库慢查询来查找消耗时间长的一些sql语句,来优化他们.&lt;/li&gt;
+  &lt;li&gt;g.避免使用mysql类,你可以使用mysqli或者数据抽象层PDO来替代他们.&lt;/li&gt;
+  &lt;li&gt;h.避免在sql语句中使用sql内置的那些函数,你可以将那些函数先获取在放入sql语句中执行&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;3.其他&lt;/p&gt;
@@ -1558,6 +1724,7 @@ opcode 缓存工具:APC,Xcache,eA&lt;/p&gt;
 分布式架构做好了.以后pv上去了也就是加加服务器的问题了.这个才是大头&lt;/p&gt;
 
 &lt;p&gt;还有一些个人的建议就是千万别把用户想的太聪明,有一次一个用户打电话来说找不到信息的修改项,后来沟通了发现这个用户不知道那个笔样子的图片就是修改功能.他居然不知道这个是修改,难道非要写上修改2个字才能知道吗.所以用户都是白痴.为什么那些网站那么流行,就因为他设计的够白痴,就拿google首页来说,就一个input框和一个按钮,白痴也知道该怎么做.所以不要拿你的网站性能来添加那些你认为很炫很牛的功能,用户要的只是使用方便,简单易懂就好&lt;/p&gt;
+
 </content>
  </entry>
  
