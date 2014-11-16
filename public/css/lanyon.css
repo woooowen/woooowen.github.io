@@ -688,7 +688,7 @@ background: #000;
 
 .paginator a:hover{
 color: white;
-background: #268bd2;
+background: #000;
 }
 
 /** read more **/
@@ -797,10 +797,8 @@ background: #268bd2;
 
 .read-more-list {
   border-top: solid 1px #bbbbbb;
-  height:4em;
+  
 }
-
-
 .list-item {
   width: 100%;
   text-align: left;
@@ -820,12 +818,13 @@ background: #268bd2;
 
 @media only screen and (min-width: 48em) {
   .list-item {
-    text-align: center;
-    width: 45%;
+    float: left;
+    width: 49%;
+    
+    
   }
   .list-item:nth-child(2) {
-    float:right;
-    text-align: center;
+    text-align: right;
   }
 }
 .icons{
