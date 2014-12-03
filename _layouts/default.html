@@ -22,9 +22,8 @@
           {% for cat in site.categories %}
             <li><a href="categories/#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}" class="tag">{{ cat[0] }}<span>{{ cat[1].size }}</span></a></li>
           {% endfor %}
-          {% endif %}
-        </ul>      
-
+          {% endif %}  
+        </ul>            
       <div class="container content" {% if page.url != '/' %}style="margin-top:2rem"{% endif %}>
         {{ content }}
       </div>
