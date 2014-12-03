@@ -193,7 +193,7 @@
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
 	font-size: 0.9em;
-	color: #bdd0db;
+	color: #000;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
@@ -315,13 +315,13 @@
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: #3594cb;
+		border-bottom-color: #000;
 		top: -20px;
 	}
 
 	.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
 		border-right-color: transparent;
-		border-bottom-color: #6cbfee;
+		border-bottom-color: #000;
 	}
 
 	.cbp_tmtimeline > li .cbp_tmicon {
@@ -331,9 +331,3 @@
 		margin: -55px 5px 0 0px;
 	}	
 }
-
-
-
-
-
-
