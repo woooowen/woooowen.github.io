@@ -1,0 +1,95 @@
+---
+layout: post
+title: swift http 请求封装get,post方法
+category: [Swift]
+tags: [Swift]
+---
+
+一个关于http,post,get请求的方法分享给新手朋友
+
+####代码实现
+```js
+import Foundation
+
+protocol HttpProtocol{
+    func didRecieveResult(result: NSDictionary)
+}
+class HttpController: NSObject{    
+    var delegate: HttpProtocol?    
+    //json get方法
+    func get(url: String){
+        var nsUrl: NSURL = NSURL(string: url)!
+        var request: NSURLRequest = NSURLRequest(URL: nsUrl)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!)->Void in
+            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            self.delegate?.didRecieveResult(jsonResult)            
+        })
+    }
+    
+    //json post方法
+    func post(url: String ,params: NSDictionary){
+        var nsUrl: NSURL = NSURL(string: url)!
+        var request: NSMutableURLRequest = NSMutableURLRequest(URL: nsUrl)
+        request.HTTPMethod = "POST"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        var objStr = ""
+        for(key, value) in params as NSDictionary{
+            if(objStr == ""){
+                objStr += "\(key)=\(value)"
+            }else{
+                objStr += "&\(key)=\(value)"
+            }
+        }
+        let data: NSData = objStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+        request.HTTPBody = data
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {(data, response, error) -> Void in
+            if (error == nil) {                
+                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                self.delegate?.didRecieveResult(jsonResult)
+            }
+        }
+        task.resume()
+    }
+}
+
+```
+
+###在你要用到的class后面加上HttpProtocol,并且类里面要实现didRecieveResult 方法具体如下
+####代码调用
+```js
+
+import UIKit
+class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        webView.delegate = self
+        //get方法调用开始
+        let url = ""
+        eHttp.delegate = self
+        eHttp.get(url)
+        self.setupRefresh()
+        //get方法调用结束
+
+        //post方法调用开始
+        let url = ""
+        let params = ["twitterId" : "13sik"]
+        eHttp.delegate = self
+        eHttp.post(url, params: params)        
+        //调用结束
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }    
+   
+    //json 数据处理
+    func didRecieveResult(result: NSDictionary){    
+        self.tmpCode = result["status"]?["code"] as Int
+        //输出你调用接口的某个键值,并且打印出来
+        println(self.tmpCode)
+    }    
+}
+
+```
+
