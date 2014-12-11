@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-12-09T20:15:45+08:00</updated>
+ <updated>2014-12-11T16:19:48+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -13,11 +13,45 @@
 
  
  <entry>
+   <title>php 浮点运算问题</title>
+   <link href="http://www.woowen.com/php/2014/12/11/php%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E9%97%AE%E9%A2%98/"/>
+   <updated>2014-12-11T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/2014/12/11/php浮点运算问题</id>
+   <content type="html">&lt;h4&gt;php的浮点运算一直是有问题得.&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;example1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//返回的结果并不是8,而是7&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;h4&gt;so use round()&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//返回的结果 = 8&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;example2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//返回结果是false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;h4&gt;so use round()&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Swift 中不用页面之间传值得两种方式</title>
    <link href="http://www.woowen.com/swift/2014/12/09/Swift%E4%B8%AD%E4%B8%8D%E5%90%8C%E9%A1%B5%E9%9D%A2%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E5%80%BC%E5%BE%97%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
    <updated>2014-12-09T00:00:00+08:00</updated>
    <id>http://www.woowen.com/swift/2014/12/09/Swift中不同页面之间传递值得两种方式</id>
-   <content type="html">&lt;h4&gt;应该还有一种通过消息传递,这里就不说了.就说说我觉得比较方便得2种方式&lt;/h4&gt;
+   <content type="html">&lt;h3&gt;Notice: 12-10新增一种通过NSUserDefaults存储的方式传递值,个人觉得比较方便,更新到github上了.&lt;/h3&gt;
+
+&lt;h4&gt;应该还有一种通过消息传递,这里就不说了.就说说我觉得比较方便得2种方式&lt;/h4&gt;
 
 &lt;p&gt;Github demo地址:&lt;a href=&quot;https://github.com/woooowen/swiftSendParamsDemo&quot;&gt;https://github.com/woooowen/swiftSendParamsDemo&lt;/a&gt; 别忘记点个赞 :)&lt;/p&gt;
 

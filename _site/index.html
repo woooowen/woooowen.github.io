@@ -137,7 +137,7 @@
         <ul class="entry-meta inline-list" style="text-align: center;">
         
           
-            <li><a href="categories/#php" title="php" rel="9" class="tag">php<span>9</span></a></li>
+            <li><a href="categories/#php" title="php" rel="10" class="tag">php<span>10</span></a></li>
           
             <li><a href="categories/#编辑器" title="编辑器" rel="1" class="tag">编辑器<span>1</span></a></li>
           
@@ -164,15 +164,34 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/php/2014/12/11/php%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E9%97%AE%E9%A2%98/">
+        php 浮点运算问题
+      </a>
+    </h1>
+    
+    <span class="post-date"><i class="fa fa-clock-o"></i> 2014-12-11</span>
+    php的浮点运算一直是有问题得.
+example1:
+$a = floor((0.1+0.7) * 10);
+//返回的结果并不是8,而是7
+echo $a;
+
+
+
+so use round()...
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/swift/2014/12/09/Swift%E4%B8%AD%E4%B8%8D%E5%90%8C%E9%A1%B5%E9%9D%A2%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E5%80%BC%E5%BE%97%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">
         Swift 中不用页面之间传值得两种方式
       </a>
     </h1>
     
     <span class="post-date"><i class="fa fa-clock-o"></i> 2014-12-09</span>
-    应该还有一种通过消息传递,这里就不说了.就说说我觉得比较方便得2种方式
+    Notice: 12-10新增一种通过NSUserDefaults存储的方式传递值,个人觉得比较方便,更新到github上了.
 
-Github demo地址:https://github.com/woooowen/swiftSendParamsDem...
+应该还有一种通过消息传递,这里就不说了.就说说我觉得比较方便得2...
   </div>
   
   <div class="post">
@@ -223,23 +242,6 @@ $a = &#39;9d9&#39;;
 for ($i = 0; $i &lt...
   </div>
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/php/2014/11/14/php%20array_merge%20%E6%96%B9%E6%B3%95%E8%B7%9F%20+%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        php array_merge方法跟 + 的区别
-      </a>
-    </h1>
-    
-    <span class="post-date"><i class="fa fa-clock-o"></i> 2014-11-14</span>
-    php中合并数组除了可以用到array_merge 方法,还有 + 号
-
-例如:
-$c = array_merge($a,$b);
-$c = $a + $b;
-
-但是说到这2者之间的区别还是有很...
-  </div>
-  
 </div>
 <div id="post-pagination" class="paginator">
       
@@ -271,7 +273,7 @@ $c = $a + $b;
       <a href="/page7">7</a>
       
     
-  (共31篇)
+  (共32篇)
 </div>
 
 <!--div class="pagination">
