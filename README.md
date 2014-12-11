@@ -56,5 +56,8 @@ Jekyll source for my personal blog.
 * 2.去掉不必要得描述,增加相关文章的标题长度,完整的标题能清楚让用户知道是否自己想要的
 * 3.修改分页配色,与主体保持一致
 
+###2014-12-03
+* 添加toDoList
 
+![icon](http://woowen.qiniudn.com/12.png)
 
