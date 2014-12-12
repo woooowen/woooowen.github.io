@@ -4,13 +4,81 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-12-11T16:19:48+08:00</updated>
+ <updated>2014-12-12T14:17:18+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>ios8 xcode6 设置Launch Image 启动图片</title>
+   <link href="http://www.woowen.com/swift/2014/12/12/ios8%E8%AE%BE%E7%BD%AELaunch%20Image%20%E5%90%AF%E5%8A%A8%E5%9B%BE%E7%89%87/"/>
+   <updated>2014-12-12T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/12/12/ios8设置Launch Image 启动图片</id>
+   <content type="html">&lt;h3&gt;如何设置app的启动图,也就是Launch Image?&lt;/h3&gt;
+
+&lt;h4&gt;Step1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.点击Image.xcassets 进入图片管理,然后右击,弹出&amp;quot;New Launch Image&amp;quot;&lt;/li&gt;
+&lt;li&gt;2.如图,右侧的勾选可以让你选择是否要对ipad,横屏,竖屏,以及低版本的ios系统做支持.这边我选了ios8.0,ios7.0,ios6没有做支持.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2014-12-12%2011-38-19.png&quot; alt=&quot;LaunchImage&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Step2&lt;/h4&gt;
+
+&lt;p&gt;将规定尺寸的图片从你的文件中拖动进到固定位置.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;em&gt;系统&lt;/em&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;em&gt;尺寸&lt;/em&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;em&gt;分辨率&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;ios8&lt;/td&gt;&lt;td&gt;Retina HD5.5&lt;/td&gt;&lt;td&gt;1242x2208&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;Retina HD4.7&lt;/td&gt;&lt;td&gt;750x1334&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;Landscape Retina Hd 5.5&lt;/td&gt;&lt;td&gt;2208x1242&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;ios7&lt;/td&gt;&lt;td&gt;   &lt;/td&gt;&lt;td&gt;640x960&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Retina4&lt;/td&gt;&lt;td&gt;640x1136&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;上传完毕,那么基本就快好了.&lt;/p&gt;
+
+&lt;h4&gt;Step3&lt;/h4&gt;
+
+&lt;p&gt;单击你整个项目名称,然后选择General,就是这个.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2014-12-12%2011-44-01.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;重点来了.&lt;/h3&gt;
+
+&lt;p&gt;我完成上面的步骤,且设置了Launch Images Srouce 为LaunchImage,但是启动图片还是不变,后来发现Launch SrceenFile,这个里面设置了,进去看下,你的目录下有个文件叫做LaunchScreen.xib
+打开右侧框,选择这个文件,然后在如图,把Use as launch Srceen取消掉,这个就是你之前一直设置Launch Image不成功的原因&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2014-12-12%2011-49-31.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Step4&lt;/h4&gt;
+
+&lt;h3&gt;Run&lt;/h3&gt;
+
+&lt;p&gt;Launch Image已经更改
+顺便发一张我得Launch Image
+&lt;img src=&quot;http://woowen.qiniudn.com/2014-12-12%2011-54-55.png&quot; alt=&quot;iamge&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;如果你觉得你开启太快,那么漂亮得LaunchImage还没怎么展示就跳过了.你可以在你的第一个加载页面中添加如下代码来延长LaunchImage的显示时间.&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;//Swift code&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//这个是swift得版本的.额,你千万不要自己新增一个方法viewDidLoad哦,你里面有的&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kr&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;NSThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sleepForTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//延长3秒&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
  
  <entry>
    <title>php 浮点运算问题</title>
