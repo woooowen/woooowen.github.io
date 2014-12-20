@@ -4,13 +4,63 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2014-12-12T14:17:18+08:00</updated>
+ <updated>2014-12-21T00:18:37+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>一个用swift编写的开源app</title>
+   <link href="http://www.woowen.com/swift/2014/12/20/Swift%20%E7%BC%96%E5%86%99%E7%9A%84%E4%B8%80%E6%AC%BEapp%E5%BA%94%E7%94%A8/"/>
+   <updated>2014-12-20T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/swift/2014/12/20/Swift 编写的一款app应用</id>
+   <content type="html">&lt;h1&gt;Open-Source Native iPhone App On Swift&lt;/h1&gt;
+
+&lt;h3&gt;项目地址&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/woooowen/Top4Swift&quot;&gt;https://github.com/woooowen/Top4Swift&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;系统&lt;/h3&gt;
+
+&lt;p&gt;Ios 8
+iPhone5s适配&lt;/p&gt;
+
+&lt;h3&gt;项目介绍&lt;/h3&gt;
+
+&lt;p&gt;这个项目是用swift编写的.使用了别人得refresh库&lt;/p&gt;
+
+&lt;h3&gt;主要功能&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导航切换分类&lt;/li&gt;
+&lt;li&gt;tableView&lt;/li&gt;
+&lt;li&gt;上啦刷新,下拉刷新&lt;/li&gt;
+&lt;li&gt;详细页面跳转&lt;/li&gt;
+&lt;li&gt;webView加载,加载图片loading&lt;/li&gt;
+&lt;li&gt;json get post提交&lt;/li&gt;
+&lt;li&gt;图片缓存加载&lt;/li&gt;
+&lt;li&gt;搜索功能&lt;/li&gt;
+&lt;li&gt;collectionView
+等等,针对新手入门朋友的.
+下面几张是app得预览图片&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/2014-12-12%2011-54-55.png&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/LoginImage.png&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/total.gif&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/search.gif&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/app.gif&quot; alt=&quot;icon&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;fork me on github&lt;/h4&gt;
+</content>
+ </entry>
  
  <entry>
    <title>ios8 xcode6 设置Launch Image 启动图片</title>
@@ -567,6 +617,10 @@
 &lt;li&gt;使用 + : 键值不会重置&lt;/li&gt;
 &lt;li&gt;使用 array_merge : 数字键值会从0开始重置,且返回的合并数组的键值排序是按照先数组1,再数组2的次序来的&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4&gt;当error&lt;em&gt;reporting 设置 Notice之上的时候,array&lt;/em&gt;merge函数第一个参数为Null也不会报错,但是确实不会返回任何数据了.&lt;/h4&gt;
+
+&lt;h4&gt;个人开发本地/测试环境还是把error&lt;em&gt;reporting设置成E&lt;/em&gt;ALL吧.&lt;/h4&gt;
 
 &lt;p&gt;岁月蹉跎,遥想当时我来蘑菇街面试的时候,就被问到这个问题了 = , =!!&lt;/p&gt;
 </content>
