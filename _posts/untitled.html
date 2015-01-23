@@ -1,0 +1,232 @@
+<?php
+/**
+ * Project: www.mogujie.com
+ * File: db.php
+ * User: 明心
+ * Date: 15-1-22
+ * Time: 上午11:59
+ * Modify: 上午11:59
+ * Desc: 档期封装数据层
+ */
+class Model_UniSchedule_Db{
+
+    const SCHEDULE_DB = 'UniSchedules';
+    const SELECT_DEFAULT_NUM = 1;
+
+    private  static $_instance;
+    public static function instance() {
+        if (self::$_instance === NULL) {
+            self::$_instance = new self;
+        }
+        return self::$_instance;
+    }
+
+    public function __clone(){}
+
+    private function insert($data){
+        $dao = Model_Uniutil_Db::getWriteDb();
+        $dao->insert($data)
+            ->into(self::SCHEDULE_DB);
+        $insertId = $dao->exec();
+        if($insertId > 0){
+            return $insertId;
+        }
+        return 0;
+    }
+
+    private function update($data,$where){
+        $dao = Model_Uniutil_Db::getWriteDb();
+        $dao->update($data)
+            ->from(self::SCHEDULE_DB)
+            ->where($where)
+            ->limit(1);
+        $rowCount = $dao->exec();
+        return $rowCount > 0 ? true : false;
+    }
+
+    private function delete($id){
+        $dao = Model_Uniutil_Db::getWriteDb();
+        $dao->update(array(
+            'isDeleted =' => 1
+        ))
+            ->from(self::SCHEDULE_DB)
+            ->where(array(
+                'id =' => $id
+            ))
+            ->limit(1);
+        $rowCount = $dao->exec();
+        return $rowCount > 0 ? true : false;
+    }
+
+    private function select($columns,$where,$order,$num = self::SELECT_DEFAULT_NUM){
+        $dao = Model_Uniutil_Db::getReadDb();
+        $dao->select($columns)
+            ->from(self::SCHEDULE_DB)
+            ->where($where)
+            ->orderBy($order)
+            ->limit($num);
+        if($num == 1){
+            $result = $dao->fetchRow();
+        }else{
+            $result = $dao->fetchAll();
+        }
+        return $result;
+    }
+
+    protected function insertData($data){
+
+        if(empty($data)){
+            return 0;
+        }
+        $insertData = array();
+
+        if(empty($data['userId'])){
+            return 0;
+        }
+        $insertData['userId'] = $data['userId'];
+
+        if(empty($data['modelUserId'])){
+            return 0;
+        }
+        $insertData['modelUserId'] = $data['modelUserId'];
+
+        if(empty($data['orderId'])){
+            return 0;
+        }
+        $insertData['orderId'] = $data['orderId'];
+
+        if(empty($data['beginTime'])){
+            return 0;
+        }
+        $insertData['beginTime'] = $data['beginTime'];
+
+        if(empty($data['endTime'])){
+            return 0;
+        }
+        $insertData['endTime'] = $data['endTime'];
+
+        if(!empty($data['status'])){
+            $insertData['status'] = $data['status'];
+        }else{
+            $insertData['status'] = 0;
+        }
+
+        if(!empty($data['isDeleted'])){
+            $insertData['isDeleted'] = $data['isDeleted'];
+        }else{
+            $insertData['isDeleted'] = 0;
+        }
+
+        if(!empty($data['created'])){
+            $insertData['created'] = $data['created'];
+        }else{
+            $insertData['created'] = time();
+        }
+
+        if(!empty($data['note'])){
+            $insertData['note'] = $data['note'];
+        }else{
+            $insertData['note'] = '';
+        }
+
+        if(!empty($data['adminUserId'])){
+            $insertData['adminUserId'] = $data['adminUserId'];
+        }
+
+        if(!empty($data['updated'])){
+            $insertData['update'] = $data['update'];
+        }else{
+            $insertData['update'] = time();
+        }
+        return $this->insert($insertData);
+    }
+
+    protected function updateData($data,$where){
+
+        if(empty($data) || empty($where)){
+            return false;
+        }
+
+        $updateData = array();
+
+        if(!empty($data['userId'])){
+            $updateData['userId ='] = $data['userId'];
+        }
+        if(!empty($data['modelUserId'])){
+            $updateData['modelUserId ='] = $data['modelUserId'];
+        }
+        if(!empty($data['orderId'])){
+            $updateData['orderId ='] = $data['orderId'];
+        }
+        if(!empty($data['beginTime'])){
+            $updateData['beginTime ='] = $data['beginTime'];
+        }
+        if(!empty($data['endTime'])){
+            $updateData['endTime ='] = $data['endTime'];
+        }
+        if(!empty($data['status'])){
+            $updateData['status ='] = $data['status'];
+        }
+        if(!empty($data['isDeleted'])){
+            $updateData['isDeleted ='] = $data['isDeleted'];
+        }
+        if(!empty($data['note'])){
+            $updateData['note ='] = $data['note'];
+        }
+        if(!empty($data['adminUserId'])){
+            $updateData['adminUserId ='] = $data['adminUserId'];
+        }
+        if(!empty($data['updated'])){
+            $updateData['update ='] = $data['update'];
+        }else{
+            $updateData['update ='] = time();
+        }
+        return $this->update($updateData,$where);
+    }
+
+    protected function deleteData($id){
+        if(empty($id)){
+            return false;
+        }
+        return $this->delete($id);
+    }
+
+    protected function selectData($columns,$where,$order,$num){
+        if(empty($columns) || !is_array($columns)){
+            $columns = '*';
+        }
+        if(empty($where)){
+            $where = array(
+                'id >' => 0
+            );
+        }
+        if(empty($order)){
+            $order = array(
+                'id',
+                'DESC',
+            );
+        }
+        $result = $this->select($columns,$where,$order,$num);
+        return $result;
+    }
+
+    protected function selectCountData($columns,$where,$order,$num){
+        if(empty($columns)){
+            $columns = Zpdo_Simple::count($columns,'num');
+        }
+        if(empty($where)){
+            $where = array(
+                'id >' => 0
+            );
+        }
+        if(empty($order)){
+            $order = array(
+                'id',
+                'DESC',
+            );
+        }
+        $result = $this->select($columns,$where,$order,$num);
+        return $result;
+    }
+
+}
