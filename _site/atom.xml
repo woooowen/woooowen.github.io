@@ -4,13 +4,117 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2015-01-31T01:23:28+08:00</updated>
+ <updated>2015-03-31T18:05:00+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>蘑菇街招聘</title>
+   <link href="http://www.woowen.com/php/java/2015/03/31/%E8%98%91%E8%8F%87%E8%A1%97%E6%8B%9B%E8%81%98/"/>
+   <updated>2015-03-31T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/java/2015/03/31/蘑菇街招聘</id>
+   <content type="html">&lt;h5&gt;如果你是从事Java/C/C++/PHP方向的工程师,如果你正在物色新的机会,或者想换个更加年轻活力有前景的环境,请继续往下看.&lt;/h5&gt;
+
+&lt;h5&gt;内推邮件: &lt;a href=&quot;mailto:mingxin@mogujie.com&quot;&gt;mingxin@mogujie.com&lt;/a&gt;&lt;/h5&gt;
+
+&lt;h5&gt;PS:内推成功几率大,且能找我跟进简历进度,欢迎投递简历,跟咨询相关&lt;/h5&gt;
+
+&lt;h3&gt;公司信息&lt;/h3&gt;
+
+&lt;p&gt;公司网站:&lt;a href=&quot;http://www.mogujie.com&quot;&gt;http://www.mogujie.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5&gt;蘑菇街是国内最大的女性时尚消费平台，为爱美的姑娘们提供衣服、鞋子、箱包、配饰和美妆等领域适合年轻女性的商品和搭配、购物分享。成立四年来，蘑菇街注册用户数已突破8500万，移动端月活跃用户超过3500万，在最近一轮的融资中，公司估值约10亿美元。 &lt;/h5&gt;
+
+&lt;h5&gt;2013年底，蘑菇街从导购网站转型为垂直领域的电商交易平台，截至2014年11月，月均交易额已突破3亿元，并已提前完成30亿交易额的全年目标。&lt;/h5&gt;
+
+&lt;h3&gt;公司福利&lt;/h3&gt;
+
+&lt;h5&gt;美女超多,萝莉,御姐都不缺,单身汉来,妥妥给你找到心仪得妹子&lt;/h5&gt;
+
+&lt;h5&gt;我们全员采用Mac笔记本办公&lt;/h5&gt;
+
+&lt;h5&gt;我们办公环境有台球、乒乓球、桌球、Xbox、按摩椅等各种娱乐设施&lt;/h5&gt;
+
+&lt;h5&gt;我们免费提供各式零食、饮料、咖啡、早餐&lt;/h5&gt;
+
+&lt;h5&gt;我们鼓励工程师勇于承担，尝试做不一样的事情&lt;/h5&gt;
+
+&lt;h5&gt;我们有完善的晋升制度、空间&lt;/h5&gt;
+
+&lt;h3&gt;技术挑战&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;大规模web开发（LNMP）&lt;/li&gt;
+&lt;li&gt;高性能服务开发(Java/C++技术体系)&lt;/li&gt;
+&lt;li&gt;大规模数据处理（Hadoop/Storm等）&lt;/li&gt;
+&lt;li&gt;机器学习及自然语言处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;职位&lt;/h3&gt;
+
+&lt;h5&gt;Java/C/C++/PHP等其中一门高级语言，熟悉互联网后端开发技术&lt;/h5&gt;
+
+&lt;h4&gt;PHP开发工程师&lt;/h4&gt;
+
+&lt;p&gt;具体工作职责：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;负责优化维护php kohana框架&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;负责研发php依赖管理、包管理方案&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;负责研究php代码调用分析工具&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;负责研发php相关扩展&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;职位要求：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;深入理解PHP底层运行机制&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;精通Mysql、Redis、Nginx、MVC/REST架构、模板引擎、中间件的原理与应用&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;掌握搜索、消息、缓存、任务、大数据处理者优先考虑&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;掌握应用整体架构、部署、调优手段者优先考虑&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;具备较强的逻辑思维和沟通能力&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;JAVA开发工程师&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;异构系统服务化解决方案&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;注册中心、配置中心&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;高性能消息中间件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据分发总线&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;职位要求：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;精通Java编程，熟悉算法、数据结构、多线程、IO、网络编程等&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;有分布式、高并发系统开发设计经验者优先&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;熟悉rpc、zk、kafka、redis、netty、hadoop、storm者优先&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;有大型分布式、高并发、高负载、高可用系统设计、开发和调优经验&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;有云服务、虚拟化、弹性计算方面经验者优先&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;阅读过开源软件代码，参与过开源项目者优先&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;具有技术钻研精神，追求完美，有较强自驱力&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>温故而知新之PHP手册(3)</title>
+   <link href="http://www.woowen.com/php/2015/02/02/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0%E4%B9%8BPHP%E6%89%8B%E5%86%8C(3)/"/>
+   <updated>2015-02-02T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/php/2015/02/02/温故而知新之PHP手册(3)</id>
+   <content type="html">&lt;p&gt;max&lt;em&gt;input&lt;/em&gt;vars  这个预防的攻击, 就是”通过调用Hash冲突实现各种语言的拒绝服务攻击漏洞”(multiple implementations denial-of-service via hash algorithm collision).
+攻击的原理很简单, 目前很多语言, 使用hash来存储k-v数据, 包括常用的来自用户的POST数据, 攻击者可以通过构造请求头, 并伴随POST大量的特殊的”k”值(根据每个语言的Hash算法不同而定制), 使得语言底层保存POST数据的Hash表因为”冲突”(碰撞)而退化成链表.&lt;/p&gt;
+
+&lt;p&gt;max&lt;em&gt;input&lt;/em&gt;vars - specifies how many GET/POST/COOKIE input variables may be
+    accepted. default value 1000.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;http://www.laruence.com/2011/12/29/2412.html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
  
  <entry>
    <title>温故而知新之PHP手册(2)</title>
@@ -37,6 +141,10 @@
 &lt;ul&gt;
 &lt;li&gt;4.array_unique&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4&gt;评论中也有人说array&lt;em&gt;unique支持不同种类型的去重，而array&lt;/em&gt;keys不支持，感谢指正（thx子天大神），当在同种类型中&lt;/h4&gt;
+
+&lt;p&gt;使用array_keys的确要快很多&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;//php5.5环境&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//使用foreach和array_keys始终比array_unique速度要快 &lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;$max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
@@ -102,7 +210,7 @@
 &lt;code&gt;bool in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] )&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;如果第三个参数 strict 的值为 TRUE 则 in_array() 函数还会检查 needle 的类型是否和 haystack 中的相同。在大量的数组中,将其设置成false能提高效率&lt;/h4&gt;
+&lt;h4&gt;如果第三个参数 strict 的值为 TRUE 则 in_array() 函数还会检查 needle 的类型是否和 haystack 中的相同。在大量的数组中,将其设置成true能提高效率&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;9.array&lt;em&gt;shift 在使用array&lt;/em&gt;shift弹出一个非常大的数组的第一个元素的时候,执行效率会很低.&lt;/li&gt;
@@ -1330,7 +1438,7 @@ similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.
     &lt;span class=&quot;nx&quot;&gt;outputFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;locale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSLocale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localeIdentifier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;shanghai&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//发布时间&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pubTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NSDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timeIntervalSince1970&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myDataSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doubleValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outputFormat1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringFromDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pubTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outputFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringFromDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pubTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//print 2014/10/08 18:22:35&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h5&gt;对于没有Object-c基础的人来说,看Swift真心吃力,希望能帮到其他人.&lt;/h5&gt;
