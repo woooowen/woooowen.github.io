@@ -49,7 +49,7 @@ tags: [Ruby,Linux]
 
 一般安装这个命令的时候中途可能出现依赖缺失.你只需要例如这样得:
 
-```
+```c
 
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
     /usr/local/rvm/rubies/ruby-2.0.0-p643/bin/ruby -r ./siteconf20150422-19711-1x7hpk.rb extconf.rb
@@ -61,7 +61,7 @@ An error occurred while installing nokogiri (1.6.6.2), and Bundler cannot
 continue.
 Make sure that `gem install nokogiri -v '1.6.6.2'` succeeds before bundling.
 
-```c
+```
 #####那么你只需要依次去安装就好了.执行 `gem install nokogiri -v '1.6.6.2' `命令.执行完成之后在继续执行 `gem install bundle`直到解决bundle的安装.
 
 * 3.安装结束之后.安装 jekyll, `gem install jekyll `
