@@ -68,6 +68,18 @@ Make sure that `gem install nokogiri -v '1.6.6.2'` succeeds before bundling.
 
 这个过程一般不会遇到什么问题.最后使用`jekyll -v `来验证安装
 
+####进入目录文件夹,创建Gemfile 文件,然后输入
+
+```c
+source 'http://ruby.taobao.org/'
+gem 'execjs'
+gem 'therubyracer'
+gem 'github-pages'
+
+```
+
+####bundle 会根据Gemfile配置文件自动加载安装相关配置,然后执行`bundle install`
+
 ####最后环境安装结束.创建文件夹.然后进入文件夹,将某个静态项目clone下来.例如本博客的项目
 
 ####git clone https://github.com/woooowen/woooowen.github.io.git
