@@ -1,11 +1,13 @@
 ---
 layout: post
 title: centos 搭建jekyll静态博客
-category: [Ruby]
-tags: [Ruby]
+category: [Ruby,Linux]
+tags: [Ruby,Linux]
 ---
 
-#####话说为什么要使用静态博客,之前我得博客一直是放在github上得..github有一个git-page用来给开源项目构建主页的.主要是使用了jekyll server,但是很多人用来搭建自己的博客.永久免费,而且还能抵挡大流量的攻击(前提是你有那么高流量).所以一直用了下来.但是github前段时间一直不稳定.因此迁移回了国内.这次记录下jekyll server的部署的一个过程.
+#####话说为什么要使用静态博客,wordpress太过臃肿,而且越来越多相对无用的功能,主要想搭建一个专心写博客,不用折腾的环境,之前我得博客一直是放在github上得..github有一个git-page用来给开源项目构建主页的.主要是使用了jekyll server,永久免费,而且还能抵挡大流量的攻击(前提是你有那么高流量).所以一直用了下来.但是github前段时间一直不稳定.因此迁移回了国内.
+
+这次记录下jekyll server的部署的一个过程.
 
 ####环境:
 #####aliyun 服务器, centos 7.0 64位
@@ -59,20 +61,19 @@ An error occurred while installing nokogiri (1.6.6.2), and Bundler cannot
 continue.
 Make sure that `gem install nokogiri -v '1.6.6.2'` succeeds before bundling.
 
-```
+```c
 #####那么你只需要依次去安装就好了.执行 `gem install nokogiri -v '1.6.6.2' `命令.执行完成之后在继续执行 `gem install bundle`直到解决bundle的安装.
 
 * 3.安装结束之后.安装 jekyll, `gem install jekyll `
 
 这个过程一般不会遇到什么问题.最后使用`jekyll -v `来验证安装
 
-最后环境安装结束.创建文件夹.
-然后进入文件夹,将某个静态项目clone下来.例如本博客的项目
+####最后环境安装结束.创建文件夹.然后进入文件夹,将某个静态项目clone下来.例如本博客的项目
 
 ####git clone https://github.com/woooowen/woooowen.github.io.git
 
-clone结束之后.执行命令来开启server服务 `bundle exec jekyll serve`
+#####clone结束之后.执行命令来开启server服务 `bundle exec jekyll serve`
 
-运行成功.访问他给你的提示地址来登录访问.
+#####运行成功.访问他给你的提示地址来登录访问.
 
 that's all .我只记录个大概过程.详细的经过请自己去折腾吧...运维真辛苦..
