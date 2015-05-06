@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2015-03-31T18:05:00+08:00</updated>
+ <updated>2015-05-06T17:38:25+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -13,13 +13,104 @@
 
  
  <entry>
+   <title>centos 搭建jekyll静态博客</title>
+   <link href="http://www.woowen.com/ruby/linux/2015/04/04/centos%20%E6%90%AD%E5%BB%BAjekyll%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+   <updated>2015-04-04T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/ruby/linux/2015/04/04/centos 搭建jekyll静态博客</id>
+   <content type="html">&lt;h5&gt;话说为什么要使用静态博客,wordpress太过臃肿,而且越来越多相对无用的功能,主要想搭建一个专心写博客,不用折腾的环境,之前我得博客一直是放在github上得..github有一个git-page用来给开源项目构建主页的.主要是使用了jekyll server,永久免费,而且还能抵挡大流量的攻击(前提是你有那么高流量).所以一直用了下来.但是github前段时间一直不稳定.因此迁移回了国内.&lt;/h5&gt;
+
+&lt;p&gt;这次记录下jekyll server的部署的一个过程.&lt;/p&gt;
+
+&lt;h4&gt;环境:&lt;/h4&gt;
+
+&lt;h5&gt;aliyun 服务器, centos 7.0 64位&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.安装ruby, 直接使用rvm安装ruby,ruby版本很混乱.所以不要轻易升级..但是一定要安装2.0之后的版本.2.0ruby优化了很多GC方面得东西.提升了不少性能.另外2.0之后会默认安装gem包管理.不用单独再去安装.可以节省很多功夫.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;--- rvm 链接: &lt;a href=&quot;https://www.rvm.io/&quot;&gt;https://www.rvm.io/&lt;/a&gt;
+安装ruby 可以使用 &lt;code&gt;curl -sSL https://get.rvm.io | bash -s stable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;---如果不能下载,请试试这边 &lt;a href=&quot;https://www.rvm.io/rvm/install&quot;&gt;https://www.rvm.io/rvm/install&lt;/a&gt; 应该比较简单易懂了.&lt;/p&gt;
+
+&lt;p&gt;---rvm 安装完毕之后.使用&lt;code&gt;rvm -v&lt;/code&gt;查看是否安装成功&lt;/p&gt;
+
+&lt;h5&gt;题外话: 如果你使用centos 6.x的系统,那么使用&lt;code&gt;yum install -y ruby&lt;/code&gt;最多只能更新到ruby 1.8.x&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2.rvm安装完成之后开始安装ruby默认可以使用版本号来安装.你想要的ruby版本.例如 &lt;code&gt;rvm install 2.1.1&lt;/code&gt;如果使用&lt;code&gt;rvm install ruby&lt;/code&gt; 默认安装最新版&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;---你可以使用&lt;code&gt;rvm list known&lt;/code&gt;来查看所有得资源以及ruby的版本&lt;/p&gt;
+
+&lt;p&gt;---安装完成之后使用&lt;code&gt;rvm list&lt;/code&gt;查看已经安装得包.如果你想安装多个版本的ruby,那么可以直接安装,多版本之间进行切换的话,使用&lt;/p&gt;
+
+&lt;p&gt;---&lt;code&gt;rvm 2.1.1 --default&lt;/code&gt; 来切换.&lt;/p&gt;
+
+&lt;p&gt;---ruby 安装完成之后,使用&lt;code&gt;ruby -v&lt;/code&gt;来验证是否安装成功&lt;/p&gt;
+
+&lt;p&gt;---如果你安装得是2.0.0 或者之后的版本,那么可以直接使用gem包管理.验证gem是否可用.可以使用gem -v 来查看.&lt;/p&gt;
+
+&lt;h4&gt;如果你想要更快速的安装.那么要切换下gem 的源.&lt;/h4&gt;
+
+&lt;p&gt;1.使用gem source list 查看已经拥有的源.你会发现是一个rubygems.org的源.国内安装会很慢.&lt;/p&gt;
+
+&lt;p&gt;2.使用gem source -r https://rubygems.org/  移除这个源&lt;/p&gt;
+
+&lt;p&gt;3.然后使用gem sources -a https://ruby.taobao.org/ 添加淘宝的源&lt;/p&gt;
+
+&lt;p&gt;4.最后使用gem sources -l 查看已经加入的源.&lt;/p&gt;
+
+&lt;p&gt;5.开始安装 gem没有问题.开始安装bundle. 命令: &lt;code&gt;gem install bundle&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;一般安装这个命令的时候中途可能出现依赖缺失.你只需要例如这样得:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;BuildError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Failed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;native&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rubies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p643&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;siteconf20150422&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19711&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x7hpk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extconf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Cannot&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allocate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;memory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rubies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p643&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;siteconf20150422&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19711&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x7hpk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extconf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;Gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remain&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;installed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p643&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.6.6.2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inspection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Results&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logged&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p643&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x86_64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.6.6.2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gem_make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;An&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;occurred&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;installing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nokogiri&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.6.6.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cannot&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Make&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nokogiri&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.6.6.2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;succeeds&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;那么你只需要依次去安装就好了.执行 &lt;code&gt;gem install nokogiri -v &amp;#39;1.6.6.2&amp;#39;&lt;/code&gt;命令.执行完成之后在继续执行 &lt;code&gt;gem install bundle&lt;/code&gt;直到解决bundle的安装.&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3.安装结束之后.安装 jekyll, &lt;code&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这个过程一般不会遇到什么问题.最后使用&lt;code&gt;jekyll -v&lt;/code&gt;来验证安装&lt;/p&gt;
+
+&lt;h4&gt;进入目录文件夹,创建Gemfile 文件,然后输入&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ruby.taobao.org/&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execjs&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;therubyracer&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;bundle 会根据Gemfile配置文件自动加载安装相关配置,然后执行&lt;code&gt;bundle install&lt;/code&gt;&lt;/h4&gt;
+
+&lt;h4&gt;最后环境安装结束.创建文件夹.然后进入文件夹,将某个静态项目clone下来.例如本博客的项目&lt;/h4&gt;
+
+&lt;h4&gt;git clone https://github.com/woooowen/woooowen.github.io.git&lt;/h4&gt;
+
+&lt;h5&gt;clone结束之后.执行命令来开启server服务 &lt;code&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/h5&gt;
+
+&lt;h5&gt;运行成功.访问他给你的提示地址来登录访问.&lt;/h5&gt;
+
+&lt;p&gt;that&amp;#39;s all .我只记录个大概过程.详细的经过请自己去折腾吧...运维真辛苦..&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>蘑菇街招聘</title>
    <link href="http://www.woowen.com/php/java/2015/03/31/%E8%98%91%E8%8F%87%E8%A1%97%E6%8B%9B%E8%81%98/"/>
    <updated>2015-03-31T00:00:00+08:00</updated>
    <id>http://www.woowen.com/php/java/2015/03/31/蘑菇街招聘</id>
    <content type="html">&lt;h5&gt;如果你是从事Java/C/C++/PHP方向的工程师,如果你正在物色新的机会,或者想换个更加年轻活力有前景的环境,请继续往下看.&lt;/h5&gt;
 
-&lt;h5&gt;内推邮件: &lt;a href=&quot;mailto:mingxin@mogujie.com&quot;&gt;mingxin@mogujie.com&lt;/a&gt;&lt;/h5&gt;
+&lt;h5&gt;内推邮件: &lt;a href=&quot;mailto:mingxin@mogujie.com&quot;&gt;mingxin@mogujie.com&lt;/a&gt; , 或者在评论区留下你自己的联系方式 :)&lt;/h5&gt;
 
 &lt;h5&gt;PS:内推成功几率大,且能找我跟进简历进度,欢迎投递简历,跟咨询相关&lt;/h5&gt;
 
@@ -100,20 +191,6 @@
 &lt;li&gt;&lt;p&gt;具有技术钻研精神，追求完美，有较强自驱力&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content>
- </entry>
- 
- <entry>
-   <title>温故而知新之PHP手册(3)</title>
-   <link href="http://www.woowen.com/php/2015/02/02/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0%E4%B9%8BPHP%E6%89%8B%E5%86%8C(3)/"/>
-   <updated>2015-02-02T00:00:00+08:00</updated>
-   <id>http://www.woowen.com/php/2015/02/02/温故而知新之PHP手册(3)</id>
-   <content type="html">&lt;p&gt;max&lt;em&gt;input&lt;/em&gt;vars  这个预防的攻击, 就是”通过调用Hash冲突实现各种语言的拒绝服务攻击漏洞”(multiple implementations denial-of-service via hash algorithm collision).
-攻击的原理很简单, 目前很多语言, 使用hash来存储k-v数据, 包括常用的来自用户的POST数据, 攻击者可以通过构造请求头, 并伴随POST大量的特殊的”k”值(根据每个语言的Hash算法不同而定制), 使得语言底层保存POST数据的Hash表因为”冲突”(碰撞)而退化成链表.&lt;/p&gt;
-
-&lt;p&gt;max&lt;em&gt;input&lt;/em&gt;vars - specifies how many GET/POST/COOKIE input variables may be
-    accepted. default value 1000.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;http://www.laruence.com/2011/12/29/2412.html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  <entry>

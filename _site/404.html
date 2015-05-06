@@ -8,7 +8,7 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <meta name="keywords" content="404: Page not found,php,mysql,swift,javascript,html,linux,woowen博客,blog,woowen">
-  <meta name="description" content="woowen's blog,网络编程,blog,it博客,网络技术,开发技术,移动开发,数据库,linux,php,swift,技术博客,项目管理,吴文的技术博客">
+  <meta name="description" content="woowen's blog,网络编程,blog,it博客,网络技术,开发技术,移动开发,数据库,linux,php,swift,技术博客,项目管理,吴文的技术博客,蘑菇街">
   <meta name="author" content="吴文">
   <title>
     
@@ -16,16 +16,32 @@
     
   </title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/poole.min.css" >
+  <!--link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/poole.min.css" >
   <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/lanyon.min.css">
   <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/pygment.min.css">
   <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/font.min.css">  
   <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/fontawesome.min.css">  
-  <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/timeline.min.css">
+  <link rel="stylesheet" type="text/css" href="http://woowen.qiniudn.com/timeline.min.css"-->
+  <link rel="stylesheet" type="text/css" href="/public/css/poole.min.css" >
+  <link rel="stylesheet" type="text/css" href="/public/css/lanyon.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/pygment.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/font.min.css">  
+  <link rel="stylesheet" type="text/css" href="/public/css/fontawesome.min.css">  
+  <link rel="stylesheet" type="text/css" href="/public/css/timeline.min.css">
   <!-- Icons -->
   <link rel="shortcut icon" href="/public/favicon.ico">
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?87749981b3575ef8d096d28051c568fb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </head>
 
   <body>   
@@ -131,15 +147,14 @@
           <h3 class="masthead-title">
             <a href="/" title="Home">Woooowen</a>
             <small>You can do anything you set your mind to, man</small>
-              <a href="http://www.woowen.com/atom.xml" target="_blank" class="icons" style="margin-left:15px;"><i class="fa fa-rss"></i></a>
+              <a href="/atom.xml" target="_blank" class="icons" style="margin-left:15px;"><i class="fa fa-rss"></i></a>
               <a href="https://github.com/woooowen" target="_blank" class="icons"><i class="fa fa-github"></i></a>
           </h3>          
         </div>        
       </div>      
-      
-        <ul class="entry-meta inline-list" style="text-align: center;">
-          
-        </ul>            
+      <ul class="entry-meta inline-list" style="text-align: center;">
+        
+      </ul>            
       <div class="container content" style="margin-top:2rem">
         <div class="page">
   <h1 class="page-title">404: Page not found</h1>
@@ -149,29 +164,30 @@
 
       </div>
     </div>
+    <div class="masthead" style="border-top: 1px solid #eee;border-bottom: none;text-align: center;">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" style="font-size: 1rem">Woooowen</a>
+            <span style="font-size: 0.7rem; width: 215px;color: #C0C0C0;">
+              浙ICP备15013647号    
+            </span>                      
+          </h3>                    
+        </div>  
+      </div>      
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
         var sidebar = document.querySelector('#sidebar');
         var checkbox = document.querySelector('#sidebar-checkbox');
-
         document.addEventListener('click', function(e) {
           var target = e.target;
-
           if(!checkbox.checked ||
              sidebar.contains(target) ||
              (target === checkbox || target === toggle)) return;
-
           checkbox.checked = false;
         }, false);
       })(document);
-    </script>
-    <!-- 百度统计 -->
-    <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F87749981b3575ef8d096d28051c568fb' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
+    </script>    
   </body>
 </html>

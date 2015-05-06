@@ -16,41 +16,41 @@
           </h3>          
         </div>        
       </div>      
-      
-        <ul class="entry-meta inline-list" style="text-align: center;">
-        {% if page.url == '/' %}
-          {% for cat in site.categories %}
-            <li><a href="categories/#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}" class="tag">{{ cat[0] }}<span>{{ cat[1].size }}</span></a></li>
-          {% endfor %}
-          {% endif %}  
-        </ul>            
+      <ul class="entry-meta inline-list" style="text-align: center;">
+      {% if page.url == '/' %}
+        {% for cat in site.categories %}
+          <li><a href="categories/#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}" class="tag">{{ cat[0] }}<span>{{ cat[1].size }}</span></a></li>
+        {% endfor %}
+        {% endif %}  
+      </ul>            
       <div class="container content" {% if page.url != '/' %}style="margin-top:2rem"{% endif %}>
         {{ content }}
       </div>
     </div>
+    <div class="masthead" style="border-top: 1px solid #eee;border-bottom: none;text-align: center;">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" style="font-size: 1rem">{{ site.title }}</a>
+            <span style="font-size: 0.7rem; width: 215px;color: #C0C0C0;">
+              浙ICP备15013647号    
+            </span>                      
+          </h3>                    
+        </div>  
+      </div>      
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
         var sidebar = document.querySelector('#sidebar');
         var checkbox = document.querySelector('#sidebar-checkbox');
-
         document.addEventListener('click', function(e) {
           var target = e.target;
-
           if(!checkbox.checked ||
              sidebar.contains(target) ||
              (target === checkbox || target === toggle)) return;
-
           checkbox.checked = false;
         }, false);
       })(document);
-    </script>
-    <!-- 百度统计 -->
-    <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F87749981b3575ef8d096d28051c568fb' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
+    </script>    
   </body>
 </html>
