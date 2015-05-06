@@ -17,15 +17,10 @@ class Woowen{
 	private age = 25;
 	
 	public static function code(){		
+
 		echo 'Hello world';
+		
 	}
 
-	public function PalyHandGun(){
-		echo 'o|o';
-	}
-
-	public function PushBullB(){
-		return '呵呵';
-	}
 }
 {% endhighlight %}
