@@ -59,5 +59,6 @@ Jekyll source for my personal blog.
 ###2014-12-03
 * 添加toDoList
 
-![icon](http://woowen.qiniudn.com/12.png)
+###2015-5-6
+* 添加底部备案信息
 
