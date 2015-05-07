@@ -1,0 +1,50 @@
+---
+layout: post
+title: Vim & Shell 终极配置
+category: [Vim,Shell]
+tags: [Vim,Shell]
+---
+
+####这2个配置应该能够满足99%的需求了
+
+###Shell配置
+
+地址: <http://ohmyz.sh/> 
+
+github:  <https://github.com/robbyrussell/oh-my-zsh/>
+
+#####图片示例
+
+![img](http://woowen.qiniudn.com/shell.png)
+
+#####修改主题
+
+* 1.<https://github.com/robbyrussell/oh-my-zsh/wiki/Themes> 查找自己喜欢的主题
+* 2.```vim ~/.zshrc``` 将里面得ZSH_THEME属性修改为上面页面中得主题名称
+* 3.重启终端,完成修改
+
+#####如果你想要将原来的配置迁移过来,只需要将你的配置代码复制到.zshrc文件底部,就会生效
+
+###Vim配置
+
+地址: <http://vim.spf13.com/>
+
+github: <https://github.com/spf13/spf13-vim>
+
+这个vim 配置默认会安装个插件 "neocomplete" 需要 Vim 7.3.885 or later
+如果你想要使用这个插件,那么需要升级你的vim版本
+如果你不想使用这个插件或者不想升级你的vim
+
+####Vim 升级
+mac下直接```brew reinstall vim ```即可安装最新的7.4 版本,安装完成之后使用```vim --version ```查看版本号
+
+####Vim去掉"neocomplete" 插件
+打开```vim ~/.vimrc.bundles``` 将neocomplete的相关代码干掉.然后就可以了.如果还不行,打开vim执行 ```:BundleClean```
+
+####Vim自定义配色方案 
+
+地址: <http://bytefluent.com/vivify/>
+
+#####图片示例
+
+![img](http://woowen.qiniudn.com/vim.png)

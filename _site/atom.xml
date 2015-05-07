@@ -4,13 +4,68 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2015-05-06T17:45:55+08:00</updated>
+ <updated>2015-05-07T18:49:14+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Vim & Shell 终极配置</title>
+   <link href="http://www.woowen.com/vim/shell/2015/05/07/Vim%20&%20Shell%20%E5%A4%A7%E6%9D%80%E5%99%A8/"/>
+   <updated>2015-05-07T00:00:00+08:00</updated>
+   <id>http://www.woowen.com/vim/shell/2015/05/07/Vim & Shell 大杀器</id>
+   <content type="html">&lt;h4&gt;这2个配置应该能够满足99%的需求了&lt;/h4&gt;
+
+&lt;h3&gt;Shell配置&lt;/h3&gt;
+
+&lt;p&gt;地址: &lt;a href=&quot;http://ohmyz.sh/&quot;&gt;http://ohmyz.sh/&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;github:  &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/&quot;&gt;https://github.com/robbyrussell/oh-my-zsh/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5&gt;图片示例&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/shell.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+
+&lt;h5&gt;修改主题&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&quot;&gt;https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&lt;/a&gt; 查找自己喜欢的主题&lt;/li&gt;
+&lt;li&gt;2.&lt;code&gt;vim ~/.zshrc&lt;/code&gt; 将里面得ZSH_THEME属性修改为上面页面中得主题名称&lt;/li&gt;
+&lt;li&gt;3.重启终端,完成修改&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;如果你想要将原来的配置迁移过来,只需要将你的配置代码复制到.zshrc文件底部,就会生效&lt;/h5&gt;
+
+&lt;h3&gt;Vim配置&lt;/h3&gt;
+
+&lt;p&gt;地址: &lt;a href=&quot;http://vim.spf13.com/&quot;&gt;http://vim.spf13.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;github: &lt;a href=&quot;https://github.com/spf13/spf13-vim&quot;&gt;https://github.com/spf13/spf13-vim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个vim 配置默认会安装个插件 &amp;quot;neocomplete&amp;quot; 需要 Vim 7.3.885 or later
+如果你想要使用这个插件,那么需要升级你的vim版本
+如果你不想使用这个插件或者不想升级你的vim&lt;/p&gt;
+
+&lt;h4&gt;Vim 升级&lt;/h4&gt;
+
+&lt;p&gt;mac下直接&lt;code&gt;brew reinstall vim&lt;/code&gt;即可安装最新的7.4 版本,安装完成之后使用&lt;code&gt;vim --version&lt;/code&gt;查看版本号&lt;/p&gt;
+
+&lt;h4&gt;Vim去掉&amp;quot;neocomplete&amp;quot; 插件&lt;/h4&gt;
+
+&lt;p&gt;打开&lt;code&gt;vim ~/.vimrc.bundles&lt;/code&gt; 将neocomplete的相关代码干掉.然后就可以了.如果还不行,打开vim执行 &lt;code&gt;:BundleClean&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4&gt;Vim自定义配色方案&lt;/h4&gt;
+
+&lt;p&gt;地址: &lt;a href=&quot;http://bytefluent.com/vivify/&quot;&gt;http://bytefluent.com/vivify/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5&gt;图片示例&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://woowen.qiniudn.com/vim.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>centos 搭建jekyll静态博客</title>
