@@ -13,9 +13,6 @@
 
  
  <entry>
-<<<<<<< HEAD
-   <title>Vim  Shell 终极配置</title>
-=======
    <title>温故而知新之PHP手册(3)</title>
    <link href="http://www.woowen.com/php/2015/05/08/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0%E4%B9%8BPHP%E6%89%8B%E5%86%8C(3)/"/>
    <updated>2015-05-08T00:00:00+08:00</updated>
@@ -136,12 +133,7 @@
  </entry>
  
  <entry>
-<<<<<<< HEAD
-   <title>Vim配置和Shell 终极配置</title>
-=======
-   <title>Vim & Shell 终极配置</title>
->>>>>>> b8eaffce3890af425aed33c5a16d109722e6bf14
->>>>>>> fef15f4954dee3a1ace48dbba01e1d85e68380a9
+   <title>Vim配置和Shell 终极配置</title>  
    <link href="http://www.woowen.com/vim/shell/2015/05/07/Vim%E9%85%8D%E7%BD%AE%E5%92%8CShell%E9%85%8D%E7%BD%AE%E5%A4%A7%E6%9D%80%E5%99%A8/"/>
    <updated>2015-05-07T00:00:00+08:00</updated>
    <id>http://www.woowen.com/vim/shell/2015/05/07/Vim配置和Shell配置大杀器</id>
