@@ -4,7 +4,7 @@
  <title>Woooowen</title>
  <link href="http://www.woowen.com/atom.xml" rel="self"/>
  <link href="http://www.woowen.com/"/>
- <updated>2015-05-15T18:07:48+08:00</updated>
+ <updated>2015-05-15T18:16:49+08:00</updated>
  <id>http://www.woowen.com</id>
  <author>
    <name></name>
@@ -195,6 +195,8 @@
    <content type="html">&lt;h5&gt;话说为什么要使用静态博客,wordpress太过臃肿,而且越来越多相对无用的功能,主要想搭建一个专心写博客,不用折腾的环境,之前我得博客一直是放在github上得..github有一个git-page用来给开源项目构建主页的.主要是使用了jekyll server,永久免费,而且还能抵挡大流量的攻击(前提是你有那么高流量).所以一直用了下来.但是github前段时间一直不稳定.因此迁移回了国内.&lt;/h5&gt;
 
 &lt;p&gt;这次记录下jekyll server的部署的一个过程.&lt;/p&gt;
+
+&lt;h4&gt;其他静态博客框架可以查看这个地址&lt;a href=&quot;https://www.staticgen.com/&quot;&gt;https://www.staticgen.com/&lt;/a&gt;&lt;/h4&gt;
 
 &lt;h4&gt;环境:&lt;/h4&gt;
 

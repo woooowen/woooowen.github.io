@@ -9,6 +9,8 @@ tags: [Ruby,Linux]
 
 这次记录下jekyll server的部署的一个过程.
 
+#### 其他静态博客框架可以查看这个地址<https://www.staticgen.com/>
+
 ####环境:
 #####aliyun 服务器, centos 7.0 64位
 
