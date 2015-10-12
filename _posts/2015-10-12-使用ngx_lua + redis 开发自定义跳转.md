@@ -24,7 +24,7 @@ tags: [Lua,redis]
 
 2.在ngxin 的配置文件中,运行lua脚本.
 
-```shell
+```js
 	-- nginx.conf
  	server {
         listen       80;
