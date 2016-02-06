@@ -9,7 +9,7 @@ tags: [Vim,Shell]
 
 ###Shell配置
 
-地址: <http://ohmyz.sh/> 
+地址: <http://ohmyz.sh/>
 
 github:  <https://github.com/robbyrussell/oh-my-zsh/>
 
@@ -41,7 +41,7 @@ mac下直接```brew reinstall vim ```即可安装最新的7.4 版本,安装完�
 ####Vim去掉"neocomplete" 插件
 打开```vim ~/.vimrc.bundles``` 将neocomplete的相关代码干掉.然后就可以了.如果还不行,打开vim执行 ```:BundleClean```
 
-####Vim自定义配色方案 
+####Vim自定义配色方案
 
 地址: <http://bytefluent.com/vivify/>
 
