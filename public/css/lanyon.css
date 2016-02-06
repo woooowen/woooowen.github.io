@@ -305,6 +305,9 @@ a.sidebar-nav-item:focus {
 .post {
   margin-bottom: 4em;
 }
+.post p{
+  font-size: 18px;
+}
 
 /* Blog post or page title */
 .page-title,
@@ -592,7 +595,7 @@ a.pagination-item:hover {
 
 .entry-meta .tag:hover {
   background-color: #268bd2;
-  color: #FFFFFF;  
+  color: #FFFFFF;
 }
 
 .entry-meta .tag:active {
@@ -665,7 +668,7 @@ article {
 }
 
 /** 分页 **/
-.paginator {  
+.paginator {
 font: 20px Arial,Helvetica,sans-serif;
 color: #AAA;
 margin: 20px 0;
@@ -706,7 +709,7 @@ background: #000;
   box-shadow: 0 0 0 1px rgba(187, 187, 187, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 10px 0 #cfcfcf;
   box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
-  
+
 }
 
 
@@ -797,7 +800,7 @@ background: #000;
 
 .read-more-list {
   border-top: solid 1px #bbbbbb;
-  
+
 }
 .list-item {
   width: 100%;
@@ -820,8 +823,8 @@ background: #000;
   .list-item {
     float: left;
     width: 49%;
-    
-    
+
+
   }
   .list-item:nth-child(2) {
     text-align: right;
