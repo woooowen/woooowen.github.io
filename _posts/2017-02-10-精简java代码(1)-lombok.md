@@ -75,7 +75,6 @@ fluent = true,chain = true
 ``` t.getLog() -> t.log() ```
 ``` t.setLog(String) -> t.log(String) ```
 
-
 当chain为false时,返回值类型为void
 
 还有个prefix,用处不大,当设置了prefix的字段才会有set/get前缀
@@ -83,6 +82,7 @@ fluent = true,chain = true
 
 `@Build` 自动生成一系列的构造方法,平时很少用到
 
+##### 其他还有诸如`Cleanup`,`SneakyThrows` 等常用的,网上的相关博客也很多,这边主要是简单介绍下,感兴趣的可以自己去深入研究下
 
 关于是否要使用lombok,下面这个链接中的讨论,大家自己见仁见智
 http://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok
