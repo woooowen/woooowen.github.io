@@ -25,6 +25,7 @@ private static final int tableSizeFor(int c) {
     return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 }
 ```
+
 #### 主要看下为什么ConcurrentHashMap是线程安全的,如何实现的
 
 类中大量使用了volatile关键字,定义volatile变量,他可以保证该变量对每个线程的可见性,就是保证每个线程看到volatile的值都是一样的.
@@ -34,6 +35,7 @@ private static final int tableSizeFor(int c) {
 * 3.他每次更新的时候会调用JNI,也就是本地方法,其实就是CPU级别的CAS方法去更新这个值来保证他的原子性,具体的后面再说,先了解这么多就行了
 
 ```JAVA
+
 final V putVal(K key, V value, boolean onlyIfAbsent) {
     if (key == null || value == null) throw new NullPointerException();
     int hash = spread(key.hashCode());
@@ -49,6 +51,7 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
         }
         else if ((fh = f.hash) == MOVED)
             tab = helpTransfer(tab, f);
+
         else {
             V oldVal = null;
             synchronized (f) {
@@ -97,15 +100,21 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
     addCount(1L, binCount);
     return null;
 }
+
 ```
+
 使用了synchronized来保证线程的安全,需要注意的是,他的基本实现其实跟HashMap是差不多的.当binCount >= 8的时候,也会转换成红黑树,增加性能
+
 ```JAVA
+
 static class Segment<K,V> extends ReentrantLock implements Serializable {
     private static final long serialVersionUID = 2249069246763182397L;
     final float loadFactor;
     Segment(float lf) { this.loadFactor = lf; }
 }
+
 ```
+
 在1.8之前的版本中,ConcurrentHashMap使用分段锁Segment来保证并发情况下的线程安全,但是在1.8的时候已经剔除了.只保留了一些初始化工作,为了保证向前兼容,网上的很多资料还停留在之前的版本,这个需要注意.
 这可能也跟synchronized在后面的几个版本的优化有关,现在的synchroinized锁性能以及比ReentrantLock要好了很多.synchronized在更多的时候能保持一个更平衡的性能
 #### 各种锁性能对比
