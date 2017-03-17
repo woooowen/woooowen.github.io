@@ -132,10 +132,23 @@ static class Segment<K,V> extends ReentrantLock implements Serializable {
 
 可见,synchronized在各个场景下的性能都比较平衡,且他是在jvm中实现的.未来版本肯定也是优先去优化这个关键字的,因此还是推荐使用他更多一些
 所以ConcurrentHashMap保证线程安全的几个要素
+
 * 1.volatile变量
 * 2.synchronized同步块
 * 3.Unsafe方法中的cas JNI方法,这个方法在初始化以及原子自增的时候会用到.
-比如下么的代码
+
+一般cas的意思就是,当老的值跟我预期的值一样,那么久讲老的值更新为新的值
+
+比如下面的代码
+当SIZECTL的值跟我现在的一样,那么就将sc的新值赋值给他,至于后面的-1,应该是JNI参数相关的,毕竟是本地的方法,也只能通过反编译来看到源码
+然而..我看到的定义是这个.
+
+```JAVA
+
+	public final native boolean compareAndSwapInt(Object var1, long var2, int var4, int var5);
+	// 看来大牛也为变量命名而头疼
+
+```
 
 ```JAVA
 private final Node<K,V>[] initTable() {
@@ -144,6 +157,7 @@ private final Node<K,V>[] initTable() {
         if ((sc = sizeCtl) < 0)
             Thread.yield(); // lost initialization race; just spin
         else if (U.compareAndSwapInt(this, SIZECTL, sc, -1)) {
+        // 用unsafe的cas方法来原子性的给SIZECTL赋值
             try {
                 if ((tab = table) == null || tab.length == 0) {
                     int n = (sc > 0) ? sc : DEFAULT_CAPACITY;
