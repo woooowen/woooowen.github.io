@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HashMap
+title: JAVA8 HashMap
 category: [JAVA]
 tags: [JAVA]
 ---
