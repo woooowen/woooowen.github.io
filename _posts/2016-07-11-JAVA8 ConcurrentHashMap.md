@@ -216,6 +216,8 @@ private final void addCount(long x, int check) {
 ```
 
 ####参考
+
 java8环境下各种锁对比
-http://blog.takipi.com/java-8-stampedlocks-vs-readwritelocks-and-synchronized/
+
+<http://blog.takipi.com/java-8-stampedlocks-vs-readwritelocks-and-synchronized/>
 

@@ -98,6 +98,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     return null;
 }
 ```
+```
 
 * 1.先检查,该key,该value是否已经包含在map中,并且检查原map中是否有值,如果没有,那么直接生成一个node给他.因为他是第一个元素嘛.
 * 2.如果这个该key以及存在一个node,那么直接将新的node赋值给他,替换掉原来的node
