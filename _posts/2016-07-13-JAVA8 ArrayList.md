@@ -96,6 +96,35 @@ public E remove(int index) {
 ##### 通过上面的add以及remove可以了解到,ArrayList的新增删除方法跟HashMap那种链表结构不一样,他每次都需要通过新增一个数组然后将修改(新增或者删除)之后的结构复制到新的数组中去,因此ArrayList的add和remove方法并不高效,特别是针对非常大的数组的情况下
 
 ![](http://pic.woowen.com/arraylistimg.png)
-针对上面的情况,我突然想到,如果塞入一个非常大的ArrayList,那么他肯定是一直去扩容,就会照成很多临时的array,必然会很频繁的触发GC,然后我就简单测试了一下,结果验证了我的想法,下图可以看到,该进程一直在执行young gc,以及fullgc,光是用于gc的时间就话费了50多秒
+针对上面的情况,我突然想到,如果塞入一个非常大的ArrayList,那么他肯定是一直去扩容,就会照成很多临时的array,必然会很频繁的触发GC,然后我就简单测试了一下,结果验证了我的想法,下图可以看到,该进程一直在执行young gc,以及fullgc,光是用于gc的时间就花费了50多秒
 
 #### 因此避免使用ArrayList存放大量的数据,如果有,那么事先设置ensureCapacity参数,提高性能
+
+测试代码
+
+```JAVA
+    ArrayList<Integer> l1 = new ArrayList<Integer>();
+    long startTime = System.currentTimeMillis();
+    for (int i = 0; i <= 999999; i++){
+        l1.add(i);
+    }
+    long endTime = System.currentTimeMillis();
+    System.out.println(endTime - startTime);
+
+
+    ArrayList<Integer> l2 = new ArrayList<Integer>();
+    l2.ensureCapacity(1000000);
+    long startTime1 = System.currentTimeMillis();
+    for (int i = 999999; i >= 0; i--){
+        l2.add(i);
+    }
+    long endTime1 = System.currentTimeMillis();
+    System.out.println(endTime1 - startTime1);
+    // 输出 42   23
+
+    // 当i的值再*10
+    // 输出 2115   812
+
+```    
+
+#### 可以看到加了扩容之后性能提高了一倍左右
