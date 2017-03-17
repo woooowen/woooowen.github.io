@@ -7,14 +7,12 @@ title: 关于
 class Woowen{
 
 	private name = '吴文';		
-	private job = 'PHP Programmer';
+	private job = 'JAVA Programmer';
 	private centralManagerialSkill = 'PHP,Mysql,HTML,JS,Redis,Memcache,Linux,Swift,JAVA,Python,Go';
 	private mail = 'woooowen@gmail.com';
 	private github = 'https://github.com/woooowen';
-	private qq = '442148342';
-	private company = '蘑菇街';
+	private qq = '442148342';	
 	private sex = 1;
-	private age = 25;
 	
 	public static function code(){		
 

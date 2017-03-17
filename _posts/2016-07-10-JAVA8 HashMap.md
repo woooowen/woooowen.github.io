@@ -4,7 +4,6 @@ title: JAVA8 HashMap
 category: [JAVA]
 tags: [JAVA]
 ---
-### HashMap
 
 * 1.HashMap实现了Map的接口,运行Null的key和value
 * 2.跟HashTable差不多,但是非线程安全,以及允许Null值
