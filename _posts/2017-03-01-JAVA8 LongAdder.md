@@ -41,6 +41,7 @@ tags: [JAVA]
  final void longAccumulate(long x, LongBinaryOperator fn,
                               boolean wasUncontended) {
         int h;
+        // 如果probe为0,那么初始化一个ThreadLocalRandom线程,因为这个线程在初始化的时候threadLocalRandomProbe字段必然是有值的
         if ((h = getProbe()) == 0) {
         	// 提前初始化h的值,获取当前线程的probe值,实际上他就是一个hashcode
             ThreadLocalRandom.current(); // force initialization
@@ -143,7 +144,7 @@ tags: [JAVA]
 	static final int getProbe() {
         return UNSAFE.getInt(Thread.currentThread(), PROBE);
     }
-
+    // 初始化的时候,利用反射,去获取threadLocalRandomProbe的值
     static {
         try {
             UNSAFE = sun.misc.Unsafe.getUnsafe();
