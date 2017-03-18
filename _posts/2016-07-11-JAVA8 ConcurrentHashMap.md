@@ -140,8 +140,8 @@ static class Segment<K,V> extends ReentrantLock implements Serializable {
 一般cas的意思就是,当老的值跟我预期的值一样,那么久讲老的值更新为新的值
 
 比如下面的代码
-当SIZECTL的值跟我现在的一样,那么就将sc的新值赋值给他,至于后面的-1,应该是JNI参数相关的,毕竟是本地的方法,也只能通过反编译来看到源码
-然而..我看到的定义是这个.
+
+当SIZECTL的值(老的值)跟新给的sc一样,那么就将-1赋值给SIZECTL
 
 ```JAVA
 
