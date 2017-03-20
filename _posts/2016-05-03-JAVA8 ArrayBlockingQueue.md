@@ -140,7 +140,7 @@ public boolean remove(Object o) {
     }
 }
 
-public void remove() {    
+public void remove() {
     final ReentrantLock lock = ArrayBlockingQueue.this.lock;
     lock.lock();
     try {
@@ -173,3 +173,5 @@ public void remove() {
 * 2.线程的阻塞锁就是ReentrantLock,独占可重入锁
 * 3.初始定义一个数组用来做队列,这个队列的长度是不可变的
 * 4.LinkedBlockingQueue跟ArrayBlockingQueue的区别就是,每次插入队列的时候都会动态变化队列的size,而ArrayBlockingQueue是不会变化的数组
+* 5.LinkedBlockingQueue初始可以设置队列的大小,如果没有设置,那么默认是Integer.MAX_VALUE,如果生产者的速度大于消费者,那么可能队列一直增长,内存消耗的厉害
+
