@@ -153,11 +153,8 @@ printcompilation 虚拟机静态方法
 
 ![](http://pic.woowen.com/metacapacity.png)
 
-#### gcutil 
 
-#### printcompilation 
-
-上面大部分都是重复的
+#### Example
 
 ```jstat -gcold 24212 2000 10```
 
