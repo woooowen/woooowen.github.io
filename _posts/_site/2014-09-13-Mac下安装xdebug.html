@@ -1,0 +1,53 @@
+<p>mac下安装xdebug 总是出错.</p>
+
+<p>整理下避免以后在遇到</p>
+
+<ul>
+  <li>
+    <p>1.cd ~ &amp;&amp; mkdir xdebug</p>
+
+    <p>在当前用户目录下创建一个文件夹用来安放xdebug源文件</p>
+  </li>
+  <li>
+    <p>2.git clone git://github.com/derickr/xdebug.git</p>
+
+    <p>mac下集成了git工具因此可以直接使用该命令,clone一份xdebug到本地.</p>
+  </li>
+  <li>
+    <p>3.cd xdebug</p>
+  </li>
+  <li>
+    <ol>
+      <li>/Applications/XAMPP/xamppfiles/bin/phpize</li>
+    </ol>
+  </li>
+  <li>
+    <p>5.make</p>
+  </li>
+  <li>
+    <p>6.sudo cp modules/* /Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20121212/</p>
+  </li>
+  <li>7.vim /Applications/XAMPP/etc/php.ini  在最底下加上这么一段代码</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">[</span><span class="nt">xdebug</span><span class="o">]</span>
+<span class="nt">zend_extension</span><span class="o">=/</span><span class="nt">Applications</span><span class="o">/</span><span class="nt">XAMPP</span><span class="o">/</span><span class="nt">xamppfiles</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">php</span><span class="o">/</span><span class="nt">extensions</span><span class="o">/</span><span class="nt">no-debug-non-zts-20121212</span><span class="o">/</span><span class="nt">xdebug</span><span class="nc">.so</span>
+<span class="nt">xdebug</span><span class="nc">.remote_enable</span><span class="o">=</span><span class="nt">on</span>
+<span class="nt">xdebug</span><span class="nc">.remote_handler</span><span class="o">=</span><span class="nt">dbgp</span>
+<span class="nt">xdebug</span><span class="nc">.remote_host</span><span class="o">=</span><span class="nt">127</span><span class="nc">.0.0.1</span>
+<span class="nt">xdebug</span><span class="nc">.remote_port</span><span class="o">=</span><span class="nt">9000</span></code></pre></div>
+
+<p>如果需要xdebug自动运行.加上xdebug.remote_autostart=1</p>
+
+<ul>
+  <li>
+    <p>8.然后重启xampp的apache服务器</p>
+
+    <p>sudo /Applications/XAMPP/xamppfiles/xampp stop
+  sudo /Applications/XAMPP/xamppfiles/xampp start</p>
+  </li>
+</ul>
+
+<p>查看phpinfo.php文件.找到xdebug</p>
+
+<h3 id="mac-uname--a-x8664-64">注: 这个只针对64位得处理器.mac下怎么查看处理器呢 打开终端.输入uname -a x86_64 显示这个就是64位得了.</h3>

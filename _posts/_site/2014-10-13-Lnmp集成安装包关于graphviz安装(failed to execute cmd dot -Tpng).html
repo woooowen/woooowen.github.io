@@ -1,0 +1,11 @@
+<p>最近想试试xhprof来调试php,具体就不说什么安装了.这个网上的资料比较多.</p>
+
+<p>关键是说下图形工具graphviz的安装.</p>
+
+<h3 id="failed-to-execute-cmd--dot--tpng">给出的错误<code>failed to execute cmd " dot -Tpng"</code></h3>
+
+<p>谷歌的半天,看了半天不给力,资料实在太少了.找不到答案,</p>
+
+<p>于是看代码.最后发现在<code>XHprof callgraph_utils.php</code> 文件中的xhprof_generate_image_by_dot方法调用了proc_open()这个方法.一般是用来执行linux命令的.类似exec(),system()</p>
+
+<p>发现lnmp一键安装里面的<code>php.ini</code> 里面的 disable_functions 里面给禁止了.于是你只要把他给删除了.就能正常运行了.我说呢.为什么别人那么安逸的就能搞定的东西.</p>

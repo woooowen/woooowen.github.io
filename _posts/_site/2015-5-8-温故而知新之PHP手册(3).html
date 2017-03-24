@@ -1,0 +1,141 @@
+<h3 id="ps-5453---">PS: 各大开源项目都已经支持5.4了,如果你还在用5.3 或者更老的版本,请尽快升级吧 : )</h3>
+
+<h4 id="null">3种判断是否为Null得方法</h4>
+<p>```PHP
+&lt;?php</p>
+
+<pre><code>$a = 'woowen';
+$i = 0;
+$start = microtime(true);
+while($i &lt; 10000000){
+    $a === Null; // 消耗: 1.96S
+    // isset($a); 消耗: 1.65S
+    // is_null($a); 消耗: 12.03S
+    ++$i;
+}
+print_r('isset:');
+var_dump(microtime(true) - $start);	
+</code></pre>
+
+<p>?&gt;</p>
+
+<p>```
+####所以如果需要判断是否为空,可以使用isset这种语句,而不要使用is_null函数.或者使用===Null方法.速度跟isset差不多,含义跟is_null一致</p>
+
+<h4 id="php-">PHP 老式写法</h4>
+
+<p>```PHP
+&lt;?php</p>
+
+<pre><code>if(condition):
+
+else:
+
+endif;
+
+while(condition):
+
+endwhile;
+</code></pre>
+
+<p>?&gt;
+```
+####各路大神甚至很多开源项目模板都会使用这种老式写法.不过最多的还是应用在Html中.的确比”{}”方式可读性好.</p>
+
+<h3 id="php53-or-later">PHP5.3 or later</h3>
+
+<h4 id="lambda">支持Lambda风格函数</h4>
+
+<p>```PHP</p>
+
+<?php 
+
+	$test = function($str){
+    	print $str;
+	};
+
+	$b = $test('Woowen');
+	// 或者这样调用
+	$b = call_user_func($test,'333d');
+	print_r($b);
+
+?>
+
+<p>```</p>
+
+<h4 id="section">三元运算符简写</h4>
+
+<p>```PHP</p>
+
+<?php
+
+	echo $a ? $a : "echo"; 
+	// 等价于
+	echo $a ? : "echo"; 
+
+?>
+
+<p>```
+但是需要注意的是,这个是PHP5.3才支持的..typecho中就有很多这方面得修改.为了支持5.2 ,所以使用之前了解清楚环境(但是5.2之前的版本,已经非常少了吧)</p>
+
+<h3 id="php-54-or-later">PHP 5.4 or later</h3>
+
+<h4 id="array-dereferencing-support">Array dereferencing support</h4>
+
+<p>```PHP</p>
+
+<?php
+
+	$a = "1,2,3,4,5";
+	$b = explode(',',$a)[1];
+	// echo 2
+	print_r($b);
+
+	// 或者这样
+	$a = "1,2,3,4,5";
+	$b = explode(',',$a)[1] = 100;
+	// echo 100
+	print_r($b);
+
+	// 或者这样
+	function a(){
+    	return [1,2,3];
+	}
+	$b = a()[2];
+	// echo 3
+	print_r($b);
+
+?>
+
+<p>```</p>
+
+<h4 id="webserver">内置了Webserver</h4>
+
+<p>php -S localhost:8000 1.php</p>
+
+<h4 id="section-1">数组简写</h4>
+
+<p>```PHP</p>
+
+<?php
+
+	$ary = array(1,2,3);
+	// 等价于
+	$ary = [1,2,3];
+
+?>
+
+<p>```
+Notice: 这个是在PHP5.4中才加入的.所以如果环境是5.3就不要用了.</p>
+
+<h4 id="section-2">新增在实例化时访问类成员方法</h4>
+
+<p>```PHP</p>
+
+<?php
+
+	(new ClassName)->func();
+
+?>
+
+<p>```</p>

@@ -1,0 +1,42 @@
+<h4 id="section">这几天身体不舒服,医院跑了好几天,心塞</h4>
+
+<p>Swift的下拉刷新功能.</p>
+
+<ul>
+  <li>1.定义一个UIRefreshControl的常量</li>
+</ul>
+
+<p>```java</p>
+
+<p>let refreshControl = UIRefreshControl()</p>
+
+<p>```
+* 2.在ViewController viewDidLoad()方法中加入</p>
+
+<p>```java
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.</p>
+
+<pre><code>//添加下拉刷新手势
+//action 的参数是当触发下拉操作时执行的方法名称
+refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
+refreshControl.attributedTitle = NSAttributedString(string: "松手刷新")
+tableView.addSubview(refreshControl) }
+</code></pre>
+
+<p>```
+* 3.添加刷新数据方法</p>
+
+<p><code>java
+//下拉刷新方法
+func refreshData() {
+	//页面数据重载
+    self.tableView.reloadData()
+    //停止刷新动作
+    self.refreshControl.endRefreshing()
+}
+</code>
+####这个场景是在tableView中使用下拉刷新功能</p>
+
+<h4 id="swift">就这几个步骤,在Swift中得下拉刷新就完成了.是不是很简单.</h4>

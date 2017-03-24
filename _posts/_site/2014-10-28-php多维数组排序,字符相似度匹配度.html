@@ -1,0 +1,51 @@
+<p>php多维数组按照某个键值排序</p>
+
+<p>```js
+ 	/**
+     * @param $array 需要排序的数组
+     * @param $keyName 数组键值名称
+     * @param int $order
+     * @return array
+     * @desc 多维数组根据键值排序,排序之后重置键值
+     * @明心
+     */
+    public static function array_sort($array, $keyName, $order=SORT_ASC)
+    {
+        $new_array = array();
+        $sortable_array = array();
+        if (count($array) &gt; 0) {
+            foreach ($array as $k =&gt; $v) {
+                if (is_array($v)) {
+                    foreach ($v as $k2 =&gt; $v2) {
+                        if ($k2 == $keyName) {
+                            $sortable_array[$k] = $v2;
+                        }
+                    }
+                } else {
+                    $sortable_array[$k] = $v;
+                }
+            }</p>
+
+<pre><code>        switch ($order) {
+            case SORT_ASC:
+                asort($sortable_array);
+                break;
+            case SORT_DESC:
+                arsort($sortable_array);
+                break;
+        }
+        foreach ($sortable_array as $k =&gt; $v) {
+            $new_array[$k] = $array[$k];
+        }
+    }
+    //重置混乱键值
+    return array_values($new_array);
+} ```
+</code></pre>
+
+<p>php 获取2个字符之间的相似度
+similar_text(),这个是php得内置方法,但是貌似不是有多少人知道.因此说一下.</p>
+
+<p>结合上面的排序可以实现一个类似搜索的功能.</p>
+
+<p>抽空了解下其内部实现原理</p>

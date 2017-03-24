@@ -1,0 +1,232 @@
+<h3 id="zval">什么是zval</h3>
+<ul>
+  <li>1.zval是php底层非常重要的一种数据结构.</li>
+  <li>2.php变量分为3种类型:简单类型(int,string,bool),集合类型(array,object,resource),常量(const)</li>
+  <li>3.php为弱类型,定义时不指明类型,运行时可以转换数据类型.就是由于zval的功劳.</li>
+  <li>4.同样zval得使用能大大的节约内存的资源消耗
+####zval结构</li>
+</ul>
+
+<p>在phpsrc/zend/zend.h中有关于zval的函数定义.</p>
+
+<ul>
+  <li>value:zval存储的实际的数值</li>
+  <li>refcount:引用计数</li>
+  <li>type:主要判断变量的类型,是字符,还是整数或者数组.</li>
+  <li>if_ref:用来判断该变量是否引用变量</li>
+</ul>
+
+<h4 id="zvalrefcountisrefrefcount1">并且在初始化zval的时候会直接给refcount和is_ref一个初始值,这也就是声明的变量他得refcount必定为1.</h4>
+
+<p>关于zval的定义代码在phpsrc/zend/zend.h文件中</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">union</span> <span class="n">_zvalue_value</span> <span class="p">{</span>
+<span class="kt">long</span> <span class="n">lval</span><span class="p">;</span> <span class="cm">/* long value */</span>
+<span class="kt">double</span> <span class="n">dval</span><span class="p">;</span> <span class="cm">/* double value */</span>
+<span class="k">struct</span> <span class="p">{</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">str</span><span class="p">;</span>
+<span class="n">HashTable</span> <span class="o">*</span><span class="n">ht</span><span class="p">;</span> <span class="cm">/* hash table value */</span>
+<span class="n">zend_object_value</span> <span class="n">obj</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">zvalue_value</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">_zval_struct</span> <span class="p">{</span>
+<span class="cm">/* Variable information */</span>
+<span class="n">zvalue_value</span> <span class="n">value</span><span class="p">;</span> <span class="cm">/* value */</span>
+<span class="n">zend_uint</span> <span class="n">refcount__gc</span><span class="p">;</span>
+<span class="n">zend_uchar</span> <span class="n">type</span><span class="p">;</span> <span class="cm">/* active type */</span>
+<span class="n">zend_uchar</span> <span class="n">is_ref__gc</span><span class="p">;</span>
+<span class="p">};</span></code></pre></div>
+
+<h4 id="zvalvalue">zval之value</h4>
+
+<ul>
+  <li>zvalue是用来保存实际数值的地方.在内存中划分了一块区域给它.</li>
+  <li>zvalue是一个union</li>
+  <li>union是c中得一个联合体.union可以定义多个成员,且多个成员共享一片内存块,一次只能使用一个成员,当其中一个成员被赋值时会覆盖其他成员的值.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include</span>
+<span class="k">typedef</span> <span class="k">union</span><span class="p">{</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Test</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+<span class="n">Test</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">321</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;a:%d,b:%d&quot;</span><span class="p">,</span><span class="n">c</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">.</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>输出结果:<code>a:321,b:321</code></p>
+
+<p>这是一个union的例子.union结构中变量a赋值为123,而b赋值为321.但是最后输出的结果.
+可见,union可以定义多个成员变量.</p>
+
+<p>多个成员变量公用一块内存.因此其他得变量值会被最后一个被赋值的变量值覆盖.关于union和struct的不同,大家自行gg,php使用union比使用struct节省很多内存,php是不是比你想的要聪明?</p>
+
+<h4 id="zvalrefcount">zval之refcount</h4>
+
+<p>refcount被称为引用计数.当这个变量对应内存中得值被其他变量所引用时,该值+1.
+例如当<code>$a = 1; $b = $a; </code>那么此时<code>refcount = 2</code>
+#####下面结合代码来理解</p>
+
+<p>debug_zval_dump()是zend自带得php方法,可以查看refcount值,但是显示的信息不够完整.</p>
+
+<p>当你声明一个变量时,他得refcount是为1得.建议大家装个xdebug去查看.xdebug中提供了一系列得方法.xdebug_debug_zval可以查看refcount,以及is_ref的值.</p>
+
+<p><code>ruby
+$a = 1;
+debug_zval_dump('a');
+</code></p>
+
+<p>输出结果:string(1) “a” refcount(1)</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span></code></pre></div>
+
+<p>输出结果:a: (refcount=1, is_ref=0)=1</p>
+
+<p><code>当$b = $a; 变量a的refcount ++;</code>
+使用传值的时候:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="vg">$b</span> <span class="o">=</span> <span class="vg">$a</span><span class="p">;</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span></code></pre></div>
+
+<p>输出结果:<code>a: (refcount=2, is_ref=0)=1</code>
+使用传引用的时候:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="vg">$b</span> <span class="o">=</span> <span class="o">&amp;</span><span class="vg">$a</span><span class="p">;</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span></code></pre></div>
+
+<p>输出结果:<code>a: (refcount=2, is_ref=0)=1</code>
+而当<code>$b = &amp;$a;refcount++</code>,且<code>is_ref = 1;is_ref=1</code>表示该变量被引用了</p>
+
+<p>当unset一个变量的时候refcount会-1,当refcount = 0的时候,对应的zval就会被释放掉.自己可以去试验下了解下.</p>
+
+<p>refcount之数组类型</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$a</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+<span class="vg">$b</span> <span class="o">=</span> <span class="o">&amp;</span><span class="vg">$a</span><span class="p">;</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span></code></pre></div>
+
+<p>输出结果:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">a</span><span class="p">:</span>
+<span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="n">array</span> <span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">string</span> <span class="s1">&#39;a&#39;</span> <span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">string</span> <span class="s1">&#39;b&#39;</span> <span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="n">array</span> <span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">int</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">refcount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_ref</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">int</span> <span class="mi">2</span></code></pre></div>
+
+<p>数组的形式比较复杂,可以看到输出结果,每个数组相当于一个zval,数组中得元素也相当于一个zval
+每个zval里面都有refcount,以及is_ref
+当$b = $a;的时候,$a对应的refcount会+1,
+当$b = $a[1]的时候$a[1]的refcount会+1.</p>
+
+<p>如果是使用类似$a[1] = &amp;$a;这样得循环引用,是不是会出现什么问题?php5.3引入了新的gc垃圾回收机制来解决这个问题.</p>
+
+<p>写时复制</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$a</span> <span class="o">=</span> <span class="s1">&#39;mingxin&#39;</span><span class="p">;</span>
+<span class="vg">$b</span> <span class="o">=</span> <span class="vg">$a</span><span class="p">;</span>
+<span class="vg">$b</span> <span class="o">=</span> <span class="s1">&#39;other str&#39;</span><span class="p">;</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">xdebug_debug_zval</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span></code></pre></div>
+
+<p>输出结果:
+a: (refcount=1, is_ref=0)=’mingxin’
+b: (refcount=1, is_ref=0)=’other str’
+当你给$b赋予了新的值得时候,php发现$b指向的zval的refcount是&gt;1的.这个时候就会初始化一个新的zval,并且给予这个新的zval一个初始值,(refcount = 1,is_ref = 0)这个赋予初值在zend.h中,对应的宏如下:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#define INIT_PZVAL(z) \</span>
+<span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">refcount__gc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">\</span>
+<span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">is_ref__gc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></code></pre></div>
+
+<p>注:__gc其实就是引入了新的垃圾回收之后而变的.</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#define SEPARATE_ZVAL(ppzv)</span>
+<span class="k">do</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Z_REFCOUNT_PP</span><span class="p">((</span><span class="n">ppzv</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">zval</span> <span class="o">*</span><span class="n">new_zv</span><span class="p">;</span>
+<span class="n">Z_DELREF_PP</span><span class="p">(</span><span class="n">ppzv</span><span class="p">);</span>
+<span class="n">ALLOC_ZVAL</span><span class="p">(</span><span class="n">new_zv</span><span class="p">);</span>
+<span class="n">INIT_PZVAL_COPY</span><span class="p">(</span><span class="n">new_zv</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">ppzv</span><span class="p">));</span>
+<span class="o">*</span><span class="p">(</span><span class="n">ppzv</span><span class="p">)</span> <span class="o">=</span> <span class="n">new_zv</span><span class="p">;</span>
+<span class="n">zval_copy_ctor</span><span class="p">(</span><span class="n">new_zv</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></div>
+
+<p>这个是分离操作,当变量进行写时复制,或者写时改变的时候都会进行这个操作.
+大体意思应该看代码都了解了.
+1.判断zval的refcount是否&gt;1
+2.如果大于1,那么new一个新的zval
+3.原先的zval的refcount-1
+4.ALLOW_ZVAL是给new zval申请分配内存.
+5.将原先zval的值copy给new zval,并且初始化new zval,refcount = 1
+6.修改符号表.使得zval和new zval分离.从而实现写时分离.</p>
+
+<p>zval之type
+type用来记录zval的类型.
+phpsrc/zend/zend_types.h文件中记录了关于type的信息</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/* data types /</span>
+<span class="sr">/ All data types &lt;= IS_BOOL have their constructor/</span><span class="n">destructors</span> <span class="n">skipped</span> <span class="o">*/</span>
+<span class="c1">#define IS_NULL 0</span>
+<span class="c1">#define IS_LONG 1</span>
+<span class="c1">#define IS_DOUBLE 2</span>
+<span class="c1">#define IS_BOOL 3</span>
+<span class="c1">#define IS_ARRAY 4</span>
+<span class="c1">#define IS_OBJECT 5</span>
+<span class="c1">#define IS_STRING 6</span>
+<span class="c1">#define IS_RESOURCE 7</span>
+<span class="c1">#define IS_CONSTANT 8</span>
+<span class="c1">#define IS_CONSTANT_ARRAY 9</span>
+<span class="c1">#define IS_CALLABLE 10</span></code></pre></div>
+
+<p>type中存储的是值类型,而真正得值是存放在zvalue中得. 如果zval.type=IS_LONG ,那么zval.value就去取lval,如果zval.type=IS_ARRAY,那么zval.value就去取ht.</p>
+
+<p>需要注意1: 
+php中并不推荐大家使用&amp;传引用方式. 
+例如下面这个实例:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span>
+<span class="vg">$aa</span> <span class="o">=</span> <span class="s1">&#39;hello mogujie&#39;</span><span class="p">;</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span>
+<span class="vg">$bb</span> <span class="o">=</span> <span class="o">&amp;</span><span class="vg">$aa</span><span class="p">;</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span>
+<span class="n">unset</span><span class="p">(</span><span class="vg">$bb</span><span class="p">);</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span></code></pre></div>
+
+<p>输出结果:
+<code>228808-&gt;228976-&gt;229064-&gt;228976</code></p>
+
+<p>理论上$bb是$aa的值引用,当unset($bb)的时候$aa的值也应该被unset掉才是.但事实上php只会将$bb从hashtable中移除,且将refcount-1,而实际使用的内存没有任何变化.只有当指向该变量的所有变量都unset掉,这块的内存才会被释放.</p>
+
+<p>需要注意2:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$ary</span> <span class="o">=</span> <span class="n">array_fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;mogujie&#39;</span><span class="p">);</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span>
+<span class="n">foreach</span><span class="p">(</span><span class="vg">$ary</span> <span class="n">as</span> <span class="vg">$k</span> <span class="o">=&gt;</span> <span class="vg">$v</span><span class="p">){</span>
+<span class="vg">$ary</span><span class="o">[</span><span class="vg">$k</span><span class="o">]</span> <span class="o">=</span> <span class="no">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">(),</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">;</span>
+<span class="n">foreach</span><span class="p">(</span><span class="vg">$ary</span> <span class="n">as</span> <span class="vg">$k</span> <span class="o">=&gt;</span> <span class="vg">$v</span><span class="p">){</span>
+<span class="n">unset</span><span class="p">(</span><span class="vg">$ary</span><span class="o">[</span><span class="vg">$k</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">echo</span> <span class="n">memory_get_usage</span><span class="p">();</span></code></pre></div>
+
+<p>输出结果:
+<code>226696-&gt;236840-&gt;241864-&gt;228264</code>
+为什么将数组声明在释放之后的内存占用是不一样得?</p>
+
+<p>在声明变量的时候,变量都是存放在hashtable中得.而hashtable每次不知道你需要申请的内存有多大,因此他每次都只是申请一部分,当不够用的时候在扩容
+但是当你unset掉变量的时候,因这些变量而扩容的hashtable并没有unset掉.所以有一部分的内存被hashtable占用了</p>
+
+<p>That’s All.</p>

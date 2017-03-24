@@ -1,0 +1,55 @@
+<h4 id="win51job">Win下,51job和智联招聘的自动刷新简历脚本</h4>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">dl</span><span class="p">(</span><span class="s2">&quot;php_curl.dll&quot;</span><span class="p">);</span>
+
+<span class="nx">$ifupdate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nx">$rand</span> <span class="o">=</span> <span class="nx">mt_rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">$rand</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nx">$ifupdate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">$ifupdate</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="c1">//智联招聘</span>
+<span class="nx">$ch</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span>
+
+<span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s2">&quot;...填写刷新简历ajax链接...&quot;</span><span class="p">);</span>
+
+<span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$ch</span><span class="p">,</span><span class="nx">CURLOPT_COOKIE</span><span class="p">,</span><span class="s2">&quot;JSpUserInfo=...填写cookie参数...&quot;</span><span class="p">);</span>
+
+<span class="nx">$result</span> <span class="o">=</span> <span class="nx">curl_exec</span><span class="p">(</span><span class="nx">$ch</span><span class="p">);</span>
+
+<span class="nx">curl_close</span><span class="p">(</span><span class="nx">$ch</span><span class="p">);</span>
+
+<span class="c1">//前程无忧</span>
+<span class="nx">$ch</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span>
+
+<span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s2">&quot;...填写刷新简历ajax链接...&quot;</span><span class="p">);</span>
+
+<span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$ch</span><span class="p">,</span><span class="nx">CURLOPT_COOKIE</span><span class="p">,</span><span class="s2">&quot;51job=...填写cookie参数...&quot;</span><span class="p">);</span>
+
+<span class="nx">$result</span> <span class="o">=</span> <span class="nx">curl_exec</span><span class="p">(</span><span class="nx">$ch</span><span class="p">);</span>
+
+<span class="nx">curl_close</span><span class="p">(</span><span class="nx">$ch</span><span class="p">);</span>
+
+<span class="p">}</span><span class="k">else</span>
+<span class="p">{</span>
+<span class="nx">echo</span> <span class="s1">&#39;rand not hit&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">?&gt;</span></code></pre></div>
+
+<p>dl是linux的方法.win下面不支持.</p>
+
+<p>这个脚本只有用来定时刷新你存放在智联招聘.或者前程无忧上面的简历的.能让你的简历保持实时的更新,从而让HR能够在第一时间看到你得简历.对你找工作起到帮助.</p>
+
+<p>我使用这个脚本没小时跑一次.每天基本都有各色的HR来浏览我的简历.
+开始放了个随机数.让随机数命中才会执行脚本,这样也是防止定时执行而被封掉.</p>
+
+<p>使用方法</p>
+
+<ul>
+  <li>在CURLOPT_URL参数中写上你刷新简历时访问的ajax url 的地址.</li>
+  <li>在CURLOPT_COOKIE中写上你浏览器cookie中对应参数的value.</li>
+  <li>然后在linux中使用将脚本1小时一次的执行起来就可以了.</li>
+</ul>

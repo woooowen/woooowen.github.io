@@ -1,0 +1,109 @@
+<ul>
+  <li>
+    <p>1.从数组中将变量导入到当前的符号表
+<code>extract($a);</code></p>
+  </li>
+  <li>
+    <p>2.<code>array_rand ( array $input [, int $num_req = 1 ] )</code>,当$num_req 的值跟给予的数组数目一致,那么数组原样输出,不做任何随机操作</p>
+  </li>
+  <li>
+    <p>3.
+<code>array_search ( mixed $needle , array $haystack [, bool $strict = false ] )</code></p>
+  </li>
+</ul>
+
+<h4 id="needle--haystack--arraykeys--searchvalue-">如果 needle 在 haystack 中出现不止一次，则返回第一个匹配的键。要返回所有匹配值的键，应该用 array_keys() 加上可选参数 search_value 来代替。</h4>
+
+<h4 id="false-false----">此函数可能返回布尔值 FALSE，但也可能返回等同于 FALSE 的非布尔值。请阅读 布尔类型章节以获取更多信息。应使用 === 运算符来测试此函数的返回值。</h4>
+
+<h4 id="valuedofcall">只支持一维数组,匹配value的值,都是通过DO_FCALL,来遍历数组获取到匹配值</h4>
+
+<ul>
+  <li>4.array_unique</li>
+</ul>
+
+<h4 id="arrayuniquearraykeysthx">评论中也有人说array_unique支持不同种类型的去重，而array_keys不支持，感谢指正（thx子天大神），当在同种类型中</h4>
+<p>使用array_keys的确要快很多</p>
+
+<p><code>js
+	//php5.5环境
+	//使用foreach和array_keys始终比array_unique速度要快 
+    $max = 1000000; 
+    $arr = range(1,$max,3); 
+    $arr2 = range(1,$max,2); 
+    $arr = array_merge($arr,$arr2); 
+    $time = -microtime(true); 
+    $res1 = array_unique($arr); 
+    $time += microtime(true); 
+    echo "array_unique :".count($res1)." in ".$time;    
+    $time = -microtime(true); 
+    $res2 = array(); 
+    foreach($arr as $key=&gt;$val) {    
+        $res2[$val] = true; 
+    } 
+    $res2 = array_keys($res2); 
+    $time += microtime(true); 
+    echo "array_keys to ".count($res2)." in ".$time;     
+</code> </p>
+
+<ul>
+  <li>5.finally 中return会覆盖try中得return</li>
+</ul>
+
+<p><code>js
+	function finallyTest() {
+	    try {
+	       return 1;
+	    } finally {
+	       return 2;
+	    }
+	}	 
+	var_dump(finallyTest());//return 2
+</code></p>
+
+<ul>
+  <li>6.implode 的别名join</li>
+</ul>
+
+<h4 id="joinimplodeimplodejoin2opcode">用法一致,手册有评论说join的性能比implode要好,自己测了下发现其实差不多.但是implode比join大部分时候都要快,但是看了2者执行的opcode发现是一模一样的.真的只是别名而已.</h4>
+
+<ul>
+  <li>7.
+<code>int levenshtein ( string $str1 , string $str2 )</code></li>
+</ul>
+
+<h3 id="str1str2--omn-n--m-str1-str2-omaxnm3similartext">编辑距离，是指两个字串之间，通过替换、插入、删除等操作将字符串str1转换成str2所需要操作的最少字符数量。 该算法的复杂度是 O(m*n)，其中 n 和 m 分别是str1 和str2的长度 （当和算法复杂度为O(max(n,m)**3)的similar_text()相比时，此函数还是相当不错的，尽管仍然很耗时</h3>
+
+<p>```js
+//给2个空字符做匹配时,返回0
+similar_text
+similar_text(‘’, ‘’, $sim);
+echo $sim; // “0”
+//opcode中真的就是传空
+2      SEND_VAL                                                 ‘’
+3      SEND_VAL                                                 ‘’</p>
+
+<p>//空格却是可以匹配的
+similar_text(‘ ‘, ‘ ‘, $sim);
+echo $sim; // “100”
+//opcode中传给函数的参数变成了++
+ 2      SEND_VAL                                                 ‘++’
+ 3      SEND_VAL                                                 ‘++’
+```
+####similar_text区分大小写</p>
+
+<ul>
+  <li>8.
+<code>bool in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] )</code></li>
+</ul>
+
+<h4 id="strict--true--inarray--needle--haystack-true">如果第三个参数 strict 的值为 TRUE 则 in_array() 函数还会检查 needle 的类型是否和 haystack 中的相同。在大量的数组中,将其设置成true能提高效率</h4>
+
+<ul>
+  <li>9.array_shift 在使用array_shift弹出一个非常大的数组的第一个元素的时候,执行效率会很低.</li>
+</ul>
+
+<h3 id="arraypopo1">array_pop()的复杂度为o(1)</h3>
+<p>###array_shift()的复杂度为o(n)
+####当你执行一个非常大的数组的时候会随着数组庞大而降低效率.因此当你给一个非常大的数组执行弹出首元素操作的时候可以使用,array_reverse() 和 array_pop()结合的方式.</p>
+

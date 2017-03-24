@@ -1,0 +1,127 @@
+<h4 id="phparraymerge---">php中合并数组除了可以用到array_merge 方法,还有 + 号</h4>
+<p>例如:</p>
+
+<p><code>js
+$c = array_merge($a,$b);
+$c = $a + $b;
+</code>
+但是说到这2者之间的区别还是有很多不同地方的.主要是跟数组的键值存在关系
+###example1 : 键值为数字时
+<code>js
+//code:
+$a = array(1,2,3);
+$b = array(3,4,5);
+print_r($a + $b);
+$c = array_merge($a,$b);
+print_r($c);
+//echo:
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 2
+    [2] =&gt; 3
+)
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 2
+    [2] =&gt; 3
+    [3] =&gt; 3
+    [4] =&gt; 4
+    [5] =&gt; 5
+)
+</code></p>
+
+<p>当2组数组键值为纯数字的时候,出现键值冲突的情况下</p>
+
+<ul>
+  <li>使用 + : 会返回前一个数组的value</li>
+  <li>使用 array_merge : 返回合并之后的一个数组,且重置键值</li>
+</ul>
+
+<h3 id="example2--">example2 : 键值为字符时</h3>
+<p><code>js
+//code:
+$a = array(
+	'a' =&gt; 1,
+	'b' =&gt; 2,
+	'c' =&gt; 3
+);
+$b = array(
+	'a' =&gt; 11,
+	'bb' =&gt; 22,
+	'c' =&gt; 33
+);	
+print_r($a + $b);
+$c = array_merge($a,$b);
+print_r($c);
+//echo:
+Array
+(
+    [a] =&gt; 1
+    [b] =&gt; 2
+    [c] =&gt; 3
+    [bb] =&gt; 22
+)
+Array
+(
+    [a] =&gt; 11
+    [b] =&gt; 2
+    [c] =&gt; 33
+    [bb] =&gt; 22
+)
+</code></p>
+
+<p>当2组数组键值为字符时</p>
+
+<ul>
+  <li>使用 + : 返回数组1的value</li>
+  <li>使用 array_merge : 返回数组2的value</li>
+</ul>
+
+<h3 id="example3--">example3 : 键值重置</h3>
+
+<p><code>js
+//code:
+	$a = array(
+		2 =&gt; 'a',
+		3 =&gt; 'b',
+		5 =&gt; 'c'
+	);
+	$b = array(
+		3 =&gt; 11,
+		5 =&gt; 22,
+		'c' =&gt; 33
+	);	
+	print_r($a + $b);
+	$c = array_merge($a,$b);
+	print_r($c);
+//echo:
+Array
+(
+    [2] =&gt; a
+    [3] =&gt; b
+    [5] =&gt; c
+    [c] =&gt; 33
+)
+Array
+(
+    [0] =&gt; a
+    [1] =&gt; b
+    [2] =&gt; c
+    [3] =&gt; 11
+    [4] =&gt; 22
+    [c] =&gt; 33
+)
+</code></p>
+
+<ul>
+  <li>使用 + : 键值不会重置</li>
+  <li>使用 array_merge : 数字键值会从0开始重置,且返回的合并数组的键值排序是按照先数组1,再数组2的次序来的</li>
+</ul>
+
+<h4 id="errorreporting--noticearraymergenull">当error_reporting 设置 Notice之上的时候,array_merge函数第一个参数为Null也不会报错,但是确实不会返回任何数据了.</h4>
+<p>####个人开发本地/测试环境还是把error_reporting设置成E_ALL吧.</p>
+
+<p>岁月蹉跎,遥想当时我来蘑菇街面试的时候,就被问到这个问题了 = , =!!</p>
+

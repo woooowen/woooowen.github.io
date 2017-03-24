@@ -1,0 +1,189 @@
+<p>根据公司现有情况,以及需求分析,这个需求使用imagick来做,涉及到的工作量就要相对少一点(例如不用在服务器上装组件,且公司不提倡使用第三方接口,而移动端没有相应得截图工具,他得截图只能截取一屏幕,一屏之外的无法截取.)</p>
+
+<h3 id="section">需求</h3>
+
+<p>当用户分享某个用户到微博的时候,需要将该用户的以下信息合并成一整个图片分享出去</p>
+
+<ul>
+  <li>
+    <p>1.用户封面图</p>
+  </li>
+  <li>
+    <p>2.用户名</p>
+  </li>
+  <li>
+    <p>3.用户描述(后剔除,因为样式不好看,且部分用户会用字符拼接一个表情,中文字体失效)</p>
+  </li>
+  <li>
+    <p>4.粉丝数目红色显示,第一张twi图,和twi文字</p>
+  </li>
+</ul>
+
+<p>最后这个需求正确得思路,应该是<code>html-&gt;pdf-&gt;imgick-&gt;pic</code></p>
+
+<p>htmltopdf 有第三方公司提供接口http://pdfcrowd.com/</p>
+
+<p>嵌套html页面,然后通过接口或者在公司集群安装htmltopdf组件,然后根据html生成了pdf文件,再使用imgick转换并且优化成图片,还可以进行裁剪,压缩等处理.生成你要的图片. 下面主要使用imagick来完成这个需求.避免在集群安装htmltopdf.这样一个不常用的组件.</p>
+
+<h3 id="section-1">解决思路</h3>
+
+<ul>
+  <li>
+    <p>1.由于没有图片得绝对地址,因此通过获取到的相对地址,构造出cdn地址.然后将需要用到的图片通过cdn地址下载到当前服务器下./var/www/html/www.xxx.com/Photo/top/ 类似该目录</p>
+  </li>
+  <li>
+    <p>2.能够复用的图片尽量放在当前服务器上,减少网络开销,加快程序运行速度.</p>
+  </li>
+  <li>
+    <p>3.图片处理</p>
+  </li>
+  <li>
+    <p>4.生成大图,保存当前服务器</p>
+  </li>
+  <li>
+    <p>5.将图片服务器zupload到FTS,然后返回相对地址</p>
+  </li>
+  <li>
+    <p>6.将新生成的图片cdn地址通过微博接口分享出去.微博自动抓取图片显示</p>
+  </li>
+</ul>
+
+<p>这边的主要展示图片处理部分</p>
+
+<h3 id="section-2">常用方法</h3>
+
+<p>主要说说比较常用的方法以及遇到的坑,具体的数据获取就不说了.</p>
+
+<h4 id="section-3">1.新建基础图片</h4>
+
+<p>```js</p>
+
+<p>public function create($width,$height,$bgColor = ‘white’,$ext = ‘jpg’){</p>
+
+<pre><code>$image = new Model_Top_Imagick();
+
+$image-&gt;newimage($width,$height,new ImagickPixel($bgColor));
+
+$image-&gt;setimageformat($ext);
+</code></pre>
+
+<p>return $image;</p>
+
+<p>}</p>
+
+<p>```</p>
+
+<h4 id="section-4">2.裁剪图片</h4>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">public</span> <span class="kd">function</span> <span class="nx">crop</span><span class="p">(</span><span class="nx">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="nx">$y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="nx">$width</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span><span class="nx">$height</span> <span class="o">=</span> <span class="kc">null</span><span class="p">){</span>
+
+	<span class="nx">$myWidth</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">getimagewidth</span><span class="p">();</span>
+
+	<span class="nx">$myHeight</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">getimageheight</span><span class="p">();</span>
+
+	<span class="c1">//只有当图片宽度小于需要的时候才会拉伸图片.高度的话不会拉伸</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">$width</span> <span class="o">&gt;</span> <span class="nx">$myWidth</span><span class="p">)</span>
+
+	<span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">thumbnailImage</span><span class="p">(</span><span class="nx">$width</span><span class="p">,</span><span class="s1">&#39;999&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">$width</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+
+		<span class="nx">$width</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">getImageWidth</span><span class="p">()</span> <span class="o">-</span> <span class="nx">$x</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">$height</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+
+		<span class="nx">$height</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">getImageHeight</span><span class="p">()</span> <span class="o">-</span> <span class="nx">$y</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">$width</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">$height</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+
+		<span class="k">return</span><span class="p">;</span>
+
+	<span class="c1">//$this-&gt;thumbnailImage($width,$height,true);</span>
+
+	<span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">cropImage</span><span class="p">(</span><span class="nx">$width</span><span class="p">,</span><span class="nx">$height</span><span class="p">,</span><span class="nx">$x</span><span class="p">,</span><span class="nx">$y</span><span class="p">);</span>
+
+<span class="p">}</span></code></pre></div>
+
+<p>需要注意的是,当原有图片比你需要的图片小,而你需要重新生成缩略图得时候,给高度设置999,然后在使用cropImage裁剪固定尺寸的方法比较好用. thumbnailImage($width,’999’,true); 第三个参数为true表示保持比例进行放大缩小,false表示强制放大缩小,不保持比例.</p>
+
+<h4 id="section-5">3.添加文字水印</h4>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$draw</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ImagickDraw</span><span class="p">();</span>
+	<span class="c1">//设置字体</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_path&#39;</span><span class="p">]))</span> <span class="nx">$draw</span><span class="o">-&gt;</span><span class="nx">setFont</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_path&#39;</span><span class="p">]);</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_size&#39;</span><span class="p">]))</span> <span class="nx">$draw</span><span class="o">-&gt;</span><span class="nx">setFontSize</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_size&#39;</span><span class="p">]);</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_color&#39;</span><span class="p">]))</span> <span class="nx">$draw</span><span class="o">-&gt;</span><span class="nx">setFillColor</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;font_color&#39;</span><span class="p">]);</span>
+
+	<span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;under_color&#39;</span><span class="p">]))</span> <span class="nx">$draw</span><span class="o">-&gt;</span><span class="nx">setTextUnderColor</span><span class="p">(</span><span class="nx">$style</span><span class="p">[</span><span class="s1">&#39;under_color&#39;</span><span class="p">]);</span></code></pre></div>
+
+<p>当你定义文字水印的时候,imagick中需要指定字体,不然会出现乱码</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="s1">&#39;uName&#39;</span> <span class="o">=&gt;</span> <span class="nx">array</span><span class="p">(</span>
+
+	<span class="s1">&#39;font_size&#39;</span> <span class="o">=&gt;</span> <span class="mi">36</span><span class="p">,</span>
+
+	<span class="s1">&#39;font_color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#333333&#39;</span><span class="p">,</span>
+
+	<span class="s1">&#39;font_path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/var/www/html/www.mogujie.com/public/fonts/fzlt_GBK.TTF&#39;</span>
+
+	<span class="p">),</span> <span class="c1">//例如这样,指定字体路径</span></code></pre></div>
+
+<h4 id="section-6">4.添加图片</h4>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">public</span> <span class="kd">function</span> <span class="nx">addImg</span><span class="p">(</span><span class="nx">$obj</span><span class="p">,</span><span class="nx">$x</span><span class="p">,</span><span class="nx">$y</span><span class="p">){</span>
+
+	<span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">setimagecolorspace</span><span class="p">(</span><span class="nx">$obj</span><span class="o">-&gt;</span><span class="nx">getImageColorspace</span><span class="p">());</span>
+
+	<span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">compositeImage</span><span class="p">(</span><span class="nx">$obj</span><span class="p">,</span><span class="nx">$obj</span><span class="o">-&gt;</span><span class="nx">getImageCompose</span><span class="p">(),</span><span class="nx">$x</span><span class="p">,</span><span class="nx">$y</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="nx">$imageObj</span><span class="p">[</span><span class="s1">&#39;avatar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$obj</span><span class="o">-&gt;</span><span class="nx">load</span><span class="p">(</span><span class="nx">$imgPath</span><span class="p">[</span><span class="s1">&#39;avatarCircle&#39;</span><span class="p">]);</span>
+
+<span class="nx">$imageObj</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="nx">addImg</span><span class="p">(</span><span class="nx">$imageObj</span><span class="p">[</span><span class="s1">&#39;avatar&#39;</span><span class="p">],</span><span class="mi">260</span><span class="p">,</span><span class="nx">$avatarHeight</span><span class="p">);</span></code></pre></div>
+
+<h5 id="section-7">5.圆形图片生成</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$mask</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;/var/www/html/www.mogujie.com/Photo/tmp/circle.png&#39;</span><span class="p">);</span>
+
+<span class="c1">//外面的白色边框圆圈图片</span>
+
+<span class="c1">//$border = $this-&gt;load(&#39;/var/www/html/www.mogujie.com/Photo/tmp/circle1.png&#39;);</span>
+
+<span class="nx">$image</span> <span class="o">=</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">load</span><span class="p">(</span><span class="nx">$avatarPath</span><span class="p">);</span>
+
+<span class="nx">$image</span><span class="o">-&gt;</span><span class="nx">setimagealphachannel</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="nx">$image</span><span class="o">-&gt;</span><span class="nx">cropimage</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nx">$image</span><span class="o">-&gt;</span><span class="nx">compositeImage</span><span class="p">(</span><span class="nx">$mask</span><span class="p">,</span> <span class="nx">Imagick</span><span class="o">::</span><span class="nx">COMPOSITE_COPYOPACITY</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">$image</span><span class="o">-&gt;</span><span class="nx">writeImage</span><span class="p">(</span><span class="nx">$outfile</span><span class="p">)){</span>
+
+	<span class="k">return</span> <span class="nx">$outfile</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="kc">false</span><span class="p">;</span></code></pre></div>
+
+<p>这边是一个坑,Top的头像使用的jpg格式的,而在jpg格式中处理透明背景的时候,imagick会给它一个默认的颜色,默认颜色是黑色,因此会出现类似这样得结果.</p>
+
+<p>2359446723avatar_circle</p>
+
+<p>这个时候就算你先将jpg图片转换成png格式的,还是失败,需要将图片得alpha通道值设为1.$image-&gt;setimagealphachannel(1);</p>
+
+<p>compositeImage,这个方法的用处主要是用来合并图片,第三个参数比较重要,具体的方法可以参见这个地址 http://us2.php.net/manual/zh/imagick.constants.php#imagick.constants.channel</p>
+
+<p>imagick网上的资料比较少,具体的API可以看这个链接 http://xiaochaozi.blog.51cto.com/6469085/1302801</p>
+
+<p>关于圆形图片那个,如果看不懂,可以参考这2篇文章</p>
+
+<p><a href="https://trovepromo-tf.trove-stg.com/0m1-sd/stackoverflow.com/questions/13795535/circularize-an-image-with-imagick">
+https://trovepromo-tf.trove-stg.com/0m1-sd/stackoverflow.com/questions/13795535/circularize-an-image-with-imagick</a></p>
+
+<p><a href="http://stackoverflow.com/questions/8699228/how-to-use-imagick-to-merge-and-mask-images">http://stackoverflow.com/questions/8699228/how-to-use-imagick-to-merge-and-mask-images</a></p>
+
+<p>注意:这2个文章的demo都是使用png格式的图片,如果你使用的图片是jpg得记得看我上面说的添加一条<code>setimagealphachannel(1);</code>方法,解决透明色显示默认黑色的问题.</p>
+

@@ -1,0 +1,15 @@
+<h4 id="swift">Swift中的时间戳转换成想要格式的字符型时间</h4>
+
+<p><code>js
+	var outputFormat = NSDateFormatter()
+	let myDataSource: NSString = "1412763755"
+	//格式化规则
+	outputFormat.dateFormat = "yyyy/MM/dd HH:mm:ss"
+	//定义时区
+	outputFormat.locale = NSLocale(localeIdentifier: "shanghai")
+	//发布时间
+	let pubTime = NSDate(timeIntervalSince1970: myDataSource.doubleValue)
+	println(outputFormat.stringFromDate(pubTime))
+	//print 2014/10/08 18:22:35
+</code>
+#####对于没有Object-c基础的人来说,看Swift真心吃力,希望能帮到其他人.</p>
