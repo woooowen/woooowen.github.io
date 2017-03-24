@@ -62,3 +62,5 @@ Jekyll source for my personal blog.
 ###2015-5-6
 * 添加底部备案信息
 
+###2017-3-25
+* 多说评论插件关闭,使用搜狐插件
