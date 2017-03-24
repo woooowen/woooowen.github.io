@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java性能监控工具-jinfo,jmap
+title: Java性能监控工具-jinfo,jmap,jstack
 category: [JAVA]
 tags: [JAVA]
 ---
@@ -31,6 +31,11 @@ tags: [JAVA]
 
 ### Jhat
 
-```jhat 2.bin```去查看上面使用```jmap -dump```导出的文件,他会自动去创建一个本地的http server,默认是在7000端口,那么直接访问localhost:7000就可以看到页面了
+```jhat 2.bin```去查看上面使用```jmap -dump```导出的文件,他会自动去创建一个本地的Http Server,默认是在7000端口,那么直接访问localhost:7000就可以看到页面了
 
 ![](http://pic.woowen.com/jhat1.png)
+
+### Jstack
+
+```jstack pid``` 生成当前的线程快照,查看线程的一些信息,可以用来查看线程数以及死锁,死循环,可以知道线程有没有在后台做什么事情,比如请求某个第三方的资源例如图片,视频,一直请求不到,导致线程阻塞等等
+
