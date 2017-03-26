@@ -170,6 +170,8 @@ longAdder从java1.8以来做了很多改进
 * 1.通过多个Cell的方式优化多并发情况下的val更新,提高吞吐
 * 2.通过线程的threadLocalRandomProbe字段中存储的probe值替换原来的hashcode方法,避免了每次增加计算hash的过程
 
+### 每一个线程的Thread对象中都有一个ThreadLocalMap对象,这个对象存储了一组ThreadLocal.threadlocalHashCode为键值,本地线程变量为值的K-V结构,ThreadLocal对象就是当前ThreadLocalMap的访问入口,每一个ThreadLocal对象都包含了一个独一无二的threadlocalHashCode值
+
 
 ### 参考
 Xorshift随机算法
