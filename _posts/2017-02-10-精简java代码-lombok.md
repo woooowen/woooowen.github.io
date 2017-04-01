@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 精简java代码(1)-lombok
+title: 精简java代码-lombok
 category: [JAVA]
 tags: [JAVA]
 ---
