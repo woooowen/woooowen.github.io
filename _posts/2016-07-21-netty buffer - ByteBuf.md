@@ -29,6 +29,8 @@ ByteBuffer中包含了几个指针,limit position capacity mark用来表示缓�
 
 ##### 1.当写入一部分数据后
 
+```JAVA
+
 +-------------------+------------------+------------------+
 | discardable bytes |  readable bytes  |  writable bytes  |
 |                   |     (CONTENT)    |                  |
@@ -36,17 +38,23 @@ ByteBuffer中包含了几个指针,limit position capacity mark用来表示缓�
 |                   |                  |                  |
 0      <=      readerIndex   <=   writerIndex    <=    capacity
 
+```
+
 * `discardable bytes` 表示废弃的区域,也就是已经读取过的,可以释放的区域,每次调用`readByte`会增加readerIndex
 * `readable bytes` 表示已经写入,但是还没有读取过的可读区域
 * `writable bytes` 表示可写区域
 
 ##### 2.当抛弃废弃区域之后
 
+```JAVA
+
 +------------------+--------------------------------------+
 |  readable bytes  |    writable bytes (got more space)   |
 +------------------+--------------------------------------+
 |                  |                                      |
 readerIndex (0) <= writerIndex (decreased)       <=    capacity
+
+```
 
 * 调用方法`discardReadBytes` 回收废弃区域
 * 此刻`discardable bytes`区域被回收,那么`readable bytes`保持不变,`writeable bytes`增长
@@ -78,7 +86,7 @@ public ByteBuf discardReadBytes() {
 
 ```
 
-##### 3.调用clear之后,返回初始状态,`readerIndex = writerIndex = 0`
+##### 3.调用clear之后,返回初始状态,`readerIndex = writerIndex = 0`,调用clear只是重置了两个读写指针为0,没有其他操作,因此比discardReadBytes要快
 
 ```JAVA
 
