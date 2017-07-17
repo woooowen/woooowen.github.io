@@ -104,16 +104,14 @@ private void allocate(PoolThreadCache cache, PooledByteBuf<T> buf, final int req
         boolean tiny = isTiny(normCapacity);
         if (tiny) { // < 512
         	// 小于512,那么分配到tinySubPagePools中
-            if (cache.allocateTiny(this, buf, reqCapacity, normCapacity)) {
-                // was able to allocate out of the cache so move on
+            if (cache.allocateTiny(this, buf, reqCapacity, normCapacity)) {                
                 return;
             }
             tableIdx = tinyIdx(normCapacity);
             table = tinySubpagePools;
         } else {
         	// 大于512但是小于pageSize(8192)就分配到smallSubPagePools中
-            if (cache.allocateSmall(this, buf, reqCapacity, normCapacity)) {
-                // was able to allocate out of the cache so move on
+            if (cache.allocateSmall(this, buf, reqCapacity, normCapacity)) {                
                 return;
             }
             tableIdx = smallIdx(normCapacity);
@@ -121,11 +119,7 @@ private void allocate(PoolThreadCache cache, PooledByteBuf<T> buf, final int req
         }
 
         final PoolSubpage<T> head = table[tableIdx];
-
-        /**
-         * Synchronize on the head. This is needed as {@link PoolChunk#allocateSubpage(int)} and
-         * {@link PoolChunk#free(long)} may modify the doubly linked list as well.
-         */
+        
         synchronized (head) {
             final PoolSubpage<T> s = head.next;
             if (s != head) {
@@ -146,8 +140,7 @@ private void allocate(PoolThreadCache cache, PooledByteBuf<T> buf, final int req
         return;
     }
     if (normCapacity <= chunkSize) {
-        if (cache.allocateNormal(this, buf, reqCapacity, normCapacity)) {
-            // was able to allocate out of the cache so move on
+        if (cache.allocateNormal(this, buf, reqCapacity, normCapacity)) {            
             return;
         }
         synchronized (this) {
@@ -173,7 +166,7 @@ private void allocateNormal(PooledByteBuf<T> buf, int reqCapacity, int normCapac
 	    return;
 	}
 
-	// Add a new chunk.
+	// 初始化的时候会执行这一部分,新建一个chunk并且放入qInit中,如果已经初始化了.那么会从上面几个chunkList中分配出去
 	PoolChunk<T> c = newChunk(pageSize, maxOrder, pageShifts, chunkSize);
 	long handle = c.allocate(normCapacity);
 	assert handle > 0;
@@ -190,7 +183,7 @@ private void allocateNormal(PooledByteBuf<T> buf, int reqCapacity, int normCapac
 
 ```JAVA
 
- private void allocateHuge(PooledByteBuf<T> buf, int reqCapacity) {
+private void allocateHuge(PooledByteBuf<T> buf, int reqCapacity) {
     PoolChunk<T> chunk = newUnpooledChunk(reqCapacity);
     activeBytesHuge.add(chunk.chunkSize());
     buf.initUnpooled(chunk, reqCapacity);
@@ -198,6 +191,7 @@ private void allocateNormal(PooledByteBuf<T> buf, int reqCapacity, int normCapac
 }
 
 protected PoolChunk<byte[]> newUnpooledChunk(int capacity) {
+	// 指定容量的字节数组,直接申请交给jvm去做
 	return new PoolChunk<byte[]>(this, new byte[capacity], capacity, 0);
 }
 
@@ -210,4 +204,4 @@ protected PoolChunk<byte[]> newUnpooledChunk(int capacity) {
 例如
 
 ```allocationsTiny``` 等用来表明已经分配的tinySubPools次数
-```allocationsSmall``` 用来表明已经分配过smallSubPools次数
+```allocationsSmall``` 用来表明已经分配过smallSubPools次数等等
