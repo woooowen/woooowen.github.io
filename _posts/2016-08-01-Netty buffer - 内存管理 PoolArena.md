@@ -159,7 +159,9 @@ private void allocate(PoolThreadCache cache, PooledByteBuf<T> buf, final int req
         allocateHuge(buf, reqCapacity);
     }
 }
+
 ```
+
 #### allocateNormal
 
 ```JAVA
@@ -180,6 +182,7 @@ private void allocateNormal(PooledByteBuf<T> buf, int reqCapacity, int normCapac
 }
 
 ```
+
 调用allocateNormal会去qInit,q000等中去先调用,初始化的时候因为这些chunkList都为空,因此会去先创建一个chunk,然后塞入qInit中,方便下次来调用
 
 超过chunkSize的申请会直接去调用allocateHuge执行,因为超过这部分的空间不会放入内存池中,因此不用理会cache,直接执行
@@ -206,5 +209,5 @@ protected PoolChunk<byte[]> newUnpooledChunk(int capacity) {
 
 例如
 
-```allocationsTiny```等用来表明已经分配的tinySubPools次数
+```allocationsTiny``` 等用来表明已经分配的tinySubPools次数
 ```allocationsSmall``` 用来表明已经分配过smallSubPools次数
