@@ -12,7 +12,7 @@ tags: [JAVA,网络]
 * chunkSize :  chunkSize = 2^{maxOrder} * pageSize,PoolChunk中每个chunk的大小通过前面的计算方式得出
 
 
-为了简单期间,当我们需要申请的容量>=pageSize的时候,总是根据计算得出>=pageSize且是2的指数级的最接近的数
+当我们需要申请的容量>=pageSize的时候,总是根据计算得出>=pageSize且是2的指数级的最接近的数
 
 ##### 比如我们要申请的容量是12,那么设定申请容量为16,如果我们要申请的容量是40,那么设定申请的容量就为64,如果是400,那么就是512,以此类推,总是保证在内存中分配的容量大于我们要申请的容量,且该容量为2的指数级,主要用来方便后续的位运算
 
@@ -21,11 +21,17 @@ tags: [JAVA,网络]
 例如
 
 depth=0        1 node (chunkSize)
+
 depth=1        2 nodes (chunkSize/2)
+
 ..
+
 ..
+
 depth=d        2^d nodes (chunkSize/2^d)
+
 ..
+
 depth=maxOrder 2^maxOrder nodes (chunkSize/2^{maxOrder} = pageSize)
 
 ### 初始化PoolChunk
@@ -187,6 +193,8 @@ private void updateParentsAlloc(int id) {
 #### 流程如下
 
 ![](http://of83v97ri.bkt.gdipper.com/poolchunknode%20alloc.png)
+
+##### 通过这样的方式遍历平衡二叉树来找到符合分配条件的第一个节点
 
 #### 分配
 
