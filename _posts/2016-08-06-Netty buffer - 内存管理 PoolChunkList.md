@@ -70,15 +70,7 @@ chunkListMetrics = Collections.unmodifiableList(metrics);
 
 ![](http://of83v97ri.bkt.gdipper.com/poolchunklistinarena.png)
 
-
-|   命名       |    minUsage        | maxUsage  |  maxCapacity|
-| ------------- |:-------------:| -----:|-----:|
-| q100      | 100 | Integer.MAX_VALUE | 0
-| q075      | 75      |   100 |  4194304
-| q050 | 50     |    100 | 8388608
-| q025 | 25      |    75 | 12582912
-| q000 | 1      |    50 | 16609443
-| qInit | -Integer.MAX_VALUE      |    25 |16609443
+![](http://of83v97ri.bkt.gdipper.com/poolchunksize.png)
 
 
 #### PoolChunkList的分配
@@ -133,7 +125,7 @@ boolean free(PoolChunk<T> chunk, long handle) {
 
 ```
 
-#### 在分配和释放的过程中,因为本身内存分配是连续的一大块,而需要的内存往往比实际申请的容量要小,因此很容易产生很多碎片,从而造成内存的浪费,不断的将高利用率的chunk移动到list尾部,而将低利用率的移动到前面,随着内存的释放,再将低利用率的移动到list前面从而提高分配的成功率
+>在分配和释放的过程中,因为本身内存分配是连续的一大块,而需要的内存往往比实际申请的容量要小,因此很容易产生很多碎片,从而造成内存的浪费,不断的将高利用率的chunk移动到list尾部,而将低利用率的移动到前面,随着内存的释放,再将低利用率的移动到list前面从而提高分配的成功率
 
 
 
