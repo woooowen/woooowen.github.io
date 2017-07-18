@@ -34,7 +34,7 @@ int normalizeCapacity(int reqCapacity) {
 	if (!isTiny(reqCapacity)) { // >= 512
 	    // Doubled
 	    // 当前需要容量 >= 512 ,<= chunkSize(16777216),
-	    // 那么计算出当前容量的double值,并且这个值是16的指数,也就是2的指数
+	    // 计算值>=当前值,并且这个值是16的指数,也就是2的指数的最接近的值
 	    int normalizedCapacity = reqCapacity;
 	    normalizedCapacity --;
 	    normalizedCapacity |= normalizedCapacity >>>  1;
