@@ -215,8 +215,9 @@ owner每次释放的时候会deck中的线程会去获取锁,如果获取成功,
 每次释放也会从Contention queue中获取一部分传递到EntryList
 
 
-
-
+##### 参考
+<http://www.jianshu.com/p/c5058b6fe8e5><br>
+<http://www.jianshu.com/p/759329da16e2>
 
 
 
