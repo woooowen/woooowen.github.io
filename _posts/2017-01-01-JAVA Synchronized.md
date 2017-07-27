@@ -196,6 +196,8 @@ protected:                              // Monitor-Mutex metadata
 
 流程
 
+![](http://pic.woowen.com/monitor.png)
+
 Contention queue --> EntryList --> OnDeck --> Owner --> !Owner
 
 竞争线程push到竞争队列的时候,会先进行自旋获取锁,因为如果当前锁得到锁之后立马释放了,那么竞争队列中的任意线程都有机会通过一定的自旋来获取到锁,而不用进入阻塞状态,提高了性能
