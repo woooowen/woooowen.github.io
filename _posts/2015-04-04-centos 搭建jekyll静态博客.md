@@ -1,8 +1,8 @@
 ---
 layout: post
 title: centos 搭建jekyll静态博客
-category: [Ruby,Linux]
-tags: [Ruby,Linux]
+category: [Linux]
+tags: [Linux]
 ---
 
 #####话说为什么要使用静态博客,wordpress太过臃肿,而且越来越多相对无用的功能,主要想搭建一个专心写博客,不用折腾的环境,之前我得博客一直是放在github上得..github有一个git-page用来给开源项目构建主页的.主要是使用了jekyll server,永久免费,而且还能抵挡大流量的攻击(前提是你有那么高流量).所以一直用了下来.但是github前段时间一直不稳定.因此迁移回了国内.
