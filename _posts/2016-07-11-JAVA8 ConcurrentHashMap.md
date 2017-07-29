@@ -216,6 +216,7 @@ private final void addCount(long x, int check) {
 }
 
 ```
+
 #### 如何保证线程安全
 
 在initTable的时候初始化table,通过cas修改sizeCtl的值,有且只有一个线程能获得锁,其他的线程通过Thread.yield让出CPU执行资源
