@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Mac下安装xdebug
-category: [Mac]
-tags: [Mac,xdebug]
+category: [PHP]
+tags: [PHP]
 ---
 
 mac下安装xdebug 总是出错.
