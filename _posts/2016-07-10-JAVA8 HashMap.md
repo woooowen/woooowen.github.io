@@ -157,5 +157,6 @@ java中通过对容量的左偏移1位,oldCapacity << 1 得到newCapacity
 那么如果一部分的元素的散列值冲突的话,扩容之后最高位不是0就是1,如果为0表示原先的散列值不变,如果为1,那么新的散列值就是原散列值+新增扩容容量,java8通过这样扩容的方法将元素均匀的分布到新的容器中
 
 
-[http://tech.meituan.com/java-hashmap.html]
-关于扩容相关的还是看这个文章吧,感觉说的比我自己思考要详细的多.
+参考
+
+<http://tech.meituan.com/java-hashmap.html><br>
