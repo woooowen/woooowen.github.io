@@ -30,7 +30,7 @@ private static final int tableSizeFor(int c) {
 
 类中大量使用了volatile关键字,定义volatile变量,他可以保证该变量对每个线程的可见性,就是保证每个线程看到volatile的值都是一样的.
 
-* 1.定义用到volatile的变量会组织jvm在编译的时候进行重排序优化操作
+* 1.定义用到volatile的变量会组织jvm在编译的时候禁止重排序优化操作
 * 2.定义volatile变量,其他线程每次获取的时候会放弃本地内存中的值,直接去主内存中捞取
 * 3.他每次更新的时候会调用JNI,也就是本地方法,其实就是CPU级别的CAS方法去更新这个值来保证他的原子性,具体的后面再说,先了解这么多就行了
 
@@ -137,7 +137,7 @@ static class Segment<K,V> extends ReentrantLock implements Serializable {
 * 2.synchronized同步块
 * 3.Unsafe方法中的cas JNI方法,这个方法在初始化以及原子自增的时候会用到.
 
-一般cas的意思就是,当老的值跟我预期的值一样,那么久讲老的值更新为新的值
+一般cas的意思就是,当老的值跟我预期的值一样,那么就将老的值更新为新的值
 
 比如下面的代码
 
@@ -151,11 +151,13 @@ static class Segment<K,V> extends ReentrantLock implements Serializable {
 ```
 
 ```JAVA
+
 private final Node<K,V>[] initTable() {
     Node<K,V>[] tab; int sc;
     while ((tab = table) == null || tab.length == 0) {
         if ((sc = sizeCtl) < 0)
-            Thread.yield(); // lost initialization race; just spin
+            // 让出线程资源,保证只有一个线程能初始化table
+            Thread.yield(); 
         else if (U.compareAndSwapInt(this, SIZECTL, sc, -1)) {
         // 用unsafe的cas方法来原子性的给SIZECTL赋值
             try {
@@ -214,10 +216,63 @@ private final void addCount(long x, int check) {
 }
 
 ```
+#### 如何保证线程安全
+
+在initTable的时候初始化table,通过cas修改sizeCtl的值,有且只有一个线程能获得锁,其他的线程通过Thread.yield让出CPU执行资源
+
+ConcurrentHashmap通过Synchronized和自旋cas来保证容器修改的线程安全
+
+扩容
+
+通过单线程构造两倍容量的nexttable,然后多线程协助复制数据的方法来安全扩容
+
+```JAVA
+
+static final class ForwardingNode<K,V> extends Node<K,V> {
+    final Node<K,V>[] nextTable;
+    ForwardingNode(Node<K,V>[] tab) {
+        super(MOVED, null, null, null);
+        this.nextTable = tab;
+    }
+
+    Node<K,V> find(int h, Object k) {
+        // loop to avoid arbitrarily deep recursion on forwarding nodes
+        outer: for (Node<K,V>[] tab = nextTable;;) {
+            Node<K,V> e; int n;
+            if (k == null || tab == null || (n = tab.length) == 0 ||
+                (e = tabAt(tab, (n - 1) & h)) == null)
+                return null;
+            for (;;) {
+                int eh; K ek;
+                if ((eh = e.hash) == h &&
+                    ((ek = e.key) == k || (ek != null && k.equals(ek))))
+                    return e;
+                if (eh < 0) {
+                    if (e instanceof ForwardingNode) {
+                        tab = ((ForwardingNode<K,V>)e).nextTable;
+                        continue outer;
+                    }
+                    else
+                        return e.find(h, k);
+                }
+                if ((e = e.next) == null)
+                    return null;
+            }
+        }
+    }
+}
+
+```
+
+大概意思就是,扩容操作一般分为两步,先构造一个两倍于本身的数组,然后将老的node复制到新数组中
+
+单线程构建新容器,然后遍历老容器往新容器中复制元素,当遍历复制的时候,线程对当前节点加Synchronized锁保证同步,并且将该节点换成forwardingNode,当多线程环境下,其他线程参与扩容的时候看到该节点为forwardingNode,说明有其他线程正在进行复制,那么就跳过该节点,处理下一个节点的复制操作,如此完成多线程环境下的扩容复制操作
+
 
 ####参考
 
 java8环境下各种锁对比
-
 <http://blog.takipi.com/java-8-stampedlocks-vs-readwritelocks-and-synchronized/>
 
+ConcurrentHashmap
+<http://blog.csdn.net/u010723709/article/details/48007881>
