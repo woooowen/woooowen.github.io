@@ -7,7 +7,7 @@ tags: [JAVA]
 
 * 1.继承AbstractList类,实现了List接口
 * 2.执行,size,isEmpty,get,set,iterator,listIterator时间复杂度都是O(1)
-* 3.执行add时间复杂度O(n)
+* 3.执行add时间复杂度O(1)
 * 4.如果你要存很多的数据进入ArrayList,比如200个,那么可以通过设置ensureCapacity来提高性能,我的理解是他在动态增加数组的时候会进行动态的扩容操作,这样事先扩容好,减少每次动态扩容带来的性能损耗?
 * 5.非线程安全,如果要在多线程环境中使用
 
@@ -133,5 +133,7 @@ public E remove(int index) {
 
 每次add新的元素会先取判断当前容量是否能容纳新的元素,如果能,那么modCount++,直接加入就行了.只有当容量不够,才会用grow方法去扩容
 
+调用add会先去判断容器的容量,而remove方法每次都会构造一个新的容量-1的新容器
 
+排除扩容,add时间复杂度为O(1),remove为O(n)
 
