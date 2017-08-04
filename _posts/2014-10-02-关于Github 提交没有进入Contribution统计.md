@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于Github提交没有进入Contribution统计的问题
-category: [Github]
+category: [开发工具]
 tags: [Github]
 ---
 本地一直使用github的mac客户端去提交代码,发现提交了好多次的代码,但是依然没有进入github的Contribution统计,于是参考了相关资料找到原因.

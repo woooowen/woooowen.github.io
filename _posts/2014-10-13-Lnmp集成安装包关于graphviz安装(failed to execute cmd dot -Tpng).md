@@ -1,7 +1,7 @@
 ---
 layout: post
 title: lnmp集成安装包关于graphviz安装(failed to execute cmd dot -Tpng)
-category: [Linux]
+category: [开发工具]
 tags: [Linux]
 ---
 

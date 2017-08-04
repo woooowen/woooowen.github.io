@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux下生成alias
-category: [Linux]
+category: [开发工具]
 tags: [Linux,Alias]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: centos 搭建jekyll静态博客
-category: [Linux]
+category: [开发工具]
 tags: [Linux]
 ---
 

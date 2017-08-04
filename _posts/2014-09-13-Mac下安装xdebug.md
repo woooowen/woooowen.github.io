@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mac下安装xdebug
-category: [PHP]
+category: [开发工具]
 tags: [PHP]
 ---
 
