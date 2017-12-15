@@ -194,7 +194,7 @@ protected:                              // Monitor-Mutex metadata
 
 ![](http://pic.woowen.com/monitor.jpeg)
 
-* Contention List 竞争队列,所有请求锁的线程会放入这个队列中
+* Contention List 请求队列,所有请求锁的线程会放入这个队列中
 * Entry List 竞争队列中,有资格称为候选人的线程被放入这个队列中
 * Wait Set 当前锁拥有线程调用wait()等待方法,就会放入等待队列
 * OnDeck 任意时刻只有一个线程可以竞争锁

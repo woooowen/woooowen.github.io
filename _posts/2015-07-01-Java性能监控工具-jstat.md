@@ -47,7 +47,7 @@ printcompilation 虚拟机静态方法
 
 ![](http://pic.woowen.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-24%20%E4%B8%8B%E5%8D%886.22.32.png)
 
-* Loaded	装载类梳理
+* Loaded	装载类数量
 * Bytes	装载类占用字节数
 * Unloaded	卸载类数量
 * Bytes	卸载类字节数

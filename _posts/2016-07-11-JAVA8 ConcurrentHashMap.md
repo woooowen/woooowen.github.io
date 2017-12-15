@@ -116,7 +116,7 @@ static class Segment<K,V> extends ReentrantLock implements Serializable {
 ```
 
 在1.8之前的版本中,ConcurrentHashMap使用分段锁Segment来保证并发情况下的线程安全,但是在1.8的时候已经剔除了.只保留了一些初始化工作,为了保证向前兼容,网上的很多资料还停留在之前的版本,这个需要注意.
-这可能也跟synchronized在后面的几个版本的优化有关,现在的synchroinized锁性能以及比ReentrantLock要好了很多.synchronized在更多的时候能保持一个更平衡的性能
+这可能也跟synchronized在后面的几个版本的优化有关,现在的synchroinized锁性能已经比ReentrantLock要好了很多.synchronized在更多的时候能保持一个更平衡的性能
 #### 各种锁性能对比
 #####5个读进程,5个写进程场景下的性能(数字越小,性能越好)
 ![](http://pic.woowen.com/lockvs1.png)
@@ -273,7 +273,9 @@ static final class ForwardingNode<K,V> extends Node<K,V> {
 ####参考
 
 java8环境下各种锁对比
+
 <http://blog.takipi.com/java-8-stampedlocks-vs-readwritelocks-and-synchronized/>
 
 ConcurrentHashmap
+
 <http://blog.csdn.net/u010723709/article/details/48007881>

@@ -100,7 +100,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 ```
 
 * 1.先检查,该key,该value是否已经包含在map中,并且检查原map中是否有值,如果没有,那么直接生成一个node给他.因为他是第一个元素嘛.
-* 2.如果这个该key以及存在一个node,那么直接将新的node赋值给他,替换掉原来的node
+* 2.如果这个该key已经存在一个node,那么直接将新的node赋值给他,替换掉原来的node
 * 3.再检查是否树状Node,如果是,那么需要按照红黑树的原则去增加,因为红黑树为了平衡,需要变色,以及左旋,右旋来保持高度,并满足红黑树的特性,使得时间复杂度始终为O(logn)
 * 4.第一次增加的时候,给binCount赋值,并且自增,增加一个节点,如果binCount大于之前定义的TREEIFY_THRESHOLD(默认为8) 那么需要转换成红黑树来提高效率
 
