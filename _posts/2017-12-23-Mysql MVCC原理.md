@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mysql MVCC
+title: Mysql MVCC原理
 category: [Mysql]
 tags: [Mysql]
 ---
