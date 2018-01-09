@@ -42,7 +42,23 @@ protected final Mapper mapper = new Mapper();
 
 ![](http://pic.woowen.com/protocolhandler.png)
 
-#### Container
+### Container 容器
+
+容器的层次结构是Engine->Host->Context->Wrapper
+
+Engine代表是servlet引擎,管理所有的容器类,负责其所有子类的生命周期
+Host代表引擎中的虚拟主机,一台机器可以部署多个虚拟主机,代表不同的域名指向
+Context代表一个web项目
+Wrapper代表一个servlet实例
+
+容器之间通过管道和阀门来控制传递,一次请求会依次通过所有的阀门,明显的责任链模式
+
+每个容器都会有一些自带的阀门,一一对应,并且是管道中的最后一个阀门,用来向下级传递请求
+
+Engine 对应 StandardEngineValve
+Host 对应 StandardHostValve
+Context 对应 StandardContextValve
+Wrapper 对应 StandardWrapperValve
 
 ![](http://pic.woowen.com/container.png)
 
