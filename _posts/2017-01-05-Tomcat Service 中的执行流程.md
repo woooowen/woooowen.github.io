@@ -27,6 +27,7 @@ private Engine engine = null;
 protected final Mapper mapper = new Mapper();
 
 ```
+
 ### Connector 连接器
 
 个人觉得连接器主要分成这几个部分
@@ -82,6 +83,7 @@ Wrapper 对应 StandardWrapperValve
 
 tomcat中Http的解析分为请求行,请求头分开解析
 将字符转成字节数组,然后遍历判断是否有空格或者```\t```,然后在按照上图的格式依次去解析```\r\n```以及```:```
+http请求头部,最多8MB
 
 说是源码解析,但是是在不想贴代码,因为实在太长了,如果要看源码解析还不如自己去看tomcat的代码,既然写出来,主要是梳理下逻辑.帮助快速理解,那么画图就是最好的方式
 
