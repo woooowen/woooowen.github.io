@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - 引用计数
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 #### 类继承关系图

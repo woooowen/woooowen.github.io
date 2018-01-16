@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - 堆内内存和堆外内存(直接内存)
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 Netty中的内存管理从位置上可以分为堆内和堆外,从功能上可以分为池化和非池化,这边主要说堆内和堆外的区别

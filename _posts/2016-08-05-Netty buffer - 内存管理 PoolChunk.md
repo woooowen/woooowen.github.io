@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - 内存管理 PoolChunk
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 #### 了解以下术语对于理解代码非常有帮助

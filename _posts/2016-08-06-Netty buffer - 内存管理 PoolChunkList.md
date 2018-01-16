@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - 内存管理 PoolChunkList
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 PoolChunkList是一堆PoolChunk的集合,主要用来管理PoolChunk

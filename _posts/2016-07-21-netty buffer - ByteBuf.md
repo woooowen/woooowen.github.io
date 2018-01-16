@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - ByteBuf
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 Netty 中的buffer是非常重要的一个部分,他重新实现了ByteBuffer相关的功能,并且做了很多的优化

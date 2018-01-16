@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Netty buffer - 内存管理 PoolArena
-category: [JAVA]
-tags: [JAVA,网络]
+category: [源码]
+tags: [Netty]
 ---
 
 ### 总览
