@@ -1,5 +1,5 @@
 GEM
-  remote: https://gems.ruby-china.org
+  remote: https://gems.ruby-china.org/
   specs:
     RedCloth (4.2.9)
     activesupport (4.2.1)
@@ -109,6 +109,7 @@ GEM
     rdiscount (2.1.7)
     redcarpet (3.1.2)
     ref (1.0.5)
+    rouge (2.0.7)
     safe_yaml (1.0.4)
     sass (3.4.13)
     terminal-table (1.4.5)
@@ -130,4 +131,5 @@ PLATFORMS
 DEPENDENCIES
   execjs
   github-pages
+  rouge
   therubyracer
